@@ -1,0 +1,115 @@
+terraform {
+  required_providers {
+    oci = {
+      source  = "oracle/oci"
+      version = "8.29.0"
+    }
+  }
+}
+
+provider "oci" {
+  # Configuration options
+}
+
+module "oke" {
+  source                               = "oracle-terraform-modules/oke/oci"
+  version                              = "4.0.0-BETA.2"
+  admission_controller_options         = var.admission_controller_options
+  allow_node_port_access               = var.allow_node_port_access
+  allow_worker_internet_access         = var.allow_worker_internet_access
+  allow_worker_ssh_access              = var.allow_worker_ssh_access
+  api_fingerprint                      = var.api_fingerprint
+  api_private_key_path                 = var.api_private_key_path
+  availability_domains                 = var.availability_domains
+  bastion_access                       = var.bastion_access
+  bastion_image_id                     = var.bastion_image_id
+  bastion_notification_endpoint        = var.bastion_notification_endpoint
+  bastion_notification_protocol        = var.bastion_notification_protocol
+  bastion_notification_topic           = var.bastion_notification_topic
+  bastion_os_version                   = var.bastion_os_version
+  bastion_service_access               = var.bastion_service_access
+  bastion_service_name                 = var.bastion_service_name
+  bastion_service_target_subnet        = var.bastion_service_target_subnet
+  bastion_shape                        = var.bastion_shape
+  bastion_state                        = var.bastion_state
+  bastion_timezone                     = var.bastion_timezone
+  bastion_type                         = var.bastion_type
+  calico_version                       = var.calico_version
+  check_node_active                    = var.check_node_active
+  cluster_name                         = var.cluster_name
+  compartment_id                       = var.compartment_id
+  control_plane_access                 = var.control_plane_access
+  control_plane_access_source          = var.control_plane_access_source
+  control_plane_nsgs                   = var.control_plane_nsgs
+  create_bastion_host                  = var.create_bastion_host
+  create_bastion_service               = var.create_bastion_service
+  create_drg                           = var.create_drg
+  create_operator                      = var.create_operator
+  create_service_account               = var.create_service_account
+  dashboard_enabled                    = var.dashboard_enabled
+  drg_display_name                     = var.drg_display_name
+  email_address                        = var.email_address
+  enable_bastion_notification          = var.enable_bastion_notification
+  enable_calico                        = var.enable_calico
+  enable_metric_server                 = var.enable_metric_server
+  enable_operator_notification         = var.enable_operator_notification
+  enable_vpa                           = var.enable_vpa
+  enable_waf                           = var.enable_waf
+  image_signing_keys                   = var.image_signing_keys
+  internet_gateway_route_rules         = var.internet_gateway_route_rules
+  kms_key_id                           = var.kms_key_id
+  kubernetes_version                   = var.kubernetes_version
+  label_prefix                         = var.label_prefix
+  lb_type                              = var.lb_type
+  local_peering_gateways               = var.local_peering_gateways
+  lockdown_default_seclist             = var.lockdown_default_seclist
+  nat_gateway_public_ip_id             = var.nat_gateway_public_ip_id
+  nat_gateway_route_rules              = var.nat_gateway_route_rules
+  node_pool_image_id                   = var.node_pool_image_id
+  node_pool_name_prefix                = var.node_pool_name_prefix
+  node_pool_os                         = var.node_pool_os
+  node_pool_os_version                 = var.node_pool_os_version
+  node_pools                           = var.node_pools
+  node_pools_to_drain                  = var.node_pools_to_drain
+  nodepool_drain                       = var.nodepool_drain
+  nodepool_upgrade_method              = var.nodepool_upgrade_method
+  ocir_urls                            = var.ocir_urls
+  operator_image_id                    = var.operator_image_id
+  operator_instance_principal          = var.operator_instance_principal
+  operator_notification_endpoint       = var.operator_notification_endpoint
+  operator_notification_protocol       = var.operator_notification_protocol
+  operator_notification_topic          = var.operator_notification_topic
+  operator_nsg_ids                     = var.operator_nsg_ids
+  operator_os_version                  = var.operator_os_version
+  operator_shape                       = var.operator_shape
+  operator_state                       = var.operator_state
+  operator_timezone                    = var.operator_timezone
+  pods_cidr                            = var.pods_cidr
+  preferred_lb_type                    = var.preferred_lb_type
+  public_lb_ports                      = var.public_lb_ports
+  region                               = var.region
+  secret_id                            = var.secret_id
+  secret_name                          = var.secret_name
+  secret_namespace                     = var.secret_namespace
+  service_account_cluster_role_binding = var.service_account_cluster_role_binding
+  service_account_name                 = var.service_account_name
+  service_account_namespace            = var.service_account_namespace
+  services_cidr                        = var.services_cidr
+  ssh_private_key_path                 = var.ssh_private_key_path
+  ssh_public_key                       = var.ssh_public_key
+  ssh_public_key_path                  = var.ssh_public_key_path
+  subnets                              = var.subnets
+  tags                                 = var.tags
+  tenancy_id                           = var.tenancy_id
+  upgrade_bastion                      = var.upgrade_bastion
+  upgrade_operator                     = var.upgrade_operator
+  use_encryption                       = var.use_encryption
+  use_signed_images                    = var.use_signed_images
+  user_id                              = var.user_id
+  username                             = var.username
+  vcn_cidrs                            = var.vcn_cidrs
+  vcn_dns_label                        = var.vcn_dns_label
+  vcn_name                             = var.vcn_name
+  vpa_version                          = var.vpa_version
+  worker_mode                          = var.worker_mode
+}

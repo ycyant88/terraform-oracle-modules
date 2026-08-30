@@ -1,0 +1,42 @@
+terraform {
+  required_providers {
+    oci = {
+      source  = "oracle/oci"
+      version = "8.29.0"
+    }
+  }
+}
+
+provider "oci" {
+  # Configuration options
+}
+
+module "iam" {
+  source                     = "oracle-terraform-modules/iam/oci"
+  version                    = "1.0.1"
+  assign_public_ip           = var.assign_public_ip
+  attachment_type            = var.attachment_type
+  availability_domain        = var.availability_domain
+  block_storage_sizes_in_gbs = var.block_storage_sizes_in_gbs
+  boot_volume_size_in_gbs    = var.boot_volume_size_in_gbs
+  compartment_ocid           = var.compartment_ocid
+  extended_metadata          = var.extended_metadata
+  hostname_label             = var.hostname_label
+  instance_count             = var.instance_count
+  instance_display_name      = var.instance_display_name
+  instance_timeout           = var.instance_timeout
+  ipxe_script                = var.ipxe_script
+  preserve_boot_volume       = var.preserve_boot_volume
+  private_ip                 = var.private_ip
+  resource_platform          = var.resource_platform
+  shape                      = var.shape
+  skip_source_dest_check     = var.skip_source_dest_check
+  source_ocid                = var.source_ocid
+  source_type                = var.source_type
+  ssh_authorized_keys        = var.ssh_authorized_keys
+  subnet_ocid                = var.subnet_ocid
+  use_chap                   = var.use_chap
+  user_data                  = var.user_data
+  vcn_ocid                   = var.vcn_ocid
+  vnic_name                  = var.vnic_name
+}

@@ -1,0 +1,765 @@
+[
+  {
+    "name": "nat_gateway_public_ip_id",
+    "type": "string",
+    "description": "OCID of reserved IP address for NAT gateway. The reserved public IP address needs to be manually created.",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "upgrade_operator",
+    "type": "bool",
+    "description": "Whether to upgrade the operator packages after provisioning. It’s useful to set this to false during development so the operator is provisioned faster.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "username",
+    "type": "string",
+    "description": "The username that can login to the selected tenancy. This is different from tenancy_id. *Required* if secret_id is set.",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "service_account_namespace",
+    "type": "string",
+    "description": "The Kubernetes namespace where to create the service account",
+    "default": "\"kube-system\"",
+    "required": false
+  },
+  {
+    "name": "home_region",
+    "type": "string",
+    "description": "The tenancy's home region. Required to perform identity operations.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "control_plane_allowed_cidrs",
+    "type": "list(string)",
+    "description": "The list of CIDR blocks from which the control plane can be accessed.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "create_service_account",
+    "type": "bool",
+    "description": "Whether to create a service account. A service account is required for CI/CD. see https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengaddingserviceaccttoken.htm",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "bastion_notification_topic",
+    "type": "string",
+    "description": "The name of the notification topic.",
+    "default": "\"bastion\"",
+    "required": false
+  },
+  {
+    "name": "node_pool_os",
+    "type": "string",
+    "description": "The name of image to use.",
+    "default": "\"Oracle Linux\"",
+    "required": false
+  },
+  {
+    "name": "create_operator",
+    "type": "bool",
+    "description": "Whether to create an operator server in a private subnet.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "secret_namespace",
+    "type": "string",
+    "description": "The Kubernetes namespace for where the OCIR secret will be created.",
+    "default": "\"default\"",
+    "required": false
+  },
+  {
+    "name": "ocir_urls",
+    "type": "map(string)",
+    "description": "The urls of ocir in the respective regions.",
+    "default": "{\n  \"ap-chuncheon-1\": \"yny.ocir.io\",\n  \"ap-hyderabad-1\": \"hyd.ocir.io\",\n  \"ap-melbourne-1\": \"mel.ocir.io\",\n  \"ap-mumbai-1\": \"bom.ocir.io\",\n  \"ap-osaka-1\": \"kix.ocir.io\",\n  \"ap-seoul-1\": \"icn.ocir.io\",\n  \"ap-singapore-1\": \"sin.ocir.io\",\n  \"ap-sydney-1\": \"syd.ocir.io\",\n  \"ap-tokyo-1\": \"nrt.ocir.io\",\n  \"ca-montreal-1\": \"yul.ocir.io\",\n  \"ca-toronto-1\": \"yyz.ocir.io\",\n  \"eu-amsterdam-1\": \"ams.ocir.io\",\n  \"eu-frankfurt-1\": \"fra.ocir.io\",\n  \"eu-marseille-1\": \"mrs.ocir.io\",\n  \"eu-milan-1\": \"lin.ocir.io\",\n  \"eu-stockholm-1\": \"arn.ocir.io\",\n  \"eu-zurich-1\": \"zrh.ocir.io\",\n  \"il-jerusalem-1\": \"mtz.ocir.io\",\n  \"me-abudhabi-1\": \"auh.ocir.io\",\n  \"me-dubai-1\": \"dxb.ocir.io\",\n  \"me-jeddah-1\": \"jed.ocir.io\",\n  \"sa-santiago-1\": \"scl.ocir.io\",\n  \"sa-saopaulo-1\": \"gru.ocir.io\",\n  \"sa-vinhedo-1\": \"vcp.ocir.io\",\n  \"uk-cardiff-1\": \"cwl.ocir.io\",\n  \"uk-london-1\": \"lhr.ocir.io\",\n  \"us-ashburn-1\": \"iad.ocir.io\",\n  \"us-phoenix-1\": \"phx.ocir.io\",\n  \"us-sanjose-1\": \"sjc.ocir.io\"\n}",
+    "required": false
+  },
+  {
+    "name": "operator_notification_endpoint",
+    "type": "string",
+    "description": "The subscription notification endpoint for the operator. Email address to be notified.",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "internal_lb_allowed_ports",
+    "type": "list(any)",
+    "description": "List of allowed ports for internal load balancers.",
+    "default": "[\n  80,\n  443\n]",
+    "required": false
+  },
+  {
+    "name": "enable_operator_notification",
+    "type": "bool",
+    "description": "Whether to enable notification on the operator host.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "admission_controller_options",
+    "type": "map(bool)",
+    "description": "various Admission Controller options",
+    "default": "{\n  \"PodSecurityPolicy\": false\n}",
+    "required": false
+  },
+  {
+    "name": "node_pools_to_drain",
+    "type": "list(string)",
+    "description": "List of node pool names to drain during an upgrade. This list is used to determine the worker nodes to drain.",
+    "default": "[\n  \"none\"\n]",
+    "required": false
+  },
+  {
+    "name": "internal_lb_allowed_cidrs",
+    "type": "list(string)",
+    "description": "The list of CIDR blocks from which the internal load balancer can be accessed.",
+    "default": "[\n  \"0.0.0.0/0\"\n]",
+    "required": false
+  },
+  {
+    "name": "lockdown_default_seclist",
+    "type": "bool",
+    "description": "whether to remove all default security rules from the VCN Default Security List",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "bastion_image_id",
+    "type": "string",
+    "description": "The image id to use for bastion.",
+    "default": "\"Autonomous\"",
+    "required": false
+  },
+  {
+    "name": "operator_notification_topic",
+    "type": "string",
+    "description": "The name of the notification topic.",
+    "default": "\"operator\"",
+    "required": false
+  },
+  {
+    "name": "gatekeeeper_version",
+    "type": "string",
+    "description": "The version of Gatekeeper to install",
+    "default": "\"3.7\"",
+    "required": false
+  },
+  {
+    "name": "tenancy_id",
+    "type": "string",
+    "description": "The tenancy id of the OCI Cloud Account in which to create the resources.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "upgrade_bastion",
+    "type": "bool",
+    "description": "Whether to upgrade the bastion host packages after provisioning. it’s useful to set this to false during development so the bastion is provisioned faster.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "node_pool_name_prefix",
+    "type": "string",
+    "description": "The prefix of the node pool name.",
+    "default": "\"np\"",
+    "required": false
+  },
+  {
+    "name": "worker_nsgs",
+    "type": "list(any)",
+    "description": "An additional list of network security groups (NSG) ids for the worker nodes that can be created subsequently.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "enable_calico",
+    "type": "bool",
+    "description": "Whether to install calico for network pod security policy",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "bastion_shape",
+    "type": "map(any)",
+    "description": "The shape of bastion instance.",
+    "default": "{\n  \"boot_volume_size\": 50,\n  \"memory\": 4,\n  \"ocpus\": 1,\n  \"shape\": \"VM.Standard.E4.Flex\"\n}",
+    "required": false
+  },
+  {
+    "name": "load_balancers",
+    "type": "string",
+    "description": "The type of subnets to create for load balancers.",
+    "default": "\"public\"",
+    "required": false
+  },
+  {
+    "name": "region",
+    "type": "string",
+    "description": "The OCI region where OKE resources will be created.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ssh_public_key_path",
+    "type": "string",
+    "description": "The path to ssh public key.",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "vcn_name",
+    "type": "string",
+    "description": "name of vcn",
+    "default": "\"oke-vcn\"",
+    "required": false
+  },
+  {
+    "name": "check_node_active",
+    "type": "string",
+    "description": "check worker node is active",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "ssh_private_key_path",
+    "type": "string",
+    "description": "The path to ssh private key.",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "bastion_timezone",
+    "type": "string",
+    "description": "The preferred timezone for the bastion host.",
+    "default": "\"Australia/Sydney\"",
+    "required": false
+  },
+  {
+    "name": "node_pools",
+    "type": "any",
+    "description": "Tuple of node pools. Each key maps to a node pool. Each value is a tuple of shape (string),ocpus(number) , node_pool_size(number) and boot_volume_size(number)",
+    "default": "{\n  \"np1\": {\n    \"boot_volume_size\": 150,\n    \"label\": {\n      \"app\": \"frontend\",\n      \"pool\": \"np1\"\n    },\n    \"memory\": 16,\n    \"node_pool_size\": 1,\n    \"ocpus\": 1,\n    \"shape\": \"VM.Standard.E4.Flex\"\n  },\n  \"np2\": {\n    \"boot_volume_size\": 150,\n    \"node_pool_size\": 2,\n    \"shape\": \"VM.Standard.E2.2\"\n  },\n  \"np3\": {\n    \"node_pool_size\": 1,\n    \"shape\": \"VM.Standard.E2.2\"\n  }\n}",
+    "required": false
+  },
+  {
+    "name": "service_account_name",
+    "type": "string",
+    "description": "The name of service account to create",
+    "default": "\"kubeconfigsa\"",
+    "required": false
+  },
+  {
+    "name": "create_bastion_service",
+    "type": "bool",
+    "description": "Whether to create a bastion service that allows access to private hosts.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "api_private_key_password",
+    "type": "string",
+    "description": "The corresponding private key password to use with the api private key if it is encrypted.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "vcn_cidrs",
+    "type": "list(string)",
+    "description": "The list of IPv4 CIDR blocks the VCN will use.",
+    "default": "[\n  \"10.0.0.0/16\"\n]",
+    "required": false
+  },
+  {
+    "name": "operator_shape",
+    "type": "map(any)",
+    "description": "The shape of operator instance.",
+    "default": "{\n  \"boot_volume_size\": 50,\n  \"memory\": 4,\n  \"ocpus\": 1,\n  \"shape\": \"VM.Standard.E4.Flex\"\n}",
+    "required": false
+  },
+  {
+    "name": "operator_timezone",
+    "type": "string",
+    "description": "The preferred timezone for the operator host.",
+    "default": "\"Australia/Sydney\"",
+    "required": false
+  },
+  {
+    "name": "worker_type",
+    "type": "string",
+    "description": "Whether to provision public or private workers.",
+    "default": "\"private\"",
+    "required": false
+  },
+  {
+    "name": "preferred_load_balancer",
+    "type": "string",
+    "description": "The preferred load balancer subnets that OKE will automatically choose when creating a load balancer. valid values are public or internal. if 'public' is chosen, the value for load_balancers must be either 'public' or 'both'. If 'private' is chosen, the value for load_balancers must be either 'internal' or 'both'.",
+    "default": "\"public\"",
+    "required": false
+  },
+  {
+    "name": "drg_display_name",
+    "type": "string",
+    "description": "(Updatable) Name of Dynamic Routing Gateway. Does not have to be unique.",
+    "default": "\"drg\"",
+    "required": false
+  },
+  {
+    "name": "local_peering_gateways",
+    "type": "map(any)",
+    "description": "Map of Local Peering Gateways to attach to the VCN.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "nat_gateway_route_rules",
+    "type": "list(map(string))",
+    "description": "(Updatable) List of routing rules to add to NAT Gateway Route Table",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "vcn_dns_label",
+    "type": "string",
+    "description": "A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet.",
+    "default": "\"oke\"",
+    "required": false
+  },
+  {
+    "name": "api_private_key_path",
+    "type": "string",
+    "description": "The path to the OCI API private key.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "dashboard_enabled",
+    "type": "bool",
+    "description": "Whether to enable kubernetes dashboard.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "enable_metric_server",
+    "type": "bool",
+    "description": "Whether to install metricserver for collecting metrics and for HPA",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "service_account_cluster_role_binding",
+    "type": "string",
+    "description": "The cluster role binding name",
+    "default": "\"cluster-admin\"",
+    "required": false
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "The compartment id where to create all resources.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "bastion_notification_endpoint",
+    "type": "string",
+    "description": "The subscription notification endpoint for the bastion. The email address to be notified.",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "operator_state",
+    "type": "string",
+    "description": "The target state for the operator instance. Could be set to RUNNING or STOPPED. (Updatable)",
+    "default": "\"RUNNING\"",
+    "required": false
+  },
+  {
+    "name": "allow_worker_internet_access",
+    "type": "bool",
+    "description": "Allow worker nodes to egress to internet. Required if container images are in a registry other than OCIR.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "allow_worker_ssh_access",
+    "type": "bool",
+    "description": "Whether to allow ssh access to worker nodes.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "operator_image_id",
+    "type": "string",
+    "description": "The image id to use for operator server. Set either an image id or to Oracle. If value is set to Oracle, the default Oracle Linux platform image will be used.",
+    "default": "\"Oracle\"",
+    "required": false
+  },
+  {
+    "name": "enable_operator_instance_principal",
+    "type": "bool",
+    "description": "Whether to enable the operator to call OCI API services without requiring api key.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "cluster_name",
+    "type": "string",
+    "description": "The name of oke cluster.",
+    "default": "\"oke\"",
+    "required": false
+  },
+  {
+    "name": "node_pool_image_id",
+    "type": "string",
+    "description": "The ocid of a custom image to use for worker node.",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "public_lb_allowed_cidrs",
+    "type": "list(string)",
+    "description": "The list of CIDR blocks from which the public load balancer can be accessed.",
+    "default": "[\n  \"0.0.0.0/0\"\n]",
+    "required": false
+  },
+  {
+    "name": "api_fingerprint",
+    "type": "string",
+    "description": "Fingerprint of the API private key to use with OCI API.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "label_prefix",
+    "type": "string",
+    "description": "A string that will be prepended to all resources.",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "internet_gateway_route_rules",
+    "type": "list(map(string))",
+    "description": "(Updatable) List of routing rules to add to Internet Gateway Route Table",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "bastion_access",
+    "type": "list(string)",
+    "description": "A list of CIDR blocks to which ssh access to the bastion host must be restricted. *anywhere* is equivalent to 0.0.0.0/0 and allows ssh access from anywhere.",
+    "default": "[\n  \"anywhere\"\n]",
+    "required": false
+  },
+  {
+    "name": "nodepool_upgrade_method",
+    "type": "string",
+    "description": "The upgrade method to use when upgrading to a new version. Only out-of-place supported at the moment.",
+    "default": "\"out_of_place\"",
+    "required": false
+  },
+  {
+    "name": "debug_mode",
+    "type": "bool",
+    "description": "Whether to turn on debug mode.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "pods_cidr",
+    "type": "string",
+    "description": "The CIDR range used for IP addresses by the pods. A /16 CIDR is generally sufficient. This CIDR should not overlap with any subnet range in the VCN (it can also be outside the VCN CIDR range).",
+    "default": "\"10.244.0.0/16\"",
+    "required": false
+  },
+  {
+    "name": "email_address",
+    "type": "string",
+    "description": "The email address used for OCIR.",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "allow_node_port_access",
+    "type": "bool",
+    "description": "Whether to allow access to NodePorts when worker nodes are deployed in public mode.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "node_pool_os_version",
+    "type": "string",
+    "description": "The version of operating system to use for the worker nodes.",
+    "default": "\"7.9\"",
+    "required": false
+  },
+  {
+    "name": "enable_gatekeeper",
+    "type": "bool",
+    "description": "Whether to install Gatekeeper",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "freeform_tags",
+    "type": "map(any)",
+    "description": "Tags to apply to different resources.",
+    "default": "{\n  \"bastion\": {\n    \"environment\": \"dev\",\n    \"role\": \"bastion\"\n  },\n  \"operator\": {\n    \"environment\": \"dev\",\n    \"role\": \"operator\"\n  },\n  \"vcn\": {\n    \"environment\": \"dev\"\n  }\n}",
+    "required": false
+  },
+  {
+    "name": "control_plane_type",
+    "type": "string",
+    "description": "Whether to allow public or private access to the control plane endpoint",
+    "default": "\"public\"",
+    "required": false
+  },
+  {
+    "name": "use_encryption",
+    "type": "bool",
+    "description": "Whether to use OCI KMS to encrypt Kubernetes secrets.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "create_bastion_host",
+    "type": "bool",
+    "description": "Whether to create a bastion host.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "bastion_state",
+    "type": "string",
+    "description": "The target state for the bastion instance. Could be set to RUNNING or STOPPED. (Updatable)",
+    "default": "\"RUNNING\"",
+    "required": false
+  },
+  {
+    "name": "enable_bastion_notification",
+    "type": "bool",
+    "description": "Whether to enable notification on the bastion host.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "availability_domains",
+    "type": "map(any)",
+    "description": "Availability Domains where to provision non-OKE resources",
+    "default": "{\n  \"bastion\": 1,\n  \"operator\": 1\n}",
+    "required": false
+  },
+  {
+    "name": "vpa_version",
+    "type": "string",
+    "description": "The version of vertical pod autoscaler to install",
+    "default": "\"0.8\"",
+    "required": false
+  },
+  {
+    "name": "bastion_notification_protocol",
+    "type": "string",
+    "description": "The notification protocol used.",
+    "default": "\"EMAIL\"",
+    "required": false
+  },
+  {
+    "name": "control_plane_nsgs",
+    "type": "list(string)",
+    "description": "An additional list of network security groups (NSG) ids for the cluster endpoint that can be created subsequently.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "services_cidr",
+    "type": "string",
+    "description": "The CIDR range used by exposed Kubernetes services (ClusterIPs). This CIDR should not overlap with the VCN CIDR range.",
+    "default": "\"10.96.0.0/16\"",
+    "required": false
+  },
+  {
+    "name": "enable_waf",
+    "type": "bool",
+    "description": "Whether to enable WAF monitoring of load balancers",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "calico_version",
+    "type": "string",
+    "description": "The version of calico to install",
+    "default": "\"3.19\"",
+    "required": false
+  },
+  {
+    "name": "enable_vpa",
+    "type": "bool",
+    "description": "Whether to install vertical pod autoscaler",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "bastion_service_target_subnet",
+    "type": "string",
+    "description": "The name of the subnet that the bastion service can connect to.",
+    "default": "\"operator\"",
+    "required": false
+  },
+  {
+    "name": "operator_nsg_ids",
+    "type": "list(string)",
+    "description": "An optional and updatable list of network security groups that the operator will be part of.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "subnets",
+    "type": "map(any)",
+    "description": "parameters to cidrsubnet function to calculate subnet masks within the VCN.",
+    "default": "{\n  \"bastion\": {\n    \"netnum\": 0,\n    \"newbits\": 13\n  },\n  \"cp\": {\n    \"netnum\": 2,\n    \"newbits\": 13\n  },\n  \"int_lb\": {\n    \"netnum\": 16,\n    \"newbits\": 11\n  },\n  \"operator\": {\n    \"netnum\": 1,\n    \"newbits\": 13\n  },\n  \"pub_lb\": {\n    \"netnum\": 17,\n    \"newbits\": 11\n  },\n  \"workers\": {\n    \"netnum\": 1,\n    \"newbits\": 2\n  }\n}",
+    "required": false
+  },
+  {
+    "name": "bastion_os_version",
+    "type": "string",
+    "description": "In case Autonomous Linux is used, allow specification of Autonomous version",
+    "default": "\"7.9\"",
+    "required": false
+  },
+  {
+    "name": "bastion_service_access",
+    "type": "list(string)",
+    "description": "A list of CIDR blocks to which ssh access to the bastion service must be restricted. *anywhere* is equivalent to 0.0.0.0/0 and allows ssh access from anywhere.",
+    "default": "[\n  \"0.0.0.0/0\"\n]",
+    "required": false
+  },
+  {
+    "name": "bastion_service_name",
+    "type": "string",
+    "description": "The name of the bastion service.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "upgrade_nodepool",
+    "type": "bool",
+    "description": "Whether to upgrade the Kubernetes version of the node pools.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "secret_id",
+    "type": "string",
+    "description": "The OCID of the Secret on OCI Vault which holds the authentication token.",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "api_private_key",
+    "type": "string",
+    "description": "The contents of the private key file to use with OCI API. This takes precedence over private_key_path if both are specified in the provider.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "kms_key_id",
+    "type": "string",
+    "description": "The id of the OCI KMS key to be used as the master encryption key for Kubernetes secrets encryption.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "public_lb_allowed_ports",
+    "type": "list(any)",
+    "description": "List of allowed ports for public load balancers.",
+    "default": "[\n  443\n]",
+    "required": false
+  },
+  {
+    "name": "ssh_public_key",
+    "type": "string",
+    "description": "The contents of the ssh public key.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "kubernetes_version",
+    "type": "string",
+    "description": "The version of kubernetes to use when provisioning OKE or to upgrade an existing OKE cluster to.",
+    "default": "\"v1.20.11\"",
+    "required": false
+  },
+  {
+    "name": "operator_notification_protocol",
+    "type": "string",
+    "description": "The notification protocol used.",
+    "default": "\"EMAIL\"",
+    "required": false
+  },
+  {
+    "name": "image_signing_keys",
+    "type": "list(string)",
+    "description": "A list of KMS key ids used by the worker nodes to verify signed images. The keys must use RSA algorithm.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "user_id",
+    "type": "string",
+    "description": "The id of the user that terraform will use to create the resources.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "create_drg",
+    "type": "bool",
+    "description": "whether to create Dynamic Routing Gateway. If set to true, creates a Dynamic Routing Gateway and attach it to the VCN.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "bastion_type",
+    "type": "string",
+    "description": "Whether to make the bastion host public or private.",
+    "default": "\"public\"",
+    "required": false
+  },
+  {
+    "name": "operator_os_version",
+    "type": "string",
+    "description": "The Oracle Linux version to use for the operator host",
+    "default": "\"8\"",
+    "required": false
+  },
+  {
+    "name": "use_signed_images",
+    "type": "bool",
+    "description": "Whether to enforce the use of signed images. If set to true, at least 1 RSA key must be provided through image_signing_keys.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "secret_name",
+    "type": "string",
+    "description": "The name of the Kubernetes secret that will hold the authentication token",
+    "default": "\"ocirsecret\"",
+    "required": false
+  },
+  {
+    "name": "ssh_private_key",
+    "type": "string",
+    "description": "The contents of the private ssh key file.",
+    "default": "\"\"",
+    "required": false
+  }
+]

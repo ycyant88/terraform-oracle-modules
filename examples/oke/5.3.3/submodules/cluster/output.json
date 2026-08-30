@@ -1,0 +1,14 @@
+[
+  {
+    "name": "oidc_discovery_endpoint",
+    "description": ""
+  },
+  {
+    "name": "cluster_id",
+    "description": ""
+  },
+  {
+    "name": "endpoints",
+    "description": ""
+  }
+]

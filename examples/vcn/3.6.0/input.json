@@ -1,0 +1,156 @@
+[
+  {
+    "name": "attached_drg_id",
+    "type": "string",
+    "description": "the ID of DRG attached to the VCN",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "region",
+    "type": "string",
+    "description": "the OCI region where resources will be created",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "internet_gateway_display_name",
+    "type": "string",
+    "description": "(Updatable) Name of Internet Gateway. Does not have to be unique.",
+    "default": "\"internet-gateway\"",
+    "required": false
+  },
+  {
+    "name": "create_service_gateway",
+    "type": "bool",
+    "description": "whether to create a service gateway. If set to true, creates a service gateway.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "vcn_cidrs",
+    "type": "list(string)",
+    "description": "The list of IPv4 CIDR blocks the VCN will use.",
+    "default": "[\n  \"10.0.0.0/16\"\n]",
+    "required": false
+  },
+  {
+    "name": "vcn_name",
+    "type": "string",
+    "description": "user-friendly name of to use for the vcn to be appended to the label_prefix",
+    "default": "\"vcn\"",
+    "required": false
+  },
+  {
+    "name": "local_peering_gateways",
+    "type": "map(any)",
+    "description": "Map of Local Peering Gateways to attach to the VCN.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "internet_gateway_route_rules",
+    "type": "list(map(string))",
+    "description": "(Updatable) List of routing rules to add to Internet Gateway Route Table",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "label_prefix",
+    "type": "string",
+    "description": "a string that will be prepended to all resources",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "defined_tags",
+    "type": "map(string)",
+    "description": "predefined and scoped to a namespace to tag the resources created using defined tags.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "enable_ipv6",
+    "type": "bool",
+    "description": "Whether IPv6 is enabled for the VCN. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "nat_gateway_public_ip_id",
+    "type": "string",
+    "description": "OCID of reserved IP address for NAT gateway. The reserved public IP address needs to be manually created.",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "vcn_dns_label",
+    "type": "string",
+    "description": "A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet. DNS resolution of hostnames in the VCN is disabled when null.",
+    "default": "\"vcnmodule\"",
+    "required": false
+  },
+  {
+    "name": "service_gateway_display_name",
+    "type": "string",
+    "description": "(Updatable) Name of Service Gateway. Does not have to be unique.",
+    "default": "\"service-gateway\"",
+    "required": false
+  },
+  {
+    "name": "freeform_tags",
+    "type": "map(any)",
+    "description": "simple key-value pairs to tag the created resources using freeform OCI Free-form tags.",
+    "default": "{\n  \"module\": \"oracle-terraform-modules/vcn/oci\",\n  \"terraformed\": \"Please do not edit manually\"\n}",
+    "required": false
+  },
+  {
+    "name": "create_nat_gateway",
+    "type": "bool",
+    "description": "whether to create a nat gateway in the vcn. If set to true, creates a nat gateway.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "lockdown_default_seclist",
+    "type": "bool",
+    "description": "whether to remove all default security rules from the VCN Default Security List",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "nat_gateway_display_name",
+    "type": "string",
+    "description": "(Updatable) Name of NAT Gateway. Does not have to be unique.",
+    "default": "\"nat-gateway\"",
+    "required": false
+  },
+  {
+    "name": "nat_gateway_route_rules",
+    "type": "list(map(string))",
+    "description": "(Updatable) list of routing rules to add to NAT Gateway Route Table",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "subnets",
+    "type": "any",
+    "description": "Private or Public subnets in a VCN",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "compartment id where to create all resources",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_internet_gateway",
+    "type": "bool",
+    "description": "whether to create the internet gateway in the vcn. If set to true, creates an Internet Gateway.",
+    "default": "false",
+    "required": false
+  }
+]

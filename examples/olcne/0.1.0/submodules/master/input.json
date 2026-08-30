@@ -1,0 +1,23 @@
+[
+  {
+    "name": "olcne_general",
+    "type": "object({\r\n    ad_names       = list(string)\r\n    compartment_id = string\r\n    label_prefix   = string\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "olcne_master",
+    "type": "object({\r\n    master_image_id     = string\r\n    master_shape        = string\r\n    master_upgrade      = bool\r\n    size                = number\r\n    ssh_public_key_path = string\r\n    timezone            = string\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "olcne_master_network",
+    "type": "object({\r\n    nsg_ids      = map(string)\r\n    subnet_id    = string\r\n    subnet_label = string\r\n    subnet_mask  = string\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  }
+]

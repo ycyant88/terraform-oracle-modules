@@ -1,0 +1,49 @@
+admission_controller_options = ""
+
+cluster_kubernetes_version = ""
+
+cluster_name = ""
+
+cluster_options_add_ons_is_kubernetes_dashboard_enabled = ""
+
+cluster_options_kubernetes_network_config_pods_cidr = ""
+
+cluster_options_kubernetes_network_config_services_cidr = ""
+
+cluster_subnets = ""
+
+compartment_id = ""
+
+control_plane_access = ""
+
+control_plane_nsgs = ""
+
+image_signing_keys = ""
+
+kms_key_id = ""
+
+label_prefix = ""
+
+node_pool_image_id = ""
+
+node_pool_name_prefix = ""
+
+node_pool_os = ""
+
+node_pool_os_version = ""
+
+node_pools = ""
+
+preferred_lb_subnet_type = ""
+
+ssh_public_key = ""
+
+ssh_public_key_path = ""
+
+tenancy_id = ""
+
+use_encryption = ""
+
+use_signed_images = ""
+
+vcn_id = ""

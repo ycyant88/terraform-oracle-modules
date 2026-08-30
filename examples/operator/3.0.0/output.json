@@ -1,0 +1,14 @@
+[
+  {
+    "name": "operator_instance_principal_group_name",
+    "description": ""
+  },
+  {
+    "name": "operator_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "operator_private_ip",
+    "description": ""
+  }
+]

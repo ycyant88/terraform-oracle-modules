@@ -1,0 +1,30 @@
+[
+  {
+    "name": "policy_compartment_id",
+    "type": "string",
+    "description": "Compartment where policy will be created",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "dynamic_group",
+    "type": "map(any)",
+    "description": "Dynamic group definition for service connector",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "service_connector_def",
+    "type": "map(object({\n    defined_tags       = optional(map(string))\n    freeform_tags      = optional(map(string))\n    display_name       = string\n    description        = optional(string)\n    state              = optional(string, \"ACTIVE\")\n    sch_source         = string\n    sch_target         = string\n    compartment_id     = string\n    create_policy      = optional(bool, false)\n    dynamic_group_name = optional(string)\n\n    #For Streaming source\n    stream_id     = optional(string)\n    stream_cursor = optional(string, \"LATEST\")\n    #For logging source\n    log_source = optional(list(object({\n      compartment_id = optional(string)\n      log_group_id   = optional(string, \"_Audit\")\n      log_id         = optional(string)\n    })))\n    #For monitoring source\n    monitoring_source = optional(list(object({\n      compartment_id   = optional(string)\n      metric_namespace = list(string)\n    })))\n\n    target = object({\n      #For Objectstorage target\n      bucket                     = optional(string)\n      batch_rollover_size_in_mbs = optional(number, 100)\n      batch_rollover_time_in_ms  = optional(number, 420000)\n      object_name_prefix         = optional(string)\n      #For Streaming target\n      stream_id = optional(string)\n      #For Notification target\n      topic_id = optional(string)\n      #For Function target\n      function_id = optional(string)\n      #For LoggingAnalytics Target\n      log_group_id   = optional(string)\n      log_source     = optional(string)\n      compartment_id = optional(string)\n    })\n    tasks = optional(object({\n      log_condition     = optional(string)\n      function_id       = optional(string)\n      batch_size_in_kbs = optional(string, 5120)\n      batch_time_in_sec = optional(string, 600)\n\n    }))\n  }))",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "tenancy_ocid",
+    "type": "string",
+    "description": "Tenancy OCID",
+    "default": "",
+    "required": true
+  }
+]

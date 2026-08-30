@@ -1,0 +1,58 @@
+[
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "defined_tags",
+    "type": "map(string)",
+    "description": "",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "disassociate_trigger",
+    "type": "number",
+    "description": "",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "display_name",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "freeform_tags",
+    "type": "map(string)",
+    "description": "",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "log_location",
+    "type": "object({\n    bucket    = string\n    namespace = string\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "association",
+    "type": "object({\n    role        = string\n    peer_id     = optional(string, null)\n    peer_region = optional(string, null)\n  })",
+    "description": "",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "members",
+    "type": "list(object({\n    autonomous_database_standby_type_for_dr_drills = optional(string, null)\n    member_id                                      = string\n    member_type                                    = string\n    bucket                                         = optional(string, null)\n    connection_string_type                         = optional(string, null)\n    destination_availability_domain                = optional(string, null)\n    destination_backup_policy_id                   = optional(string, null)\n    destination_capacity_reservation_id            = optional(string, null)\n    destination_compartment_id                     = optional(string, null)\n    destination_dedicated_vm_host_id               = optional(string, null)\n    destination_load_balancer_id                   = optional(string, null)\n    destination_network_load_balancer_id           = optional(string, null)\n    destination_snapshot_policy_id                 = optional(string, null)\n    gtid_reconciliation_timeout                    = optional(number, 0)\n    is_continue_on_gtid_reconciliation_timeout     = optional(bool, false)\n    is_movable                                     = optional(bool, false)\n    is_retain_fault_domain                         = optional(bool, false)\n    is_start_stop_enabled                          = optional(bool, false)\n    jump_host_id                                   = optional(string, null)\n    namespace                                      = optional(string, null)\n    password_vault_secret_id                       = optional(string, null)\n    peer_cluster_id                                = optional(string, null)\n    peer_db_system_id                              = optional(string, null)\n    backend_set_mappings = optional(list(object({\n      destination_backend_set_name   = optional(string, null)\n      is_backend_set_for_non_movable = optional(bool, false)\n      source_backend_set_name        = optional(string, null)\n    })), [])\n    backup_config = optional(object({\n      backup_schedule                   = optional(string, null)\n      exclude_namespaces                = optional(list(string), [])\n      image_replication_vault_secret_id = optional(string, null)\n      max_number_of_backups_retained    = optional(number, null)\n      namespaces                        = optional(list(string), [])\n      replicate_images                  = optional(string, null)\n    }), null)\n    backup_location = optional(object({\n      bucket    = optional(string, null)\n      namespace = optional(string, null)\n    }), null)\n    block_volume_attach_and_mount_operations = optional(object({\n      attachments = optional(list(object({\n        block_volume_id                         = optional(string, null)\n        volume_attachment_reference_instance_id = optional(string, null)\n      })), [])\n      mounts = optional(list(object({\n        mount_point = optional(string, null)\n      })), [])\n    }), {})\n    common_destination_key = optional(object({\n      encryption_key_id = optional(string, null)\n      vault_id          = optional(string, null)\n    }), null)\n    db_system_admin_user_details = optional(object({\n      password_vault_secret_id = optional(string, null)\n      username                 = optional(string, null)\n    }), null)\n    db_system_replication_user_details = optional(object({\n      password_vault_secret_id = optional(string, null)\n      username                 = optional(string, null)\n    }), null)\n    destination_encryption_key = optional(object({\n      encryption_key_id = optional(string, null)\n      vault_id          = optional(string, null)\n    }), null)\n    export_mappings = optional(list(object({\n      destination_mount_target_id = optional(string, null)\n      export_id                   = optional(string, null)\n    })), [])\n    file_system_operations = optional(list(object({\n      export_path = optional(string, null)\n      mount_details = optional(object({\n        mount_target_id = optional(string, null)\n      }), null)\n      unmount_details = optional(object({\n        mount_target_id = optional(string, null)\n      }), null)\n      mount_point     = optional(string, null)\n      mount_target_id = optional(string, null)\n    })), [])\n    load_balancer_mappings = optional(list(object({\n      destination_load_balancer_id = optional(string, null)\n      source_load_balancer_id      = optional(string, null)\n    })), [])\n    managed_node_pool_configs = optional(list(object({\n      id      = optional(string, null)\n      maximum = optional(number, null)\n      minimum = optional(number, null)\n    })), [])\n    network_load_balancer_mappings = optional(list(object({\n      destination_network_load_balancer_id = optional(string, null)\n      source_network_load_balancer_id      = optional(string, null)\n    })), [])\n    source_volume_to_destination_encryption_key_mappings = optional(list(object({\n      source_volume_id = optional(string, null)\n      destination_encryption_key = optional(object({\n        encryption_key_id = optional(string, null)\n        vault_id          = optional(string, null)\n      }), null)\n    })), [])\n    vault_mappings = optional(list(object({\n      destination_vault_id = optional(string, null)\n      source_vault_id      = optional(string, null)\n    })), [])\n    virtual_node_pool_configs = optional(list(object({\n      id      = optional(string, null)\n      maximum = optional(number, null)\n      minimum = optional(number, null)\n    })), [])\n    vnic_mapping = optional(list(object({\n      destination_nsg_id_list = optional(list(string), [])\n      destination_subnet_id   = optional(string, null)\n      source_vnic_id          = optional(string, null)\n    })), [])\n    vnic_mappings = optional(list(object({\n      destination_nsg_id_list                       = optional(list(string), [])\n      destination_primary_private_ip_address        = optional(string, null)\n      destination_primary_private_ip_hostname_label = optional(string, null)\n      destination_reserved_public_ip_id             = optional(string, null)\n      destination_subnet_id                         = optional(string, null)\n      source_vnic_id                                = optional(string, null)\n    })), [])\n  }))",
+    "description": "",
+    "default": "[]",
+    "required": false
+  }
+]

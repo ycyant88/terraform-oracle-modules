@@ -1,0 +1,18 @@
+[
+  {
+    "name": "cluster_kms_dynamic_group_id",
+    "description": ""
+  },
+  {
+    "name": "nodepool_ids",
+    "description": ""
+  },
+  {
+    "name": "endpoints",
+    "description": ""
+  },
+  {
+    "name": "cluster_id",
+    "description": ""
+  }
+]

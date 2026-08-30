@@ -1,0 +1,37 @@
+[
+  {
+    "name": "oci_bastion_notification",
+    "type": "object({\r\n    notification_enabled  = bool\r\n    notification_endpoint = string\r\n    notification_protocol = string\r\n    notification_topic    = string\r\n  })",
+    "description": "OCI notification parameters for bastion",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "oci_base_identity",
+    "type": "object({\r\n    api_fingerprint      = string\r\n    api_private_key_path = string\r\n    compartment_id       = string\r\n    tenancy_id           = string\r\n    user_id              = string\r\n  })",
+    "description": "parameters related to oci identity",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "oci_bastion_general",
+    "type": "object({\r\n    home_region  = string\r\n    label_prefix = string\r\n    region       = string\r\n  })",
+    "description": "general oci parameters",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "oci_bastion_network",
+    "type": "object({\r\n    ad_names             = list(string)\r\n    availability_domains = number\r\n    ig_route_id          = string\r\n    netnum               = number\r\n    newbits              = number\r\n    vcn_cidr             = string\r\n    vcn_id               = string\r\n  })",
+    "description": "bastion host networking parameters",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "oci_bastion",
+    "type": "object({\r\n    bastion_access      = string\r\n    bastion_enabled     = bool\r\n    bastion_image_id    = string\r\n    bastion_shape       = string\r\n    bastion_upgrade     = bool\r\n    ssh_public_key_path = string\r\n    timezone            = string\r\n    use_autonomous      = bool\r\n  })",
+    "description": "bastion host parameters",
+    "default": "",
+    "required": true
+  }
+]

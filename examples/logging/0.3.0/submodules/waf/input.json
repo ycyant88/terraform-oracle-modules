@@ -1,0 +1,37 @@
+[
+  {
+    "name": "log_retention_duration",
+    "type": "string",
+    "description": "Duration to retain logs",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "Compartment ID where the resources will be created",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "loggroup",
+    "type": "map(any)",
+    "description": "Log Group",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "label_prefix",
+    "type": "string",
+    "description": "A string that will be prepended to log resources.",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "logdefinition",
+    "type": "map(any)",
+    "description": "Log definition",
+    "default": "",
+    "required": true
+  }
+]

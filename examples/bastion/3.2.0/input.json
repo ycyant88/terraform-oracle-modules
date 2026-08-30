@@ -1,0 +1,184 @@
+[
+  {
+    "name": "bastion_image_type",
+    "type": "string",
+    "description": "Whether to use a platform or custom image for the created bastion instance. When custom is set, the bastion_image_id must be specified.",
+    "default": "\"platform\"",
+    "required": false
+  },
+  {
+    "name": "bastion_is_public",
+    "type": "bool",
+    "description": "Whether to make the bastion host public or private.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "ssh_public_key_path",
+    "type": "string",
+    "description": "path to the ssh public key used to access the bastion. set this or the ssh_public_key",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "bastion_availability_domain",
+    "type": "number",
+    "description": "the AD to place the bastion host",
+    "default": "1",
+    "required": false
+  },
+  {
+    "name": "bastion_allowed_cidrs",
+    "type": "list(string)",
+    "description": "A list of CIDR blocks to which ssh access to the bastion must be restricted to. *anywhere* is equivalent to 0.0.0.0/0 and allows ssh access from anywhere.",
+    "default": "[\n  \"anywhere\"\n]",
+    "required": false
+  },
+  {
+    "name": "bastion_nsg_ids",
+    "type": "list(string)",
+    "description": "An additional list of network security group (NSG) IDs for bastion security.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "ig_route_id",
+    "type": "string",
+    "description": "the route id to the internet gateway",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "bastion_image_os",
+    "type": "string",
+    "description": "Bastion image operating system name when bastion_image_type = 'platform'.",
+    "default": "\"Oracle Autonomous Linux\"",
+    "required": false
+  },
+  {
+    "name": "bastion_state",
+    "type": "string",
+    "description": "The target state for the instance. Could be set to RUNNING or STOPPED. (Updatable)",
+    "default": "\"RUNNING\"",
+    "required": false
+  },
+  {
+    "name": "bastion_await_cloudinit",
+    "type": "bool",
+    "description": "Whether to block until successful SSH connection to the bastion and completion of cloud-init. This wait path is only attempted for public bastions.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "assign_dns",
+    "type": "bool",
+    "description": "Whether to assign DNS records to created instances",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "bastion_route_table_id",
+    "type": "string",
+    "description": "Route table ID to associate with the bastion subnet. Required when bastion_is_public is false.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "newbits",
+    "type": "number",
+    "description": "The difference between the VCN's netmask and the desired bastion subnet mask",
+    "default": "14",
+    "required": false
+  },
+  {
+    "name": "bastion_image_os_version",
+    "type": "string",
+    "description": "Operating system version when bastion_image_type is set to platform.",
+    "default": "\"9\"",
+    "required": false
+  },
+  {
+    "name": "bastion_shape",
+    "type": "map(any)",
+    "description": "The shape of bastion instance.",
+    "default": "{\n  \"boot_volume_size\": 50,\n  \"memory\": 4,\n  \"ocpus\": 1,\n  \"shape\": \"VM.Standard.E4.Flex\"\n}",
+    "required": false
+  },
+  {
+    "name": "upgrade_bastion",
+    "type": "bool",
+    "description": "Whether to upgrade the bastion host packages after provisioning. It's useful to set this to false during development/testing so the bastion is provisioned faster.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "netnum",
+    "type": "number",
+    "description": "0-based index of the bastion subnet when the VCN's CIDR is masked with the corresponding newbit value.",
+    "default": "0",
+    "required": false
+  },
+  {
+    "name": "vcn_id",
+    "type": "string",
+    "description": "The id of the VCN to use when creating the bastion resources.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "bastion_user",
+    "type": "string",
+    "description": "User for SSH access through bastion host.",
+    "default": "\"opc\"",
+    "required": false
+  },
+  {
+    "name": "bastion_timezone",
+    "type": "string",
+    "description": "The preferred timezone for the bastion host.",
+    "default": "\"Australia/Sydney\"",
+    "required": false
+  },
+  {
+    "name": "ssh_public_key",
+    "type": "string",
+    "description": "the content of the ssh public key used to access the bastion. set this or the ssh_public_key_path",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "ssh_private_key",
+    "type": "string",
+    "description": "Private key content used only when waiting for cloud-init over SSH on a public bastion.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "freeform_tags",
+    "type": "map(string)",
+    "description": "Freeform tags for bastion",
+    "default": "{\n  \"access\": \"public\",\n  \"environment\": \"dev\",\n  \"role\": \"bastion\"\n}",
+    "required": false
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "compartment id where to create all resources",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "label_prefix",
+    "type": "string",
+    "description": "a string that will be prepended to all resources",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "bastion_image_id",
+    "type": "string",
+    "description": "Custom image OCID for the bastion host when bastion_image_type is set to custom.",
+    "default": "null",
+    "required": false
+  }
+]

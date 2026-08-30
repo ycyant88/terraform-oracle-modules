@@ -1,0 +1,30 @@
+[
+  {
+    "name": "pod_nsg_id",
+    "description": ""
+  },
+  {
+    "name": "worker_nsg_id",
+    "description": ""
+  },
+  {
+    "name": "subnet_ids",
+    "description": ""
+  },
+  {
+    "name": "nsg_ids",
+    "description": ""
+  },
+  {
+    "name": "control_plane_nsg_id",
+    "description": ""
+  },
+  {
+    "name": "int_lb",
+    "description": ""
+  },
+  {
+    "name": "pub_lb",
+    "description": ""
+  }
+]

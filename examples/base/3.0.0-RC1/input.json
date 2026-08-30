@@ -1,0 +1,37 @@
+[
+  {
+    "name": "oci_base_provider",
+    "type": "object({\r\n    api_fingerprint      = string\r\n    api_private_key_path = string\r\n    region               = string\r\n    tenancy_id           = string\r\n    user_id              = string\r\n  })",
+    "description": "oci provider parameters",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "oci_base_general",
+    "type": "object({\r\n    compartment_id = string\r\n    label_prefix   = string\r\n  })",
+    "description": "general oci parameters",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "oci_base_vcn",
+    "type": "object({\r\n    create_drg                   = bool\r\n    drg_display_name             = string\r\n    internet_gateway_enabled     = bool\r\n    lockdown_default_seclist     = bool\r\n    nat_gateway_enabled          = bool\r\n    service_gateway_enabled      = bool\r\n    tags                         = map(any)\r\n    vcn_cidr                     = string\r\n    vcn_dns_label                = string\r\n    vcn_name                     = string\r\n    internet_gateway_route_rules = list(any)\r\n    nat_gateway_route_rules      = list(any)\r\n  })",
+    "description": "VCN parameters",
+    "default": "{\n  \"create_drg\": false,\n  \"drg_display_name\": \"drg\",\n  \"internet_gateway_enabled\": true,\n  \"internet_gateway_route_rules\": [],\n  \"lockdown_default_seclist\": true,\n  \"nat_gateway_enabled\": true,\n  \"nat_gateway_route_rules\": [],\n  \"service_gateway_enabled\": true,\n  \"tags\": null,\n  \"vcn_cidr\": \"10.0.0.0/16\",\n  \"vcn_dns_label\": \"\",\n  \"vcn_name\": \"\"\n}",
+    "required": false
+  },
+  {
+    "name": "oci_base_bastion",
+    "type": "object({\r\n    availability_domain              = number\r\n    bastion_access                   = string\r\n    bastion_enabled                  = bool\r\n    bastion_image_id                 = string\r\n    bastion_operating_system_version = string\r\n    bastion_shape                    = map(any)\r\n    bastion_state                    = string\r\n    bastion_upgrade                  = bool\r\n    netnum                           = number\r\n    newbits                          = number\r\n    notification_enabled             = bool\r\n    notification_endpoint            = string\r\n    notification_protocol            = string\r\n    notification_topic               = string\r\n    ssh_private_key_path             = string\r\n    ssh_public_key                   = string\r\n    ssh_public_key_path              = string\r\n    tags                             = map(any)\r\n    timezone                         = string\r\n  })",
+    "description": "bastion host parameters",
+    "default": "{\n  \"availability_domain\": 1,\n  \"bastion_access\": \"ANYWHERE\",\n  \"bastion_enabled\": false,\n  \"bastion_image_id\": \"Autonomous\",\n  \"bastion_operating_system_version\": \"7.9\",\n  \"bastion_shape\": {\n    \"boot_volume_size\": 50,\n    \"memory\": 4,\n    \"ocpus\": 1,\n    \"shape\": \"VM.Standard.E3.Flex\"\n  },\n  \"bastion_state\": \"RUNNING\",\n  \"bastion_upgrade\": true,\n  \"netnum\": 0,\n  \"newbits\": 14,\n  \"notification_enabled\": false,\n  \"notification_endpoint\": \"\",\n  \"notification_protocol\": \"EMAIL\",\n  \"notification_topic\": \"bastion\",\n  \"ssh_private_key_path\": \"\",\n  \"ssh_public_key\": \"\",\n  \"ssh_public_key_path\": \"\",\n  \"tags\": {\n    \"role\": \"bastion\"\n  },\n  \"timezone\": \"Australia/Sydney\"\n}",
+    "required": false
+  },
+  {
+    "name": "oci_base_operator",
+    "type": "object({\r\n    availability_domain       = number\r\n    operator_enabled          = bool\r\n    operator_image_id         = string\r\n    operator_shape            = map(any)\r\n    operating_system_version  = string\r\n    operator_upgrade          = bool\r\n    enable_instance_principal = bool\r\n    netnum                    = number\r\n    newbits                   = number\r\n    notification_enabled      = bool\r\n    notification_endpoint     = string\r\n    notification_protocol     = string\r\n    notification_topic        = string\r\n    ssh_private_key_path      = string\r\n    ssh_public_key            = string\r\n    ssh_public_key_path       = string\r\n    tags                      = map(any)\r\n    timezone                  = string\r\n  })",
+    "description": "operator host parameters",
+    "default": "{\n  \"availability_domain\": 1,\n  \"enable_instance_principal\": false,\n  \"netnum\": 1,\n  \"newbits\": 14,\n  \"notification_enabled\": false,\n  \"notification_endpoint\": \"\",\n  \"notification_protocol\": \"EMAIL\",\n  \"notification_topic\": \"operator\",\n  \"operating_system_version\": \"8\",\n  \"operator_enabled\": false,\n  \"operator_image_id\": \"Oracle\",\n  \"operator_shape\": {\n    \"boot_volume_size\": 50,\n    \"memory\": 4,\n    \"ocpus\": 1,\n    \"shape\": \"VM.Standard.E3.Flex\"\n  },\n  \"operator_upgrade\": true,\n  \"ssh_private_key_path\": \"\",\n  \"ssh_public_key\": \"\",\n  \"ssh_public_key_path\": \"\",\n  \"tags\": {\n    \"role\": \"operator\"\n  },\n  \"timezone\": \"Australia/Sydney\"\n}",
+    "required": false
+  }
+]

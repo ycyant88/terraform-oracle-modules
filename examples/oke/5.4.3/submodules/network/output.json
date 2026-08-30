@@ -1,0 +1,106 @@
+[
+  {
+    "name": "control_plane_nsg_id",
+    "description": ""
+  },
+  {
+    "name": "pub_lb_nsg_id",
+    "description": ""
+  },
+  {
+    "name": "pod_nsg_id",
+    "description": ""
+  },
+  {
+    "name": "nsg_ids",
+    "description": ""
+  },
+  {
+    "name": "worker_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "pod_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "fss_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "bastion_nsg_id",
+    "description": ""
+  },
+  {
+    "name": "fss_nsg_id",
+    "description": ""
+  },
+  {
+    "name": "network_security_rules",
+    "description": ""
+  },
+  {
+    "name": "bastion_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "operator_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "int_lb_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "pub_lb_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "worker_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "operator_nsg_id",
+    "description": ""
+  },
+  {
+    "name": "worker_nsg_id",
+    "description": ""
+  },
+  {
+    "name": "control_plane_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "pub_lb_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "pod_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "fss_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "int_lb_nsg_id",
+    "description": ""
+  },
+  {
+    "name": "bastion_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "operator_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "control_plane_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "int_lb_subnet_cidr",
+    "description": ""
+  }
+]

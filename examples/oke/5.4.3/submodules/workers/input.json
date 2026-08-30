@@ -1,0 +1,359 @@
+[
+  {
+    "name": "cluster_type",
+    "type": "string",
+    "description": "The cluster type. See <a href=https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengworkingwithenhancedclusters.htm>Working with Enhanced Clusters and Basic Clusters</a> for more information.",
+    "default": "\"basic\"",
+    "required": false
+  },
+  {
+    "name": "worker_subnet_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ssh_public_key",
+    "type": "string",
+    "description": "The contents of the SSH public key file. Used to allow login for workers/bastion/operator with corresponding private key.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "worker_nsg_ids",
+    "type": "list(string)",
+    "description": "An additional list of network security group (NSG) IDs for node security. Combined with 'nsg_ids' specified on each pool.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "block_volume_type",
+    "type": "string",
+    "description": "Default block volume attachment type for Instance Configurations when unspecified on a pool.",
+    "default": "\"paravirtualized\"",
+    "required": false
+  },
+  {
+    "name": "image_os",
+    "type": "string",
+    "description": "Default worker image operating system name when worker_image_type = 'oke' or 'platform' and unspecified on a pool.",
+    "default": "\"Oracle Linux\"",
+    "required": false
+  },
+  {
+    "name": "platform_config",
+    "type": "object({\n    type                                           = optional(string),\n    are_virtual_instructions_enabled               = optional(bool),\n    is_access_control_service_enabled              = optional(bool),\n    is_input_output_memory_management_unit_enabled = optional(bool),\n    is_measured_boot_enabled                       = optional(bool),\n    is_memory_encryption_enabled                   = optional(bool),\n    is_secure_boot_enabled                         = optional(bool),\n    is_symmetric_multi_threading_enabled           = optional(bool),\n    is_trusted_platform_module_enabled             = optional(bool),\n    numa_nodes_per_socket                          = optional(number),\n    percentage_of_cores_enabled                    = optional(bool),\n  })",
+    "description": "Default platform_config for self-managed worker pools created with mode: 'instance', 'instance-pool', or 'cluster-network'. See <a href=https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PlatformConfig>PlatformConfig</a> for more information.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "cluster_id",
+    "type": "string",
+    "description": "An existing OKE cluster OCID when `create_cluster = false`.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "assign_public_ip",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cni_type",
+    "type": "string",
+    "description": "The CNI for the cluster: 'flannel' or 'npn'. See <a href=https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengpodnetworking.htm>Pod Networking</a>.",
+    "default": "\"flannel\"",
+    "required": false
+  },
+  {
+    "name": "enable_ipv6",
+    "type": "bool",
+    "description": "Whether to create a dual-stack (IPv4/IPv6) cluster.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "pod_subnet_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "allow_short_container_image_names",
+    "type": "bool",
+    "description": "Whether to allow short container image names for K8s version >= 1.34.0. See <a href=https://github.com/cri-o/cri-o/pull/9401>CRI-O pull request</a> for more information.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "agent_config",
+    "type": "object({\n    are_all_plugins_disabled = bool,\n    is_management_disabled   = bool,\n    is_monitoring_disabled   = bool,\n    plugins_config           = map(string),\n  })",
+    "description": "Default agent_config for self-managed worker pools created with mode: 'instance', 'instance-pool', or 'cluster-network'. See <a href=https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/InstanceAgentConfig>InstanceConfig</a> for more information.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "compute_clusters",
+    "type": "map(any)",
+    "description": "Whether to create compute clusters shared by nodes across multiple worker pools enabled for 'compute-cluster'.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "tenancy_id",
+    "type": "string",
+    "description": "The tenancy id of the OCI Cloud Account in which to create the resources.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "freeform_tags",
+    "type": "map(string)",
+    "description": "Freeform tags to be applied to created resources.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "timezone",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "max_pods_per_node",
+    "type": "number",
+    "description": "The default maximum number of pods to deploy per node when unspecified on a pool. Absolute maximum is 110. Ignored when when cni_type != 'npn'.",
+    "default": "31",
+    "required": false
+  },
+  {
+    "name": "apiserver_private_host",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cluster_ca_cert",
+    "type": "string",
+    "description": "Base64+PEM-encoded cluster CA certificate for unmanaged instance pools. Determined automatically when 'create_cluster' = true or 'cluster_id' is provided.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "cluster_dns",
+    "type": "string",
+    "description": "Cluster DNS resolver IP address. Determined automatically when not set (recommended).",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "kubernetes_version",
+    "type": "string",
+    "description": "The version of Kubernetes used for worker nodes.",
+    "default": "\"v1.26.2\"",
+    "required": false
+  },
+  {
+    "name": "indexed_images",
+    "type": "any",
+    "description": "Map of images.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "pod_nsg_ids",
+    "type": "list(string)",
+    "description": "An additional list of network security group (NSG) IDs for pod security. Combined with 'pod_nsg_ids' specified on each pool.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "node_labels",
+    "type": "map(string)",
+    "description": "Default worker node labels. Merged with labels defined on each pool.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "image_id",
+    "type": "string",
+    "description": "Default image for worker pools  when unspecified on a pool.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "tag_namespace",
+    "type": "string",
+    "description": "The tag namespace for standard OKE defined tags.",
+    "default": "\"oke\"",
+    "required": false
+  },
+  {
+    "name": "ad_numbers_to_names",
+    "type": "map(string)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ad_numbers",
+    "type": "list(number)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "image_os_version",
+    "type": "string",
+    "description": "Default worker image operating system version when worker_image_type = 'oke' or 'platform' and unspecified on a pool.",
+    "default": "\"8\"",
+    "required": false
+  },
+  {
+    "name": "volume_kms_key_id",
+    "type": "string",
+    "description": "The ID of the OCI KMS key to be used as the master encryption key for Boot Volume and Block Volume encryption by default when unspecified on a pool.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "pv_transit_encryption",
+    "type": "bool",
+    "description": "Whether to enable in-transit encryption for the data volume's paravirtualized attachment by default when unspecified on a pool.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "state_id",
+    "type": "string",
+    "description": "Optional Terraform state_id from an existing deployment of the module to re-use with created resources.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "The compartment id where resources will be created.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "defined_tags",
+    "type": "map(string)",
+    "description": "Defined tags to be applied to created resources. Must already exist in the tenancy.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "worker_pool_size",
+    "type": "number",
+    "description": "Default size for worker pools when unspecified on a pool.",
+    "default": "0",
+    "required": false
+  },
+  {
+    "name": "shape",
+    "type": "map(any)",
+    "description": "Default shape of the created worker instance when unspecified on a pool.",
+    "default": "{\n  \"boot_volume_size\": 50,\n  \"memory\": 16,\n  \"ocpus\": 2,\n  \"shape\": \"VM.Standard.E4.Flex\"\n}",
+    "required": false
+  },
+  {
+    "name": "capacity_reservation_id",
+    "type": "string",
+    "description": "The ID of the Compute capacity reservation the worker node will be launched under. See <a href=https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/reserve-capacity.htm>Capacity Reservations</a> for more information.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "preemptible_config",
+    "type": "map(any)",
+    "description": "Default preemptible Compute configuration when unspecified on a pool. See <a href=https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengusingpreemptiblecapacity.htm>Preemptible Worker Nodes</a> for more information.",
+    "default": "{\n  \"enable\": false,\n  \"is_preserve_boot_volume\": false\n}",
+    "required": false
+  },
+  {
+    "name": "disable_default_cloud_init",
+    "type": "bool",
+    "description": "Whether to disable the default OKE cloud init and only use the cloud init explicitly passed to the worker pool in 'worker_cloud_init'.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "assign_dns",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "worker_pools",
+    "type": "any",
+    "description": "Tuple of OKE worker pools where each key maps to the OCID of an OCI resource, and value contains its definition.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "worker_pool_mode",
+    "type": "string",
+    "description": "Default management mode for workers when unspecified on a pool. Only 'node-pool' is currently supported.",
+    "default": "\"node-pool\"",
+    "required": false
+  },
+  {
+    "name": "kubeproxy_mode",
+    "type": "string",
+    "description": "The mode in which to run kube-proxy when unspecified on a pool.",
+    "default": "\"iptables\"",
+    "required": false
+  },
+  {
+    "name": "cloud_init",
+    "type": "list(map(string))",
+    "description": "List of maps containing cloud init MIME part configuration for worker nodes. Merged with pool-specific definitions. See https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/cloudinit_config.html#part for expected schema of each element.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "image_ids",
+    "type": "any",
+    "description": "Map of images for filtering with image_os and image_os_version.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "node_metadata",
+    "type": "map(string)",
+    "description": "Map of additional worker node instance metadata. Merged with metadata defined on each pool.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "image_type",
+    "type": "string",
+    "description": "Whether to use a platform, OKE, or custom image for worker nodes by default when unspecified on a pool. When custom is set, the worker_image_id must be specified.",
+    "default": "\"oke\"",
+    "required": false
+  },
+  {
+    "name": "legacy_imds_endpoints_disabled",
+    "type": "bool",
+    "description": "Whether to disable requests to the IMDSv1 endpoint and only allow requests to the IMDSv2 endpoint.  See <a href=https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengconfiguringimds.htm>Instance Metadata</a> for more information.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "use_defined_tags",
+    "type": "bool",
+    "description": "Whether to apply defined tags to created resources for IAM policy and tracking.",
+    "default": "false",
+    "required": false
+  }
+]

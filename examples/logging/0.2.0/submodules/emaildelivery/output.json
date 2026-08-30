@@ -1,0 +1,14 @@
+[
+  {
+    "name": "emaillogaccept_id",
+    "description": ""
+  },
+  {
+    "name": "emaillogrelay_id",
+    "description": ""
+  },
+  {
+    "name": "emailloggroup_id",
+    "description": ""
+  }
+]

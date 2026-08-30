@@ -1,0 +1,65 @@
+[
+  {
+    "name": "label_prefix",
+    "type": "string",
+    "description": "A string that will be prepended to log resources.",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "log_retention_duration",
+    "type": "number",
+    "description": "Log retention duration",
+    "default": "30",
+    "required": false
+  },
+  {
+    "name": "linux_logdef",
+    "type": "map(any)",
+    "description": "Custom Linux Operating System Log Definition",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "windows_logdef",
+    "type": "map(any)",
+    "description": "Custom Windows Operating System Log Definition",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "compartment id where to create the resources",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "loggroup_tags",
+    "type": "map(any)",
+    "description": "Freeform Tags",
+    "default": "{\n  \"Environment\": \"Dev\"\n}",
+    "required": false
+  },
+  {
+    "name": "service_logdef",
+    "type": "map(any)",
+    "description": "OCI Service log definition.Please refer doc for example definition",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "tenancy_id",
+    "type": "string",
+    "description": "Tenancy OCID",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "vcn_id",
+    "type": "string",
+    "description": "VCN OCID",
+    "default": "\"none\"",
+    "required": false
+  }
+]

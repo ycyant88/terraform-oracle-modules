@@ -1,0 +1,93 @@
+[
+  {
+    "name": "container_registry_urls",
+    "type": "map(string)",
+    "description": "urls of container-registries",
+    "default": "{\n  \"ap-melbourne-1\": \"container-registry-mel.oracle.com\",\n  \"ap-mumbai-1\": \"container-registry-bom.oracle.com\",\n  \"ap-osaka-1\": \"container-registry-kix.oracle.com\",\n  \"ap-seoul-1\": \"container-registry-icn.oracle.com\",\n  \"ap-sydney-1\": \"container-registry-syd.oracle.com\",\n  \"ap-tokyo-1\": \"container-registry-nrt.oracle.com\",\n  \"ca-montreal-1\": \"container-registry-yul.oracle.com\",\n  \"ca-toronto-1\": \"container-registry-yyz.oracle.com\",\n  \"eu-amsterdam-1\": \"container-registry-ams.oracle.com\",\n  \"eu-frankfurt-1\": \"container-registry-fra.oracle.com\",\n  \"eu-zurich-1\": \"container-registry-zrh.oracle.com\",\n  \"me-jeddah-1\": \"container-registry-jed.oracle.com\",\n  \"sa-saopaulo-1\": \"container-registry-gru.oracle.com\",\n  \"uk-london-1\": \"container-registry-lhr.oracle.com\",\n  \"us-ashburn-1\": \"container-registry-iad.oracle.com\",\n  \"us-phoenix-1\": \"container-registry-phx.oracle.com\"\n}",
+    "required": false
+  },
+  {
+    "name": "oci_provider",
+    "type": "object({\r\n    api_fingerprint      = string\r\n    api_private_key_path = string\r\n    home_region          = string\r\n    region               = string\r\n    tenancy_id           = string\r\n    user_id              = string\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "olcne_operator",
+    "type": "object({\r\n    operator_image_id    = string\r\n    operator_shape       = string\r\n    operator_upgrade     = bool\r\n    ssh_private_key_path = string\r\n    ssh_public_key_path  = string\r\n    timezone             = string\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "olcne_operator_network",
+    "type": "object({\r\n    nsg_ids      = map(string)\r\n    subnet_id    = string\r\n    subnet_label = string\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "olcne_workers",
+    "type": "object({\r\n    olcne_worker_nodes = list(any)\r\n    worker_nodes_size  = number\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "secret_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "loadbalancer_ip_address",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "olcne_general",
+    "type": "object({\r\n    ad_names       = list(string)\r\n    compartment_id = string\r\n    label_prefix   = string\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "olcne_bastion",
+    "type": "object({\r\n    bastion_public_ip    = string\r\n    ssh_private_key_path = string\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "olcne_masters",
+    "type": "object({\r\n    master_nodes_size  = number\r\n    olcne_master_nodes = list(any)\r\n    primary_master_vip = string\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "olcne_certificate",
+    "type": "object({\r\n    org_unit    = string\r\n    org         = string\r\n    city        = string\r\n    state       = string\r\n    country     = string\r\n    common_name = string\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "olcne_environment",
+    "type": "object({\r\n    environment_name        = string\r\n    cluster_name            = string\r\n    create_kata_runtime     = bool\r\n    kata_runtime_class_name = string\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "helm_version",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  }
+]

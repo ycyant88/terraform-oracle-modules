@@ -1,0 +1,14 @@
+[
+  {
+    "name": "lb_accesslogid",
+    "description": ""
+  },
+  {
+    "name": "lb_errorlogid",
+    "description": ""
+  },
+  {
+    "name": "lb_loggroupid",
+    "description": ""
+  }
+]

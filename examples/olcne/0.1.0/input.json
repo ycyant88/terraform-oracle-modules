@@ -1,0 +1,478 @@
+[
+  {
+    "name": "state",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "tenancy_id",
+    "type": "string",
+    "description": "tenancy id",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "service_gateway_enabled",
+    "type": "bool",
+    "description": "whether to create a service gateway",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "bastion_notification_protocol",
+    "type": "string",
+    "description": "The notification protocol used.",
+    "default": "\"EMAIL\"",
+    "required": false
+  },
+  {
+    "name": "admin_notification_endpoint",
+    "type": "string",
+    "description": "the subscription notification endpoint for the admin. email address to be notified.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "admin_timezone",
+    "type": "string",
+    "description": "the preferred timezone for the admin host.",
+    "default": "\"Australia/Sydney\"",
+    "required": false
+  },
+  {
+    "name": "worker_package_upgrade",
+    "type": "bool",
+    "description": "whether to upgrade the worker host packages after provisioning. it’s useful to set this to false during development so the worker nodes are provisioned faster.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "api_fingerprint",
+    "type": "string",
+    "description": "fingerprint of oci api private key",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "region",
+    "type": "string",
+    "description": "region",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "allow_worker_ssh_access",
+    "type": "bool",
+    "description": "whether to allow ssh access to worker nodes",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "master_timezone",
+    "type": "string",
+    "description": "the preferred timezone for the master nodes.",
+    "default": "\"Australia/Sydney\"",
+    "required": false
+  },
+  {
+    "name": "operator_timezone",
+    "type": "string",
+    "description": "the preferred timezone for the operator nodes.",
+    "default": "\"Australia/Sydney\"",
+    "required": false
+  },
+  {
+    "name": "environment_name",
+    "type": "string",
+    "description": "name of the environment",
+    "default": "\"dev\"",
+    "required": false
+  },
+  {
+    "name": "worker_size",
+    "type": "number",
+    "description": "number of worker nodes to provision",
+    "default": "3",
+    "required": false
+  },
+  {
+    "name": "ssh_public_key_path",
+    "type": "string",
+    "description": "path to ssh public key",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "vcn_name",
+    "type": "string",
+    "description": "name of vcn",
+    "default": "\"olcne\"",
+    "required": false
+  },
+  {
+    "name": "helm_version",
+    "type": "string",
+    "description": "version of helm client to install on operator",
+    "default": "\"3.1.1\"",
+    "required": false
+  },
+  {
+    "name": "api_private_key_path",
+    "type": "string",
+    "description": "path to oci api private key",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "bastion_image_id",
+    "type": "string",
+    "description": "image id to use for bastion.",
+    "default": "\"Autonomous\"",
+    "required": false
+  },
+  {
+    "name": "admin_instance_principal",
+    "type": "bool",
+    "description": "enable the admin server host to call OCI API services without requiring api key",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "master_image_id",
+    "type": "string",
+    "description": "image id to use for master nodes.",
+    "default": "\"Oracle Linux\"",
+    "required": false
+  },
+  {
+    "name": "vcn_cidr",
+    "type": "string",
+    "description": "cidr block of VCN",
+    "default": "\"10.0.0.0/16\"",
+    "required": false
+  },
+  {
+    "name": "bastion_timezone",
+    "type": "string",
+    "description": "the preferred timezone for the bastion host.",
+    "default": "\"Australia/Sydney\"",
+    "required": false
+  },
+  {
+    "name": "master_size",
+    "type": "number",
+    "description": "number of master nodes to provision",
+    "default": "1",
+    "required": false
+  },
+  {
+    "name": "secret_id",
+    "type": "string",
+    "description": "id of secret where the private ssh key is stored in encrypted format",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "nat_gateway_enabled",
+    "type": "bool",
+    "description": "whether to create a nat gateway",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "admin_enabled",
+    "type": "bool",
+    "description": "whether to create an admin server in a private subnet",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "bastion_access",
+    "type": "string",
+    "description": "cidr from where the bastion can be sshed into. default is ANYWHERE and equivalent to 0.0.0.0/0",
+    "default": "\"ANYWHERE\"",
+    "required": false
+  },
+  {
+    "name": "admin_image_id",
+    "type": "string",
+    "description": "image id to use for admin server. set either an image id or to Oracle. if value is set to Oracle, the default Oracle Linux platform image will be used.",
+    "default": "\"Oracle\"",
+    "required": false
+  },
+  {
+    "name": "cluster_name",
+    "type": "string",
+    "description": "name of the cluster",
+    "default": "\"olcne\"",
+    "required": false
+  },
+  {
+    "name": "worker_image_id",
+    "type": "string",
+    "description": "image id to use for worker nodes.",
+    "default": "\"Oracle Linux\"",
+    "required": false
+  },
+  {
+    "name": "ssh_private_key_path",
+    "type": "string",
+    "description": "path to ssh private key",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "vcn_dns_label",
+    "type": "string",
+    "description": "internal vcn dns domain that will be prepended to oraclevcn.com",
+    "default": "\"olcne\"",
+    "required": false
+  },
+  {
+    "name": "city",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "worker_timezone",
+    "type": "string",
+    "description": "the preferred timezone for the worker nodes.",
+    "default": "\"Australia/Sydney\"",
+    "required": false
+  },
+  {
+    "name": "allow_master_ssh_access",
+    "type": "bool",
+    "description": "whether to allow ssh access to master nodes",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "operator_image_id",
+    "type": "string",
+    "description": "image id to use for operator node.",
+    "default": "\"Oracle Linux\"",
+    "required": false
+  },
+  {
+    "name": "public_lb_shape",
+    "type": "string",
+    "description": "the preferred shape of the public load balancer",
+    "default": "\"100Mbps\"",
+    "required": false
+  },
+  {
+    "name": "bastion_notification_enabled",
+    "type": "bool",
+    "description": "whether to enable notification on the bastion host",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "availability_domains",
+    "type": "map",
+    "description": "Availability Domains where to provision specific resources",
+    "default": "{\n  \"admin\": 1,\n  \"bastion\": 1,\n  \"operator\": 1\n}",
+    "required": false
+  },
+  {
+    "name": "common_name",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "org_unit",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "org",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "admin_package_upgrade",
+    "type": "bool",
+    "description": "whether to upgrade the bastion host packages after provisioning. it’s useful to set this to false during development so the bastion is provisioned faster.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "label_prefix",
+    "type": "string",
+    "description": "a string that will be prependend to all resources",
+    "default": "\"dev\"",
+    "required": false
+  },
+  {
+    "name": "bastion_package_upgrade",
+    "type": "bool",
+    "description": "whether to upgrade the bastion host packages after provisioning. it’s useful to set this to false during development so the bastion is provisioned faster.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "newbits",
+    "type": "map",
+    "description": "new mask for the subnet within the virtual network. use as newbits parameter for cidrsubnet function",
+    "default": "{\n  \"admin\": 13,\n  \"bastion\": 13,\n  \"lb\": 11,\n  \"master\": 12,\n  \"operator\": 13,\n  \"worker\": 2\n}",
+    "required": false
+  },
+  {
+    "name": "bastion_enabled",
+    "type": "bool",
+    "description": "whether to create a bastion host",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "admin_notification_protocol",
+    "type": "string",
+    "description": "the notification protocol used.",
+    "default": "\"EMAIL\"",
+    "required": false
+  },
+  {
+    "name": "int_lb_shape",
+    "type": "string",
+    "description": "the preferred shape of the internal load balancer",
+    "default": "\"100Mbps\"",
+    "required": false
+  },
+  {
+    "name": "user_id",
+    "type": "string",
+    "description": "user id",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "netnum",
+    "type": "map",
+    "description": "zero-based index of the subnet when the network is masked with the newbit.",
+    "default": "{\n  \"admin\": 33,\n  \"bastion\": 32,\n  \"int_lb\": 16,\n  \"master\": 48,\n  \"operator\": 18,\n  \"pub_lb\": 17,\n  \"worker\": 1\n}",
+    "required": false
+  },
+  {
+    "name": "bastion_notification_topic",
+    "type": "string",
+    "description": "the name of the notification topic.",
+    "default": "\"bastion\"",
+    "required": false
+  },
+  {
+    "name": "bastion_shape",
+    "type": "string",
+    "description": "shape of bastion instance",
+    "default": "\"VM.Standard.E2.1\"",
+    "required": false
+  },
+  {
+    "name": "operator_package_upgrade",
+    "type": "bool",
+    "description": "whether to upgrade the operator host packages after provisioning. it’s useful to set this to false during development so the operator nodes are provisioned faster.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "compartment id",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "bastion_notification_endpoint",
+    "type": "string",
+    "description": "the subscription notification endpoint for the bastion. email address to be notified.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "master_package_upgrade",
+    "type": "bool",
+    "description": "whether to upgrade the master host packages after provisioning. it’s useful to set this to false during development so the master nodes are provisioned faster.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "master_shape",
+    "type": "string",
+    "description": "shape of master instance",
+    "default": "\"VM.Standard.E2.2\"",
+    "required": false
+  },
+  {
+    "name": "operator_shape",
+    "type": "string",
+    "description": "shape of operator instance",
+    "default": "\"VM.Standard.E2.2\"",
+    "required": false
+  },
+  {
+    "name": "create_kata_runtime",
+    "type": "bool",
+    "description": "whether to create kata runtime class",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "kata_runtime_class_name",
+    "type": "string",
+    "description": "the name of the kata runtime class",
+    "default": "\"kata\"",
+    "required": false
+  },
+  {
+    "name": "disable_auto_retries",
+    "type": "bool",
+    "description": "",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "admin_shape",
+    "type": "string",
+    "description": "shape of admin server instance",
+    "default": "\"VM.Standard.E2.1\"",
+    "required": false
+  },
+  {
+    "name": "country",
+    "type": "string",
+    "description": "2 letter country code",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "worker_shape",
+    "type": "string",
+    "description": "shape of worker instance",
+    "default": "\"VM.Standard.E2.2\"",
+    "required": false
+  },
+  {
+    "name": "admin_notification_enabled",
+    "type": "bool",
+    "description": "whether to enable notification on the admin host",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "admin_notification_topic",
+    "type": "string",
+    "description": "the name of the notification topic.",
+    "default": "\"admin\"",
+    "required": false
+  }
+]

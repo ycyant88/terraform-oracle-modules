@@ -1,0 +1,30 @@
+[
+  {
+    "name": "rpc_ids",
+    "description": "IDs of created RPCs"
+  },
+  {
+    "name": "rpc_all_attributes",
+    "description": "all attributes of created RPCs"
+  },
+  {
+    "name": "drg_id",
+    "description": "id of drg if it is created"
+  },
+  {
+    "name": "drg_display_name",
+    "description": "display name of drg if it is created"
+  },
+  {
+    "name": "drg_all_attributes",
+    "description": "all attributes of created drg"
+  },
+  {
+    "name": "drg_attachment_all_attributes",
+    "description": "all attributes related to drg attachment"
+  },
+  {
+    "name": "drg_summary",
+    "description": "drg information summary"
+  }
+]

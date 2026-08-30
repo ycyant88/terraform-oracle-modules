@@ -1,0 +1,345 @@
+[
+  {
+    "name": "availability_domains",
+    "type": "map",
+    "description": "ADs where to provision resources",
+    "default": "{\n  \"bastion\": 1,\n  \"lb_ad1\": 1,\n  \"lb_ad2\": 2,\n  \"lb_ad3\": 3,\n  \"workers_ad1\": 1,\n  \"workers_ad2\": 2,\n  \"workers_ad3\": 3\n}",
+    "required": false
+  },
+  {
+    "name": "compartment_name",
+    "type": "string",
+    "description": "compartment name",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "region",
+    "type": "string",
+    "description": "region",
+    "default": "\"us-phoenix-1\"",
+    "required": false
+  },
+  {
+    "name": "bastion_shape",
+    "type": "string",
+    "description": "shape of bastion instance",
+    "default": "\"VM.Standard2.1\"",
+    "required": false
+  },
+  {
+    "name": "image_operating_system_version",
+    "type": "string",
+    "description": "version of selected operating system",
+    "default": "\"7.6\"",
+    "required": false
+  },
+  {
+    "name": "node_pool_node_image_name",
+    "type": "string",
+    "description": "name of image to use",
+    "default": "\"Oracle-Linux-7.5\"",
+    "required": false
+  },
+  {
+    "name": "tiller_enabled",
+    "type": "string",
+    "description": "whether to enable tiller",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "user_ocid",
+    "type": "string",
+    "description": "user ocid",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "label_prefix",
+    "type": "string",
+    "description": "",
+    "default": "\"oke\"",
+    "required": false
+  },
+  {
+    "name": "dashboard_enabled",
+    "type": "string",
+    "description": "whether to enable kubernetes dashboard",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "worker_mode",
+    "type": "string",
+    "description": "whether to provision public or private workers",
+    "default": "\"private\"",
+    "required": false
+  },
+  {
+    "name": "tenancy_name",
+    "type": "string",
+    "description": "tenancy name",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "tenancy_ocid",
+    "type": "string",
+    "description": "tenancy id",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "node_pool_name_prefix",
+    "type": "string",
+    "description": "prefix of node pool name",
+    "default": "\"np\"",
+    "required": false
+  },
+  {
+    "name": "api_fingerprint",
+    "type": "string",
+    "description": "fingerprint of oci api private key",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "api_private_key_path",
+    "type": "string",
+    "description": "path to oci api private key",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "compartment_ocid",
+    "type": "string",
+    "description": "compartment ocid",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "node_pools",
+    "type": "string",
+    "description": "number of node pools",
+    "default": "1",
+    "required": false
+  },
+  {
+    "name": "create_auth_token",
+    "type": "string",
+    "description": "whether to create an auth token to use with OCIR",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "ocir_urls",
+    "type": "map",
+    "description": "urls of ocir",
+    "default": "{\n  \"ap-seoul-1\": \"icn.ocir.io\",\n  \"ap-tokyo-1\": \"nrt.ocir.io\",\n  \"ca-toronto-1\": \"yyz.ocir.io\",\n  \"eu-frankfurt-1\": \"fra.ocir.io\",\n  \"uk-london-1\": \"lhr.ocir.io\",\n  \"us-ashburn-1\": \"iad.ocir.io\",\n  \"us-phoenix-1\": \"phx.ocir.io\"\n}",
+    "required": false
+  },
+  {
+    "name": "helm_version",
+    "type": "string",
+    "description": "version of helm to install",
+    "default": "\"2.13.0\"",
+    "required": false
+  },
+  {
+    "name": "disable_auto_retries",
+    "type": "string",
+    "description": "",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "vcn_cidr",
+    "type": "string",
+    "description": "cidr block of VCN",
+    "default": "\"10.0.0.0/16\"",
+    "required": false
+  },
+  {
+    "name": "vcn_dns_name",
+    "type": "string",
+    "description": "",
+    "default": "\"oke\"",
+    "required": false
+  },
+  {
+    "name": "service_gateway_name",
+    "type": "string",
+    "description": "name of service gateway",
+    "default": "\"sg\"",
+    "required": false
+  },
+  {
+    "name": "node_pool_node_shape",
+    "type": "string",
+    "description": "shape of worker nodes",
+    "default": "\"VM.Standard2.1\"",
+    "required": false
+  },
+  {
+    "name": "pods_cidr",
+    "type": "string",
+    "description": "This is the CIDR range used for IP addresses by your pods. A /16 CIDR is generally sufficient. This CIDR should not overlap with any subnet range in the VCN (it can also be outside the VCN CIDR range).",
+    "default": "\"10.244.0.0/16\"",
+    "required": false
+  },
+  {
+    "name": "email_address",
+    "type": "string",
+    "description": "email address used for OICR",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "install_calico",
+    "type": "string",
+    "description": "whether to install calico for network pod security policy",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "vcn_name",
+    "type": "string",
+    "description": "name of vcn",
+    "default": "\"oke vcn\"",
+    "required": false
+  },
+  {
+    "name": "subnets",
+    "type": "map",
+    "description": "zero-based index of the subnet when the network is masked with the newbit.",
+    "default": "{\n  \"bastion\": 11,\n  \"lb_ad1\": 12,\n  \"lb_ad2\": 22,\n  \"lb_ad3\": 32,\n  \"workers_ad1\": 13,\n  \"workers_ad2\": 23,\n  \"workers_ad3\": 33\n}",
+    "required": false
+  },
+  {
+    "name": "node_pool_quantity_per_subnet",
+    "type": "string",
+    "description": "number of workers in node pool",
+    "default": "1",
+    "required": false
+  },
+  {
+    "name": "services_cidr",
+    "type": "string",
+    "description": "This is the CIDR range used by exposed Kubernetes services (ClusterIPs). This CIDR should not overlap with the VCN CIDR range.",
+    "default": "\"10.96.0.0/16\"",
+    "required": false
+  },
+  {
+    "name": "newbits",
+    "type": "map",
+    "description": "new mask for the subnet within the virtual network. use as newbits parameter for cidrsubnet function",
+    "default": "{\n  \"bastion\": \"8\",\n  \"lb\": \"8\",\n  \"workers\": \"8\"\n}",
+    "required": false
+  },
+  {
+    "name": "create_nat_gateway",
+    "type": "string",
+    "description": "whether to create a nat gateway",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "nat_gateway_name",
+    "type": "string",
+    "description": "display name of the nat gateway",
+    "default": "\"nat\"",
+    "required": false
+  },
+  {
+    "name": "create_bastion",
+    "type": "string",
+    "description": "",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "enable_instance_principal",
+    "type": "string",
+    "description": "enable the bastion hosts to call OCI API services without requiring api key",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "image_operating_system",
+    "type": "string",
+    "description": "operating system to use for the bastion",
+    "default": "\"Oracle Linux\"",
+    "required": false
+  },
+  {
+    "name": "nodepool_topology",
+    "type": "string",
+    "description": "whether to use 2 ADs or 3ADs for the node pool. Possible values are 2 or 3 only",
+    "default": "3",
+    "required": false
+  },
+  {
+    "name": "install_helm",
+    "type": "string",
+    "description": "whether to install helm client on the bastion",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "calico_version",
+    "type": "string",
+    "description": "version of calico to install",
+    "default": "\"3.6\"",
+    "required": false
+  },
+  {
+    "name": "ssh_private_key_path",
+    "type": "string",
+    "description": "path to ssh private key",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ssh_public_key_path",
+    "type": "string",
+    "description": "path to ssh public key",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_service_gateway",
+    "type": "string",
+    "description": "whether to create a service gateway",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "image_ocid",
+    "type": "string",
+    "description": "",
+    "default": "\"NONE\"",
+    "required": false
+  },
+  {
+    "name": "cluster_name",
+    "type": "string",
+    "description": "name of oke cluster",
+    "default": "\"oke\"",
+    "required": false
+  },
+  {
+    "name": "kubernetes_version",
+    "type": "string",
+    "description": "version of kubernetes to use",
+    "default": "\"LATEST\"",
+    "required": false
+  },
+  {
+    "name": "username",
+    "type": "string",
+    "description": "username to access OCIR",
+    "default": "\"\"",
+    "required": false
+  }
+]

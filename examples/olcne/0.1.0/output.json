@@ -1,0 +1,14 @@
+[
+  {
+    "name": "ssh_to_bastion",
+    "description": "ssh to bastion"
+  },
+  {
+    "name": "ssh_to_operator",
+    "description": "ssh to operator"
+  },
+  {
+    "name": "ssh_to_master",
+    "description": "ssh to primary master node"
+  }
+]

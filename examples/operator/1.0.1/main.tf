@@ -1,0 +1,42 @@
+terraform {
+  required_providers {
+    oci = {
+      source  = "oracle/oci"
+      version = "8.29.0"
+    }
+  }
+}
+
+provider "oci" {
+  # Configuration options
+}
+
+module "operator" {
+  source                      = "oracle-terraform-modules/operator/oci"
+  version                     = "1.0.1"
+  api_fingerprint             = var.api_fingerprint
+  api_private_key_path        = var.api_private_key_path
+  availability_domain         = var.availability_domain
+  compartment_id              = var.compartment_id
+  label_prefix                = var.label_prefix
+  nat_route_id                = var.nat_route_id
+  netnum                      = var.netnum
+  newbits                     = var.newbits
+  notification_enabled        = var.notification_enabled
+  notification_endpoint       = var.notification_endpoint
+  notification_protocol       = var.notification_protocol
+  notification_topic          = var.notification_topic
+  operator_enabled            = var.operator_enabled
+  operator_image_id           = var.operator_image_id
+  operator_instance_principal = var.operator_instance_principal
+  operator_shape              = var.operator_shape
+  operator_upgrade            = var.operator_upgrade
+  region                      = var.region
+  ssh_public_key              = var.ssh_public_key
+  ssh_public_key_path         = var.ssh_public_key_path
+  tags                        = var.tags
+  tenancy_id                  = var.tenancy_id
+  timezone                    = var.timezone
+  user_id                     = var.user_id
+  vcn_id                      = var.vcn_id
+}

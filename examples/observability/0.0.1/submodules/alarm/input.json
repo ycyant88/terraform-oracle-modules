@@ -1,0 +1,30 @@
+[
+  {
+    "name": "compartment_ocid",
+    "type": "string",
+    "description": "Compartment OCID",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "alarm_def",
+    "type": "map(object({\n    destination                  = string\n    display_name                 = string\n    severity                     = optional(string, \"CRITICAL\")\n    query                        = string\n    is_enabled                   = optional(bool, true)\n    namespace                    = string\n    metric_compartment_id        = optional(string)\n    repeat_notification_duration = optional(string, \"PT5M\")\n    trigger                      = optional(string, \"PT5M\")\n    suppression_from_time        = optional(string)\n    suppression_till_time        = optional(string)\n    message_format               = optional(string, \"RAW\")\n    body                         = optional(string, null)\n    freeform_tags                = optional(map(string))\n    defined_tags                 = optional(map(string))\n  }))",
+    "description": "OCI Alarm definition",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "notification",
+    "type": "map(object({\n    description   = optional(string)\n    create_topic  = optional(bool, true)\n    defined_tags  = optional(map(string))\n    freeform_tags = optional(map(string))\n    subscription = optional(map(object({\n      endpoint = string\n      protocol = string\n    })))\n  }))",
+    "description": "Notification Topic and Subscription",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "label_prefix",
+    "type": "string",
+    "description": "Prefix to be added to the resources",
+    "default": "\"none\"",
+    "required": false
+  }
+]

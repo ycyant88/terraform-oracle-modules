@@ -1,0 +1,23 @@
+[
+  {
+    "name": "olcne_network_access",
+    "type": "object({\r\n    allow_master_ssh_access = bool\r\n    allow_worker_ssh_access = bool\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "olcne_general",
+    "type": "object({\r\n    ad_names       = list(string)\r\n    compartment_id = string\r\n    label_prefix   = string\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "olcne_network_vcn",
+    "type": "object({\r\n    ig_route_id                = string\r\n    is_service_gateway_enabled = bool\r\n    nat_route_id               = string\r\n    netnum                     = map(number)\r\n    newbits                    = map(number)\r\n    vcn_cidr                   = string\r\n    vcn_id                     = string\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  }
+]

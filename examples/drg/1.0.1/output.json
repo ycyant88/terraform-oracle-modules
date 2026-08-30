@@ -1,0 +1,34 @@
+[
+  {
+    "name": "drg_display_name",
+    "description": "display name of drg if it is created"
+  },
+  {
+    "name": "drg_all_attributes",
+    "description": "all attributes of created drg"
+  },
+  {
+    "name": "drg_attachment_all_attributes",
+    "description": "all attributes related to drg attachment"
+  },
+  {
+    "name": "drg_summary",
+    "description": "drg information summary"
+  },
+  {
+    "name": "rpc_id",
+    "description": "id of RPC if it is created"
+  },
+  {
+    "name": "rpc_display_name",
+    "description": "display name of RPC if it is created"
+  },
+  {
+    "name": "rpc_all_attributes",
+    "description": "all attributes of created RPC"
+  },
+  {
+    "name": "drg_id",
+    "description": "id of drg if it is created"
+  }
+]

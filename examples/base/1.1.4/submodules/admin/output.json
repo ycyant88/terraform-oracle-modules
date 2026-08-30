@@ -1,0 +1,10 @@
+[
+  {
+    "name": "admin_private_ip",
+    "description": ""
+  },
+  {
+    "name": "admin_instance_principal_group_name",
+    "description": ""
+  }
+]

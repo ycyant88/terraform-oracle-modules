@@ -1,0 +1,16 @@
+[
+  {
+    "name": "dr_plan",
+    "type": "object({\n    display_name           = string\n    dr_protection_group_id = string\n    type                   = string\n    defined_tags           = optional(map(string), null)\n    freeform_tags          = optional(map(string), null)\n    source_plan_id         = optional(string, null)\n    refresh_trigger        = optional(number, null)\n    verify_trigger         = optional(number, null)\n  })",
+    "description": "",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "dr_plan_execution",
+    "type": "object({\n    plan_execution_type   = string\n    are_prechecks_enabled = optional(bool, false)\n    are_warnings_ignored  = optional(bool, false)\n    plan_id               = optional(string, null)\n    defined_tags          = optional(map(string), null)\n    display_name          = optional(string, null)\n    freeform_tags         = optional(map(string), null)\n    timeouts_create       = optional(string, \"20m\")\n    timeouts_update       = optional(string, \"20m\")\n  })",
+    "description": "",
+    "default": "null",
+    "required": false
+  }
+]

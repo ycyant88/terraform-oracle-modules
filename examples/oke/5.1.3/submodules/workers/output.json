@@ -1,0 +1,30 @@
+[
+  {
+    "name": "worker_pool_autoscale_expected",
+    "description": "# of worker pools expected with autoscale enabled from created worker pools"
+  },
+  {
+    "name": "worker_pools",
+    "description": "Created worker pools (mode != 'instance')"
+  },
+  {
+    "name": "worker_instances",
+    "description": "Created worker pools (mode == 'instance')"
+  },
+  {
+    "name": "worker_pool_ids",
+    "description": "Created worker pool IDs"
+  },
+  {
+    "name": "worker_pool_ips",
+    "description": "Created worker instance private IPs by pool for available modes ('node-pool', 'instance')."
+  },
+  {
+    "name": "worker_count_expected",
+    "description": "# of nodes expected from created worker pools"
+  },
+  {
+    "name": "worker_drain_expected",
+    "description": "# of nodes expected to be draining in worker pools"
+  }
+]

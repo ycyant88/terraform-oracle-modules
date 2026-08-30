@@ -1,0 +1,22 @@
+[
+  {
+    "name": "subnet_ids",
+    "description": ""
+  },
+  {
+    "name": "nsg_ids",
+    "description": ""
+  },
+  {
+    "name": "master_subnet_dns_label",
+    "description": ""
+  },
+  {
+    "name": "operator_subnet_dns_label",
+    "description": ""
+  },
+  {
+    "name": "worker_subnet_dns_label",
+    "description": ""
+  }
+]

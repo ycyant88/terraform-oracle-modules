@@ -1,0 +1,16 @@
+[
+  {
+    "name": "path",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "schema_names",
+    "type": "map",
+    "description": "",
+    "default": "",
+    "required": true
+  }
+]

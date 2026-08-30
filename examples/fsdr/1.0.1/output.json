@@ -1,0 +1,26 @@
+[
+  {
+    "name": "region2_plan_ids",
+    "description": "OCID of region2 plans"
+  },
+  {
+    "name": "region1_members",
+    "description": "Members of the existing protection group in region1"
+  },
+  {
+    "name": "region2_members",
+    "description": "Members of the existing protection group in region2"
+  },
+  {
+    "name": "region1_dr_protection_group_id",
+    "description": "Protection group OCID of region1"
+  },
+  {
+    "name": "region2_dr_protection_group_id",
+    "description": "Protection group OCID of region2"
+  },
+  {
+    "name": "region1_plan_ids",
+    "description": "OCID of region1 plans"
+  }
+]

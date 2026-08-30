@@ -1,0 +1,22 @@
+[
+  {
+    "name": "group_description",
+    "description": ""
+  },
+  {
+    "name": "group_policy_name",
+    "description": ""
+  },
+  {
+    "name": "group_id",
+    "description": ""
+  },
+  {
+    "name": "group_name",
+    "description": ""
+  },
+  {
+    "name": "name_ocid",
+    "description": "group name and associated OCID"
+  }
+]

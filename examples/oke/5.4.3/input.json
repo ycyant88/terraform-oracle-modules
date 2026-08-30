@@ -1,0 +1,1808 @@
+[
+  {
+    "name": "user_id",
+    "type": "string",
+    "description": "The id of the user that terraform will use to create the resources.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "region",
+    "type": "string",
+    "description": "The OCI region where OKE resources will be created.",
+    "default": "\"us-ashburn-1\"",
+    "required": false
+  },
+  {
+    "name": "create_iam_autoscaler_policy",
+    "type": "string",
+    "description": "Whether to create an IAM dynamic group and policy rules for Cluster Autoscaler management. Depends on configuration of associated component when set to 'auto'. Ignored when 'create_iam_resources' is false.",
+    "default": "\"auto\"",
+    "required": false
+  },
+  {
+    "name": "remote_peering_connections",
+    "type": "map(any)",
+    "description": "Map of parameters to add and optionally to peer to remote peering connections. Key-only items represent local acceptors and no peering attempted; items containing key and values represent local requestor and must have the OCID and region of the remote acceptor to peer to",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "worker_preemptible_config",
+    "type": "map(any)",
+    "description": "Default preemptible Compute configuration when unspecified on a pool. See <a href=https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengusingpreemptiblecapacity.htm>Preemptible Worker Nodes</a> for more information.",
+    "default": "{\n  \"enable\": false,\n  \"is_preserve_boot_volume\": false\n}",
+    "required": false
+  },
+  {
+    "name": "backend_nsg_ids",
+    "type": "set(string)",
+    "description": "An additional list of network security groups (NSG) ids for the LB backends. Used when the service rule management mode is set to NSG via annotations. See <a href=https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengconfiguringloadbalancersnetworkloadbalancers-subtopic.htm#contengcreatingloadbalancer_topic-Specifying_Load_Balancer_Security_Rule_Management_Options>Security Rule Management Options for Load Balancers and Network Load Balancers</a> for more information.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "create_iam_tag_namespace",
+    "type": "bool",
+    "description": "Whether to create a namespace for defined tags used for IAM policy and tracking. Ignored when 'create_iam_resources' is false.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "use_stateless_rules",
+    "type": "bool",
+    "description": "(experimental) Create NSGs with stateless rules instead of the default stateful rules.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "operator_image_os_version",
+    "type": "string",
+    "description": "Operator image operating system version when operator_image_type = 'platform'.",
+    "default": "\"8\"",
+    "required": false
+  },
+  {
+    "name": "operator_install_kubectl_from_repo",
+    "type": "bool",
+    "description": "Whether to install kubectl from the repo on the created operator host.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "operator_shape",
+    "type": "map(any)",
+    "description": "Shape of the created operator instance. Baseline OCPU utilization can be used to provision <a href=https://docs.oracle.com/en-us/iaas/Content/Compute/References/burstable-instances.htm>burstable shapes.</a>",
+    "default": "{\n  \"baseline_ocpu_utilization\": 100,\n  \"boot_volume_size\": 50,\n  \"memory\": 4,\n  \"ocpus\": 1,\n  \"shape\": \"VM.Standard.E4.Flex\"\n}",
+    "required": false
+  },
+  {
+    "name": "kubeproxy_mode",
+    "type": "string",
+    "description": "The mode in which to run kube-proxy when unspecified on a pool.",
+    "default": "\"iptables\"",
+    "required": false
+  },
+  {
+    "name": "ocir_secret_namespace",
+    "type": "string",
+    "description": "The Kubernetes namespace in which to create the OCIR secret.",
+    "default": "\"default\"",
+    "required": false
+  },
+  {
+    "name": "bastion_user",
+    "type": "string",
+    "description": "User for SSH access through bastion host.",
+    "default": "\"opc\"",
+    "required": false
+  },
+  {
+    "name": "nat_gateway_route_rules",
+    "type": "list(map(string))",
+    "description": "(Updatable) List of routing rules to add to NAT Gateway Route Table.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "cilium_namespace",
+    "type": "string",
+    "description": "Kubernetes namespace for deployed resources.",
+    "default": "\"kube-system\"",
+    "required": false
+  },
+  {
+    "name": "internet_gateway_id",
+    "type": "string",
+    "description": "Optional ID of existing Internet gateway in VCN.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "create_drg",
+    "type": "bool",
+    "description": "Whether to create a Dynamic Routing Gateway and attach it to the VCN.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "operator_availability_domain",
+    "type": "string",
+    "description": "The availability domain for operator placement. Defaults to first available.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "cluster_addons_to_remove",
+    "type": "any",
+    "description": "Map with cluster addons not created by Terraform that should be removed. This operation is performed using oci-cli and requires the operator host to be deployed.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "cilium_helm_values_files",
+    "type": "list(string)",
+    "description": "Paths to a local YAML files with Helm chart values (as with `helm install -f` which supports multiple). Generate with defaults using `helm show values [CHART] [flags]`.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "metrics_server_namespace",
+    "type": "string",
+    "description": "Kubernetes namespace for deployed resources.",
+    "default": "\"metrics\"",
+    "required": false
+  },
+  {
+    "name": "cluster_autoscaler_helm_values",
+    "type": "map(string)",
+    "description": "Map of individual Helm chart values. See <a href=https://registry.terraform.io/providers/hashicorp/helm/latest/docs/data-sources/template>data.helm_template</a>.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "cluster_ca_cert",
+    "type": "string",
+    "description": "Base64+PEM-encoded cluster CA certificate for unmanaged instance pools. Determined automatically when 'create_cluster' = true or 'cluster_id' is provided.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "worker_legacy_imds_endpoints_disabled",
+    "type": "bool",
+    "description": "Whether to disable requests to the IMDSv1 endpoint and only allow requests to the IMDSv2 endpoint.  See <a href=https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengconfiguringimds.htm>Instance Metadata</a> for more information.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "mpi_operator_deployment_url",
+    "type": "string",
+    "description": "The URL path to the manifest. Leave unset for tags of <a href=https://github.com/kubeflow/mpi-operator>kubeflow/mpi-operator</a> using mpi_operator_version.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "whereabouts_install",
+    "type": "bool",
+    "description": "Whether to deploy Whereabouts IPAM. See <a href=https://github.com/k8snetworkplumbingwg/whereabouts>k8snetworkplumbingwg/whereabouts</a>. NOTE: Provided only as a convenience and not supported by or sourced from Oracle - use at your own risk.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "whereabouts_daemonset_url",
+    "type": "string",
+    "description": "The URL path to the manifest. Leave unset for tags of <a href=https://github.com/k8snetworkplumbingwg/whereabouts>k8snetworkplumbingwg/whereabouts</a> using whereabouts_version.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "gatekeeper_helm_values",
+    "type": "map(string)",
+    "description": "Map of individual Helm chart values. See <a href=https://registry.terraform.io/providers/hashicorp/helm/latest/docs/data-sources/template>data.helm_template</a>.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "tag_namespace",
+    "type": "string",
+    "description": "The tag namespace for standard OKE defined tags.",
+    "default": "\"oke\"",
+    "required": false
+  },
+  {
+    "name": "cluster_defined_tags",
+    "type": "map(string)",
+    "description": "Defined tags applied to created resources.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "drg_attachments",
+    "type": "any",
+    "description": "DRG attachment configurations.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "sriov_cni_plugin_version",
+    "type": "string",
+    "description": "Version to install. Ignored when an explicit value for sriov_cni_plugin_daemonset_url is provided.",
+    "default": "\"master\"",
+    "required": false
+  },
+  {
+    "name": "allow_rules_cp",
+    "type": "any",
+    "description": "A map of additional rules to allow traffic for the OKE control plane.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "operator_volume_kms_key_id",
+    "type": "string",
+    "description": "The OCID of the OCI KMS key to assign as the master encryption key for the operator host boot volume.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "rdma_cni_plugin_version",
+    "type": "string",
+    "description": "Version to install. Ignored when an explicit value for rdma_cni_plugin_daemonset_url is provided.",
+    "default": "\"master\"",
+    "required": false
+  },
+  {
+    "name": "prometheus_install",
+    "type": "bool",
+    "description": "Whether to deploy the Prometheus Helm chart. See https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack. NOTE: Provided only as a convenience and not supported by or sourced from Oracle - use at your own risk.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "create_iam_operator_policy",
+    "type": "string",
+    "description": "Whether to create an IAM dynamic group and policy rules for operator access to the OKE control plane. Depends on configuration of associated components when set to 'auto'. Ignored when 'create_iam_resources' is false.",
+    "default": "\"auto\"",
+    "required": false
+  },
+  {
+    "name": "nat_route_table_id",
+    "type": "string",
+    "description": "Optional ID of existing NAT gateway route table in VCN.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "nsgs",
+    "type": "map(object({\n    create = optional(string)\n    id     = optional(string)\n  }))",
+    "description": "Configuration for standard network security groups (NSGs).  The 'create' parameter of each entry defaults to 'auto', creating NSGs when other enabled components are expected to utilize them, and may be configured with 'never' or 'always' to force disabled/enabled.",
+    "default": "{\n  \"bastion\": {},\n  \"cp\": {},\n  \"int_lb\": {},\n  \"operator\": {},\n  \"pods\": {},\n  \"pub_lb\": {},\n  \"workers\": {}\n}",
+    "required": false
+  },
+  {
+    "name": "sriov_device_plugin_version",
+    "type": "string",
+    "description": "Version to install. Ignored when an explicit value for sriov_device_plugin_daemonset_url is provided.",
+    "default": "\"master\"",
+    "required": false
+  },
+  {
+    "name": "tenancy_ocid",
+    "type": "string",
+    "description": "A tenancy OCID automatically populated by Resource Manager.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "bastion_availability_domain",
+    "type": "string",
+    "description": "The availability domain for bastion placement. Defaults to first available.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "multus_install",
+    "type": "bool",
+    "description": "Whether to deploy Multus. See <a href=https://github.com/k8snetworkplumbingwg/multus-cni>k8snetworkplumbingwg/multus-cni</a>. NOTE: Provided only as a convenience and not supported by or sourced from Oracle - use at your own risk.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "bastion_legacy_imds_endpoints_disabled",
+    "type": "bool",
+    "description": "Whether to disable requests to the IMDSv1 endpoint and only allow requests to the IMDSv2 endpoint for the bastion instance.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "cilium_install",
+    "type": "bool",
+    "description": "Whether to deploy the Cilium Helm chart. May only be enabled when cni_type = 'flannel'. See https://docs.cilium.io. NOTE: Provided only as a convenience and not supported by or sourced from Oracle - use at your own risk.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "cilium_helm_version",
+    "type": "string",
+    "description": "Version of the Helm chart to install. List available releases using `helm search repo [keyword] --versions`.",
+    "default": "\"1.16.3\"",
+    "required": false
+  },
+  {
+    "name": "multus_namespace",
+    "type": "string",
+    "description": "Kubernetes namespace for deployed resources.",
+    "default": "\"network\"",
+    "required": false
+  },
+  {
+    "name": "vcn_id",
+    "type": "string",
+    "description": "Optional ID of existing VCN. Takes priority over vcn_name filter. Ignored when `create_vcn = true`.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "operator_install_helm_from_repo",
+    "type": "bool",
+    "description": "Whether to install Helm from the repo on the created operator host.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "create_service_account",
+    "type": "bool",
+    "description": "Whether to create a service account or not.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "vcn_name",
+    "type": "string",
+    "description": "Display name for the created VCN. Defaults to 'oke' suffixed with the generated Terraform 'state_id' value.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "subnets",
+    "type": "map(object({\n    create       = optional(string)\n    id           = optional(string)\n    newbits      = optional(string)\n    netnum       = optional(string)\n    cidr         = optional(string)\n    display_name = optional(string)\n    dns_label    = optional(string)\n    ipv6_cidr    = optional(string)\n  }))",
+    "description": "Configuration for standard subnets. The 'create' parameter of each entry defaults to 'auto', creating subnets when other enabled components are expected to utilize them, and may be configured with 'never' or 'always' to force disabled/enabled.",
+    "default": "{\n  \"bastion\": {\n    \"ipv6_cidr\": \"8, 0\",\n    \"newbits\": 13\n  },\n  \"cp\": {\n    \"ipv6_cidr\": \"8, 2\",\n    \"newbits\": 13\n  },\n  \"int_lb\": {\n    \"ipv6_cidr\": \"8, 3\",\n    \"newbits\": 11\n  },\n  \"operator\": {\n    \"ipv6_cidr\": \"8, 1\",\n    \"newbits\": 13\n  },\n  \"pods\": {\n    \"ipv6_cidr\": \"8, 6\",\n    \"newbits\": 2\n  },\n  \"pub_lb\": {\n    \"ipv6_cidr\": \"8, 4\",\n    \"newbits\": 11\n  },\n  \"workers\": {\n    \"ipv6_cidr\": \"8, 5\",\n    \"newbits\": 4\n  }\n}",
+    "required": false
+  },
+  {
+    "name": "operator_image_type",
+    "type": "string",
+    "description": "Whether to use a platform or custom image for the created operator instance. When custom is set, the operator_image_id must be specified.",
+    "default": "\"platform\"",
+    "required": false
+  },
+  {
+    "name": "worker_volume_kms_key_id",
+    "type": "string",
+    "description": "The ID of the OCI KMS key to be used as the master encryption key for Boot Volume and Block Volume encryption by default when unspecified on a pool.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "ssh_private_key",
+    "type": "string",
+    "description": "The contents of the SSH private key file, optionally base64-encoded. May be provided via SSH agent when unset.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "cluster_autoscaler_helm_values_files",
+    "type": "list(string)",
+    "description": "Paths to a local YAML files with Helm chart values (as with `helm install -f` which supports multiple). Generate with defaults using `helm show values [CHART] [flags]`.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "dcgm_exporter_reapply",
+    "type": "bool",
+    "description": "Whether to force reapply of the Helm chart when no changes are detected, e.g. with state modified externally.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "network_freeform_tags",
+    "type": "map(string)",
+    "description": "Freeform tags applied to created resources.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "bastion_image_id",
+    "type": "string",
+    "description": "Image ID for created bastion instance.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "create_cluster",
+    "type": "bool",
+    "description": "Whether to create the OKE cluster and dependent resources.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "cluster_autoscaler_install",
+    "type": "bool",
+    "description": "Whether to deploy the Kubernetes Cluster Autoscaler Helm chart. See <a href=https://github.com/kubernetes/autoscaler>kubernetes/autoscaler</a>. NOTE: Provided only as a convenience and not supported by or sourced from Oracle - use at your own risk.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "argocd_install",
+    "type": "bool",
+    "description": "Whether to deploy the Argocd Helm chart. See https://github.com/argoproj/argo-cd. NOTE: Provided only as a convenience and not supported by or sourced from Oracle - use at your own risk.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "compartment_ocid",
+    "type": "string",
+    "description": "A compartment OCID automatically populated by Resource Manager.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "vcn_create_nat_gateway",
+    "type": "string",
+    "description": "Whether to create a NAT gateway with the VCN. Defaults to automatic creation when private network resources are expected to utilize it.",
+    "default": "\"auto\"",
+    "required": false
+  },
+  {
+    "name": "whereabouts_namespace",
+    "type": "string",
+    "description": "Kubernetes namespace for deployed resources.",
+    "default": "\"default\"",
+    "required": false
+  },
+  {
+    "name": "operator_defined_tags",
+    "type": "map(string)",
+    "description": "Defined tags applied to created resources.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "workers_freeform_tags",
+    "type": "map(string)",
+    "description": "Freeform tags applied to created resources.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "drg_display_name",
+    "type": "string",
+    "description": "(Updatable) Name of the created Dynamic Routing Gateway. Does not have to be unique. Defaults to 'oke' suffixed with the generated Terraform 'state_id' value.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "worker_image_os",
+    "type": "string",
+    "description": "Default worker image operating system name when worker_image_type = 'oke' or 'platform' and unspecified on a pool.",
+    "default": "\"Oracle Linux\"",
+    "required": false
+  },
+  {
+    "name": "output_detail",
+    "type": "bool",
+    "description": "Whether to include detailed output in state.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "operator_image_os",
+    "type": "string",
+    "description": "Operator image operating system name when operator_image_type = 'platform'.",
+    "default": "\"Oracle Linux\"",
+    "required": false
+  },
+  {
+    "name": "worker_node_labels",
+    "type": "map(string)",
+    "description": "Default worker node labels. Merged with labels defined on each pool.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "ig_route_table_id",
+    "type": "string",
+    "description": "Optional ID of existing internet gateway route table in VCN.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "operator_pv_transit_encryption",
+    "type": "bool",
+    "description": "Whether to enable in-transit encryption for the data volume's paravirtualized attachment.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "worker_shape",
+    "type": "map(any)",
+    "description": "Default shape of the created worker instance when unspecified on a pool.",
+    "default": "{\n  \"boot_volume_size\": 50,\n  \"boot_volume_vpus_per_gb\": 10,\n  \"memory\": 16,\n  \"ocpus\": 2,\n  \"shape\": \"VM.Standard.E4.Flex\"\n}",
+    "required": false
+  },
+  {
+    "name": "cilium_helm_values",
+    "type": "any",
+    "description": "Map of individual Helm chart values. See https://registry.terraform.io/providers/hashicorp/helm/latest/docs/data-sources/template.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "multus_daemonset_url",
+    "type": "string",
+    "description": "The URL path to the Multus manifest. Leave unset for tags of <a href=https://github.com/k8snetworkplumbingwg/multus-cni>k8snetworkplumbingwg/multus-cni</a> using multus_version.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "use_defined_tags",
+    "type": "bool",
+    "description": "Whether to apply defined tags to created resources for IAM policy and tracking.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "operator_freeform_tags",
+    "type": "map(string)",
+    "description": "Freeform tags applied to created resources.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "internet_gateway_route_rules",
+    "type": "list(map(string))",
+    "description": "(Updatable) List of routing rules to add to Internet Gateway Route Table.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "allow_rules_workers",
+    "type": "any",
+    "description": "A map of additional rules to allow traffic for the workers.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "operator_install_istioctl",
+    "type": "bool",
+    "description": "Whether to install istioctl on the created operator host.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "prometheus_helm_values_files",
+    "type": "list(string)",
+    "description": "Paths to a local YAML files with Helm chart values (as with `helm install -f` which supports multiple). Generate with defaults using `helm show values [CHART] [flags]`.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "config_file_profile",
+    "type": "string",
+    "description": "The profile within the OCI config file to use.",
+    "default": "\"DEFAULT\"",
+    "required": false
+  },
+  {
+    "name": "freeform_tags",
+    "type": "any",
+    "description": "Freeform tags to be applied to created resources.",
+    "default": "{\n  \"bastion\": {},\n  \"cluster\": {},\n  \"iam\": {},\n  \"network\": {},\n  \"operator\": {},\n  \"persistent_volume\": {},\n  \"service_lb\": {},\n  \"workers\": {}\n}",
+    "required": false
+  },
+  {
+    "name": "enable_waf",
+    "type": "bool",
+    "description": "Whether to enable WAF monitoring of load balancers.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "operator_install_stern",
+    "type": "bool",
+    "description": "Whether to install stern on the created operator host. NOTE: Provided only as a convenience and not supported by or sourced from Oracle - use at your own risk.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "worker_block_volume_type",
+    "type": "string",
+    "description": "Default block volume attachment type for Instance Configurations when unspecified on a pool.",
+    "default": "\"paravirtualized\"",
+    "required": false
+  },
+  {
+    "name": "cluster_type",
+    "type": "string",
+    "description": "The cluster type. See <a href=https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengworkingwithenhancedclusters.htm>Working with Enhanced Clusters and Basic Clusters</a> for more information.",
+    "default": "\"basic\"",
+    "required": false
+  },
+  {
+    "name": "cluster_kms_key_id",
+    "type": "string",
+    "description": "The id of the OCI KMS key to be used as the master encryption key for Kubernetes secrets encryption.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "cilium_reapply",
+    "type": "bool",
+    "description": "Whether to force reapply of the chart when no changes are detected, e.g. with state modified externally.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "gatekeeper_helm_version",
+    "type": "string",
+    "description": "Version of the Helm chart to install. List available releases using `helm search repo [keyword] --versions`.",
+    "default": "\"3.11.0\"",
+    "required": false
+  },
+  {
+    "name": "vcn_create_service_gateway",
+    "type": "string",
+    "description": "Whether to create a service gateway with the VCN. Defaults to always created.",
+    "default": "\"always\"",
+    "required": false
+  },
+  {
+    "name": "worker_drain_ignore_daemonsets",
+    "type": "bool",
+    "description": "Whether to ignore DaemonSet-managed Pods when draining worker pools. See <a href=https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#drain>kubectl drain</a> for more information.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "gatekeeper_helm_values_files",
+    "type": "list(string)",
+    "description": "Paths to a local YAML files with Helm chart values (as with `helm install -f` which supports multiple). Generate with defaults using `helm show values [CHART] [flags]`.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "argocd_helm_values",
+    "type": "map(string)",
+    "description": "Map of individual Helm chart values. See <a href=https://registry.terraform.io/providers/hashicorp/helm/latest/docs/data-sources/template>data.helm_template</a>.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "pod_nsg_ids",
+    "type": "list(string)",
+    "description": "An additional list of network security group (NSG) IDs for pod security. Combined with 'pod_nsg_ids' specified on each pool.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "allow_short_container_image_names",
+    "type": "bool",
+    "description": "Whether to allow short container image names for K8s version >= 1.34.0. See <a href=https://github.com/cri-o/cri-o/pull/9401>CRI-O pull request</a> for more information.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "cluster_autoscaler_namespace",
+    "type": "string",
+    "description": "Kubernetes namespace for deployed resources.",
+    "default": "\"kube-system\"",
+    "required": false
+  },
+  {
+    "name": "whereabouts_version",
+    "type": "string",
+    "description": "Version to install. Ignored when an explicit value for whereabouts_daemonset_url is provided.",
+    "default": "\"master\"",
+    "required": false
+  },
+  {
+    "name": "operator_private_ip",
+    "type": "string",
+    "description": "The IP address of an existing operator host. Ignored when create_operator = true.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "create_bastion",
+    "type": "bool",
+    "description": "Whether to create a bastion host.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "enable_ipv6",
+    "type": "bool",
+    "description": "Whether to create a dual-stack (IPv4/IPv6) cluster.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "mpi_operator_namespace",
+    "type": "string",
+    "description": "Kubernetes namespace for deployed resources.",
+    "default": "\"default\"",
+    "required": false
+  },
+  {
+    "name": "argocd_helm_version",
+    "type": "string",
+    "description": "Version of the Helm chart to install. List available releases using `helm search repo [keyword] --versions`.",
+    "default": "\"8.1.2\"",
+    "required": false
+  },
+  {
+    "name": "api_fingerprint",
+    "type": "string",
+    "description": "Fingerprint of the API private key to use with OCI API.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "worker_drain_timeout_seconds",
+    "type": "number",
+    "description": "The length of time to wait before giving up on draining nodes in a pool. See <a href=https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#drain>kubectl drain</a> for more information.",
+    "default": "900",
+    "required": false
+  },
+  {
+    "name": "bastion_public_ip",
+    "type": "string",
+    "description": "The IP address of an existing bastion host, if create_bastion = false.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "control_plane_is_public",
+    "type": "bool",
+    "description": "Whether the Kubernetes control plane endpoint should be allocated a public IP address to enable access over public internet.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "api_private_key_path",
+    "type": "string",
+    "description": "The path to the OCI API private key.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "timezone",
+    "type": "string",
+    "description": "The preferred timezone for workers, operator, and bastion instances.",
+    "default": "\"Etc/UTC\"",
+    "required": false
+  },
+  {
+    "name": "rdma_cni_plugin_daemonset_url",
+    "type": "string",
+    "description": "The URL path to the manifest. Leave unset for tags of <a href=https://github.com/Mellanox/rdma-cni>Mellanox/rdma-cni</a> using rdma_cni_plugin_version.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "iam_defined_tags",
+    "type": "map(string)",
+    "description": "Defined tags applied to created resources.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "local_peering_gateways",
+    "type": "map(any)",
+    "description": "Map of Local Peering Gateways to attach to the VCN.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "allow_node_port_access",
+    "type": "bool",
+    "description": "Whether to allow access from worker NodePort range to load balancers.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "operator_install_k8sgpt",
+    "type": "bool",
+    "description": "Whether to install k8sgpt on the created operator host. NOTE: Provided only as a convenience and not supported by or sourced from Oracle - use at your own risk.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "worker_pool_size",
+    "type": "number",
+    "description": "Default size for worker pools when unspecified on a pool.",
+    "default": "0",
+    "required": false
+  },
+  {
+    "name": "worker_disable_default_cloud_init",
+    "type": "bool",
+    "description": "Whether to disable the default OKE cloud init and only use the cloud init explicitly passed to the worker pool in 'worker_cloud_init'.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "bastion_upgrade",
+    "type": "bool",
+    "description": "Whether to upgrade bastion packages after provisioning.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "metrics_server_helm_version",
+    "type": "string",
+    "description": "Version of the Helm chart to install. List available releases using `helm search repo [keyword] --versions`.",
+    "default": "\"3.8.3\"",
+    "required": false
+  },
+  {
+    "name": "argocd_helm_values_files",
+    "type": "list(string)",
+    "description": "Paths to a local YAML files with Helm chart values (as with `helm install -f` which supports multiple). Generate with defaults using `helm show values [CHART] [flags]`.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "sriov_device_plugin_namespace",
+    "type": "string",
+    "description": "Kubernetes namespace for deployed resources.",
+    "default": "\"network\"",
+    "required": false
+  },
+  {
+    "name": "create_iam_defined_tags",
+    "type": "bool",
+    "description": "Whether to create defined tags used for IAM policy and tracking. Ignored when 'create_iam_resources' is false.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "bastion_image_type",
+    "type": "string",
+    "description": "Whether to use a platform or custom image for the created bastion instance. When custom is set, the bastion_image_id must be specified.",
+    "default": "\"platform\"",
+    "required": false
+  },
+  {
+    "name": "load_balancers",
+    "type": "string",
+    "description": "The type of subnets to create for load balancers.",
+    "default": "\"both\"",
+    "required": false
+  },
+  {
+    "name": "service_accounts",
+    "type": "map(any)",
+    "description": "Map of service accounts and associated parameters.",
+    "default": "{\n  \"kubeconfigsa\": {\n    \"sa_cluster_role\": \"cluster-admin\",\n    \"sa_cluster_role_binding\": \"kubeconfigsa-crb\",\n    \"sa_name\": \"kubeconfigsa\",\n    \"sa_namespace\": \"kube-system\"\n  }\n}",
+    "required": false
+  },
+  {
+    "name": "network_defined_tags",
+    "type": "map(string)",
+    "description": "Defined tags applied to created resources.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "lockdown_default_seclist",
+    "type": "bool",
+    "description": "Whether to remove all default security rules from the VCN Default Security List.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "vcn_dns_label",
+    "type": "string",
+    "description": "A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet. Defaults to the generated Terraform 'state_id' value.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "allow_rules_public_lb",
+    "type": "any",
+    "description": "A map of additional rules to allow incoming traffic for public load balancers.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "operator_nsg_ids",
+    "type": "list(string)",
+    "description": "An optional and updatable list of network security groups that the operator will be part of.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "prometheus_helm_version",
+    "type": "string",
+    "description": "Version of the Helm chart to install. List available releases using `helm search repo [keyword] --versions`.",
+    "default": "\"45.2.0\"",
+    "required": false
+  },
+  {
+    "name": "tenancy_id",
+    "type": "string",
+    "description": "The tenancy id of the OCI Cloud Account in which to create the resources.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "create_iam_kms_policy",
+    "type": "string",
+    "description": "Whether to create an IAM dynamic group and policy rules for KMS encryption. Depends on configuration of associated components when set to 'auto'. Ignored when 'create_iam_resources' is false.",
+    "default": "\"auto\"",
+    "required": false
+  },
+  {
+    "name": "ocir_email_address",
+    "type": "string",
+    "description": "The email address used for the Oracle Container Image Registry (OCIR).",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "worker_node_metadata",
+    "type": "map(string)",
+    "description": "Map of additional worker node instance metadata. Merged with metadata defined on each pool.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "cluster_addons",
+    "type": "any",
+    "description": "Map with cluster addons that should be enabled.  See <a href=https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengconfiguringclusteraddons-configurationarguments.htm#contengconfiguringclusteraddons-supportedarguments>ClusterAddon documentation</a> for the supported configuration of each addon.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "ssh_public_key",
+    "type": "string",
+    "description": "The contents of the SSH public key file, optionally base64-encoded. Used to allow login for workers/bastion/operator with corresponding private key.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "cluster_autoscaler_helm_version",
+    "type": "string",
+    "description": "Version of the Helm chart to install. List available releases using `helm search repo [keyword] --versions`.",
+    "default": "\"9.24.0\"",
+    "required": false
+  },
+  {
+    "name": "operator_install_oci_cli_from_repo",
+    "type": "bool",
+    "description": "Whether to install OCI from repo on the created operator host.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "bastion_freeform_tags",
+    "type": "map(string)",
+    "description": "Freeform tags applied to created resources.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "preferred_load_balancer",
+    "type": "string",
+    "description": "The preferred load balancer subnets that OKE will automatically choose when creating a load balancer. Valid values are 'public' or 'internal'. If 'public' is chosen, the value for load_balancers must be either 'public' or 'both'. If 'private' is chosen, the value for load_balancers must be either 'internal' or 'both'. NOTE: Service annotations for internal load balancers must still be specified regardless of this setting. See <a href=https://github.com/oracle/oci-cloud-controller-manager/blob/master/docs/load-balancer-annotations.md>Load Balancer Annotations</a> for more information.",
+    "default": "\"public\"",
+    "required": false
+  },
+  {
+    "name": "multus_version",
+    "type": "string",
+    "description": "Version of Multus to install. Ignored when an explicit value for multus_daemonset_url is provided.",
+    "default": "\"3.9.3\"",
+    "required": false
+  },
+  {
+    "name": "sriov_cni_plugin_daemonset_url",
+    "type": "string",
+    "description": "The URL path to the manifest. Leave unset for tags of <a href=https://github.com/openshift/sriov-cni</a> using sriov_cni_plugin_version.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "worker_compartment_id",
+    "type": "string",
+    "description": "The compartment id where worker group resources will be created.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "persistent_volume_freeform_tags",
+    "type": "map(string)",
+    "description": "Freeform tags applied to created resources.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "ocir_secret_id",
+    "type": "string",
+    "description": "The OCI Vault secret ID for the OCIR authentication token.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "worker_drain_delete_local_data",
+    "type": "bool",
+    "description": "Whether to accept removal of data stored locally on draining worker pools. See <a href=https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#drain>kubectl drain</a> for more information.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "worker_image_os_version",
+    "type": "string",
+    "description": "Default worker image operating system version when worker_image_type = 'oke' or 'platform' and unspecified on a pool.",
+    "default": "\"8\"",
+    "required": false
+  },
+  {
+    "name": "assign_dns",
+    "type": "bool",
+    "description": "Whether to assign DNS records to created instances or disable DNS resolution of hostnames in the VCN.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "home_region",
+    "type": "string",
+    "description": "The tenancy's home region. Required to perform identity operations.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "oidc_discovery_enabled",
+    "type": "bool",
+    "description": "Whether the cluster has OIDC Discovery enabled. See <a href=https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengOpenIDConnect-Discovery.htm>OIDC Discovery configuration documentation</a>.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "control_plane_allowed_cidrs",
+    "type": "list(string)",
+    "description": "The list of CIDR blocks from which the control plane can be accessed.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "max_pods_per_node",
+    "type": "number",
+    "description": "The default maximum number of pods to deploy per node when unspecified on a pool. Absolute maximum is 110. Ignored when when cni_type != 'npn'.",
+    "default": "31",
+    "required": false
+  },
+  {
+    "name": "worker_compute_clusters",
+    "type": "map(any)",
+    "description": "Whether to create compute clusters shared by nodes across multiple worker pools enabled for 'compute-cluster'.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "worker_image_id",
+    "type": "string",
+    "description": "Default image for worker pools  when unspecified on a pool.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "bastion_allowed_cidrs",
+    "type": "list(string)",
+    "description": "A list of CIDR blocks to allow SSH access to the bastion host. NOTE: Default is empty i.e. no access permitted. Allow access from anywhere with '0.0.0.0/0'.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "iam_freeform_tags",
+    "type": "map(string)",
+    "description": "Freeform tags applied to created resources.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "operator_image_id",
+    "type": "string",
+    "description": "Image ID for created operator instance.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "ocir_username",
+    "type": "string",
+    "description": "A username with access to the OCI Vault secret for OCIR access. Required when 'ocir_secret_id' is provided.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "cluster_id",
+    "type": "string",
+    "description": "An existing OKE cluster OCID when `create_cluster = false`.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "oidc_token_auth_enabled",
+    "type": "bool",
+    "description": "Whether the cluster has OIDC Auth Config enabled.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "drg_compartment_id",
+    "type": "string",
+    "description": "Compartment for the DRG resource. Can be used to override network_compartment_id.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "assign_public_ip_to_control_plane",
+    "type": "bool",
+    "description": "Whether to assign a public IP address to the API endpoint for public access. Requires the control plane subnet to be public to assign a public IP address.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "rdma_cni_plugin_namespace",
+    "type": "string",
+    "description": "Kubernetes namespace for deployed resources.",
+    "default": "\"network\"",
+    "required": false
+  },
+  {
+    "name": "ocir_secret_name",
+    "type": "string",
+    "description": "The name of the Kubernetes secret to be created with the OCIR authentication token.",
+    "default": "\"ocirsecret\"",
+    "required": false
+  },
+  {
+    "name": "worker_cloud_init",
+    "type": "list(map(string))",
+    "description": "List of maps containing cloud init MIME part configuration for worker nodes. Merged with pool-specific definitions. See https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/cloudinit_config.html#part for expected schema of each element.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "rdma_cni_plugin_install",
+    "type": "bool",
+    "description": "Whether to deploy the RDMA CNI Plugin. See <a href=https://github.com/Mellanox/rdma-cni>Mellanox/rdma-cni</a>. NOTE: Provided only as a convenience and not supported by or sourced from Oracle - use at your own risk.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "create_iam_worker_policy",
+    "type": "string",
+    "description": "Whether to create an IAM dynamic group and policy rules for self-managed worker nodes. Depends on configuration of associated components when set to 'auto'. Ignored when 'create_iam_resources' is false.",
+    "default": "\"auto\"",
+    "required": false
+  },
+  {
+    "name": "worker_capacity_reservation_id",
+    "type": "string",
+    "description": "The ID of the Compute capacity reservation the worker node will be launched under. See <a href=https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/reserve-capacity.htm>Capacity Reservations</a> for more information.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "api_private_key_password",
+    "type": "string",
+    "description": "The corresponding private key password to use with the api private key if it is encrypted.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "defined_tags",
+    "type": "any",
+    "description": "Defined tags to be applied to created resources. Must already exist in the tenancy.",
+    "default": "{\n  \"bastion\": {},\n  \"cluster\": {},\n  \"iam\": {},\n  \"network\": {},\n  \"operator\": {},\n  \"persistent_volume\": {},\n  \"service_lb\": {},\n  \"workers\": {}\n}",
+    "required": false
+  },
+  {
+    "name": "operator_upgrade",
+    "type": "bool",
+    "description": "Whether to upgrade operator packages after provisioning.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "worker_image_type",
+    "type": "string",
+    "description": "Whether to use a platform, OKE, or custom image for worker nodes by default when unspecified on a pool. When custom is set, the worker_image_id must be specified.",
+    "default": "\"oke\"",
+    "required": false
+  },
+  {
+    "name": "bastion_await_cloudinit",
+    "type": "bool",
+    "description": "Whether to block until successful connection to bastion and completion of cloud-init.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "bastion_shape",
+    "type": "map(any)",
+    "description": "The shape of bastion instance. Baseline OCPU utilization can be used to provision <a href=https://docs.oracle.com/en-us/iaas/Content/Compute/References/burstable-instances.htm>burstable shapes.</a>",
+    "default": "{\n  \"baseline_ocpu_utilization\": 100,\n  \"boot_volume_size\": 50,\n  \"memory\": 4,\n  \"ocpus\": 1,\n  \"shape\": \"VM.Standard.E4.Flex\"\n}",
+    "required": false
+  },
+  {
+    "name": "agent_config",
+    "type": "object({\n    are_all_plugins_disabled = bool,\n    is_management_disabled   = bool,\n    is_monitoring_disabled   = bool,\n    plugins_config           = map(string),\n  })",
+    "description": "Default agent_config for self-managed worker pools created with mode: 'instance', 'instance-pool', or 'cluster-network'. See <a href=https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/InstanceAgentConfig for more information.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "state_id",
+    "type": "string",
+    "description": "Optional Terraform state_id from an existing deployment of the module to re-use with created resources.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "ssh_public_key_path",
+    "type": "string",
+    "description": "A path on the local filesystem to the SSH public key. Used to allow login for workers/bastion/operator with corresponding private key.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "metrics_server_helm_values_files",
+    "type": "list(string)",
+    "description": "Paths to a local YAML files with Helm chart values (as with `helm install -f` which supports multiple). Generate with defaults using `helm show values [CHART] [flags]`.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "gatekeeper_namespace",
+    "type": "string",
+    "description": "Kubernetes namespace for deployed resources.",
+    "default": "\"kube-system\"",
+    "required": false
+  },
+  {
+    "name": "argocd_namespace",
+    "type": "string",
+    "description": "Kubernetes namespace for deployed resources.",
+    "default": "\"argocd\"",
+    "required": false
+  },
+  {
+    "name": "allow_rules_internal_lb",
+    "type": "any",
+    "description": "A map of additional rules to allow incoming traffic for internal load balancers.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "cluster_name",
+    "type": "string",
+    "description": "The name of oke cluster.",
+    "default": "\"oke\"",
+    "required": false
+  },
+  {
+    "name": "sriov_device_plugin_daemonset_url",
+    "type": "string",
+    "description": "The URL path to the manifest. Leave unset for tags of <a href=https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin>k8snetworkplumbingwg/sriov-network-device-plugin</a> using sriov_device_plugin_version.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "prometheus_helm_values",
+    "type": "map(string)",
+    "description": "Map of individual Helm chart values. See <a href=https://registry.terraform.io/providers/hashicorp/helm/latest/docs/data-sources/template>data.helm_template</a>.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "dcgm_exporter_namespace",
+    "type": "string",
+    "description": "Kubernetes namespace for deployed resources.",
+    "default": "\"metrics\"",
+    "required": false
+  },
+  {
+    "name": "network_compartment_id",
+    "type": "string",
+    "description": "The compartment id where network resources will be created.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "allow_worker_ssh_access",
+    "type": "bool",
+    "description": "Whether to allow SSH access to worker nodes.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "metrics_server_helm_values",
+    "type": "map(string)",
+    "description": "Map of individual Helm chart values. See <a href=https://registry.terraform.io/providers/hashicorp/helm/latest/docs/data-sources/template>data.helm_template</a>.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "prometheus_reapply",
+    "type": "bool",
+    "description": "Whether to force reapply of the Prometheus Helm chart when no changes are detected, e.g. with state modified externally.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "dcgm_exporter_helm_values_files",
+    "type": "list(string)",
+    "description": "Paths to a local YAML files with Helm chart values (as with `helm install -f` which supports multiple). Generate with defaults using `helm show values [CHART] [flags]`.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "gatekeeper_install",
+    "type": "bool",
+    "description": "Whether to deploy the Gatekeeper Helm chart. See https://github.com/open-policy-agent/gatekeeper. NOTE: Provided only as a convenience and not supported by or sourced from Oracle - use at your own risk.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "cluster_freeform_tags",
+    "type": "map(string)",
+    "description": "Freeform tags applied to created resources.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "cni_type",
+    "type": "string",
+    "description": "The CNI for the cluster: 'flannel' or 'npn'. See <a href=https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengpodnetworking.htm>Pod Networking</a>.",
+    "default": "\"flannel\"",
+    "required": false
+  },
+  {
+    "name": "vcn_enable_ipv6_gua",
+    "type": "bool",
+    "description": "Whether to enable IPv6 GUA when IPv6 is enabled.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "cluster_dns",
+    "type": "string",
+    "description": "Cluster DNS resolver IP address. Determined automatically when not set (recommended).",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "worker_nsg_ids",
+    "type": "list(string)",
+    "description": "An additional list of network security group (NSG) IDs for node security. Combined with 'nsg_ids' specified on each pool.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "dcgm_exporter_install",
+    "type": "bool",
+    "description": "Whether to deploy the DCGM exporter Helm chart. See <a href=https://docs.nvidia.com/datacenter/cloud-native/gpu-telemetry/dcgm-exporter.html>DCGM-Exporter</a>. NOTE: Provided only as a convenience and not supported by or sourced from Oracle - use at your own risk.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "operator_user",
+    "type": "string",
+    "description": "User for SSH access to operator host.",
+    "default": "\"opc\"",
+    "required": false
+  },
+  {
+    "name": "worker_pool_mode",
+    "type": "string",
+    "description": "Default management mode for workers when unspecified on a pool.",
+    "default": "\"node-pool\"",
+    "required": false
+  },
+  {
+    "name": "vcn_ipv6_ula_cidrs",
+    "type": "list(string)",
+    "description": "IPv6 ULA CIDR blocks to be used for the VCN.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "bastion_nsg_ids",
+    "type": "list(string)",
+    "description": "An additional list of network security group (NSG) IDs for bastion security.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "bastion_image_os",
+    "type": "string",
+    "description": "Bastion image operating system name when bastion_image_type = 'platform'.",
+    "default": "\"Oracle Autonomous Linux\"",
+    "required": false
+  },
+  {
+    "name": "bastion_volume_kms_key_id",
+    "type": "string",
+    "description": "The OCID of the OCI KMS key to assign as the master encryption key for the bastion host boot volume.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "services_cidr",
+    "type": "string",
+    "description": "The CIDR range used within the cluster by Kubernetes services (ClusterIPs). This CIDR should not overlap with the VCN CIDR range.",
+    "default": "\"10.96.0.0/16\"",
+    "required": false
+  },
+  {
+    "name": "oidc_token_authentication_config",
+    "type": "any",
+    "description": "The properties that configure OIDC token authentication in kube-apiserver. See <a href=https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengOpenIDConnect-Authentication.htm>OIDC Token Authentication configuration documentation</a>.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "api_private_key",
+    "type": "string",
+    "description": "The contents of the private key file to use with OCI API, optionally base64-encoded. This takes precedence over private_key_path if both are specified in the provider.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "service_lb_freeform_tags",
+    "type": "map(string)",
+    "description": "Freeform tags applied to created resources.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "nat_gateway_public_ip_id",
+    "type": "string",
+    "description": "OCID of reserved IP address for NAT gateway. The reserved public IP address needs to be manually created.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "control_plane_nsg_ids",
+    "type": "set(string)",
+    "description": "An additional list of network security groups (NSG) ids for the cluster endpoint.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "pods_cidr",
+    "type": "string",
+    "description": "The CIDR range used for IP addresses by the pods. A /16 CIDR is generally sufficient. This CIDR should not overlap with any subnet range in the VCN (it can also be outside the VCN CIDR range). Ignored when cni_type = 'npn'.",
+    "default": "\"10.244.0.0/16\"",
+    "required": false
+  },
+  {
+    "name": "prometheus_namespace",
+    "type": "string",
+    "description": "Kubernetes namespace for deployed resources.",
+    "default": "\"metrics\"",
+    "required": false
+  },
+  {
+    "name": "operator_cloud_init",
+    "type": "list(map(string))",
+    "description": "List of maps containing cloud init MIME part configuration for operator host. See https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/cloudinit_config.html#part for expected schema of each element.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "await_node_readiness",
+    "type": "string",
+    "description": "Optionally block completion of Terraform apply until one/all worker nodes become ready.",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "worker_pools",
+    "type": "any",
+    "description": "Tuple of OKE worker pools where each key maps to the OCID of an OCI resource, and value contains its definition.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "mpi_operator_install",
+    "type": "bool",
+    "description": "Whether to deploy the MPI Operator. See <a href=https://github.com/kubeflow/mpi-operator>kubeflow/mpi-operator</a>. NOTE: Provided only as a convenience and not supported by or sourced from Oracle - use at your own risk.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "mpi_operator_version",
+    "type": "string",
+    "description": "Version to install. Ignored when an explicit value for mpi_operator_deployment_url is provided.",
+    "default": "\"0.4.0\"",
+    "required": false
+  },
+  {
+    "name": "operator_await_cloudinit",
+    "type": "bool",
+    "description": "Whether to block until successful connection to operator and completion of cloud-init.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "use_signed_images",
+    "type": "bool",
+    "description": "Whether to enforce the use of signed images. If set to true, at least 1 RSA key must be provided through image_signing_keys.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "persistent_volume_defined_tags",
+    "type": "map(string)",
+    "description": "Defined tags applied to created resources.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "workers_defined_tags",
+    "type": "map(string)",
+    "description": "Defined tags applied to created resources.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "operator_install_kubectx",
+    "type": "bool",
+    "description": "Whether to install kubectx/kubens on the created operator host. NOTE: Provided only as a convenience and not supported by or sourced from Oracle - use at your own risk.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "ssh_private_key_path",
+    "type": "string",
+    "description": "A path on the local filesystem to the SSH private key. May be provided via SSH agent when unset.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "sriov_cni_plugin_install",
+    "type": "bool",
+    "description": "Whether to deploy the SR-IOV CNI Plugin. See <a href=https://github.com/openshift/sriov-cni</a>. NOTE: Provided only as a convenience and not supported by or sourced from Oracle - use at your own risk.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "sriov_cni_plugin_namespace",
+    "type": "string",
+    "description": "Kubernetes namespace for deployed resources.",
+    "default": "\"network\"",
+    "required": false
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "The compartment id where resources will be created.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "create_vcn",
+    "type": "bool",
+    "description": "Whether to create a Virtual Cloud Network.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "worker_is_public",
+    "type": "bool",
+    "description": "Whether to provision workers with public IPs allocated by default when unspecified on a pool. It should be true when creating dual-stack clusters.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "bastion_is_public",
+    "type": "bool",
+    "description": "Whether to create allocate a public IP and subnet for the created bastion host.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "dcgm_exporter_helm_version",
+    "type": "string",
+    "description": "Version of the Helm chart to install. List available releases using `helm search repo [keyword] --versions`.",
+    "default": "\"3.1.5\"",
+    "required": false
+  },
+  {
+    "name": "service_lb_defined_tags",
+    "type": "map(string)",
+    "description": "Defined tags applied to created resources.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "vcn_cidrs",
+    "type": "list(string)",
+    "description": "The list of IPv4 CIDR blocks the VCN will use.",
+    "default": "[\n  \"10.0.0.0/16\"\n]",
+    "required": false
+  },
+  {
+    "name": "allow_rules_pods",
+    "type": "any",
+    "description": "A map of additional rules to allow traffic for the pods.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "bastion_defined_tags",
+    "type": "map(string)",
+    "description": "Defined tags applied to created resources.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "allow_worker_internet_access",
+    "type": "bool",
+    "description": "Allow worker nodes to egress to internet. Required if container images are in a registry other than OCIR.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "kubernetes_version",
+    "type": "string",
+    "description": "The version of kubernetes to use when provisioning OKE or to upgrade an existing OKE cluster to.",
+    "default": "\"v1.34.2\"",
+    "required": false
+  },
+  {
+    "name": "vcn_create_internet_gateway",
+    "type": "string",
+    "description": "Whether to create an internet gateway with the VCN. Defaults to automatic creation when public network resources are expected to utilize it.",
+    "default": "\"auto\"",
+    "required": false
+  },
+  {
+    "name": "nat_gateway_id",
+    "type": "string",
+    "description": "Optional ID of existing NAT gateway in VCN.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "allow_pod_internet_access",
+    "type": "bool",
+    "description": "Allow pods to egress to internet. Ignored when cni_type != 'npn'.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "worker_pv_transit_encryption",
+    "type": "bool",
+    "description": "Whether to enable in-transit encryption for the data volume's paravirtualized attachment by default when unspecified on a pool.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "sriov_device_plugin_install",
+    "type": "bool",
+    "description": "Whether to deploy the SR-IOV Network Device Plugin. See <a href=https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin>k8snetworkplumbingwg/sriov-network-device-plugin</a>. NOTE: Provided only as a convenience and not supported by or sourced from Oracle - use at your own risk.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "create_operator",
+    "type": "bool",
+    "description": "Whether to create an operator server in a private subnet.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "operator_install_k9s",
+    "type": "bool",
+    "description": "Whether to install k9s on the created operator host. NOTE: Provided only as a convenience and not supported by or sourced from Oracle - use at your own risk.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "operator_legacy_imds_endpoints_disabled",
+    "type": "bool",
+    "description": "Whether to disable requests to the IMDSv1 endpoint and only allow requests to the IMDSv2 endpoint for the operator instance.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "igw_ngw_mixed_route_id",
+    "type": "string",
+    "description": "Optional ID of the existing route table in VCN using IGW for IPv6 and NGW for IPv4.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "metrics_server_install",
+    "type": "bool",
+    "description": "Whether to deploy the Kubernetes Metrics Server Helm chart. See <a href=https://github.com/kubernetes-sigs/metrics-server>kubernetes-sigs/metrics-server</a>. NOTE: Provided only as a convenience and not supported by or sourced from Oracle - use at your own risk.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "current_user_ocid",
+    "type": "string",
+    "description": "A user OCID automatically populated by Resource Manager.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "drg_id",
+    "type": "string",
+    "description": "ID of an external created Dynamic Routing Gateway to be attached to the VCN.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "allow_bastion_cluster_access",
+    "type": "bool",
+    "description": "Whether to allow access to the Kubernetes cluster endpoint from the bastion host.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "operator_install_helm",
+    "type": "bool",
+    "description": "Whether to install Helm on the created operator host.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "platform_config",
+    "type": "object({\n    type                                           = optional(string),\n    are_virtual_instructions_enabled               = optional(bool),\n    is_access_control_service_enabled              = optional(bool),\n    is_input_output_memory_management_unit_enabled = optional(bool),\n    is_measured_boot_enabled                       = optional(bool),\n    is_memory_encryption_enabled                   = optional(bool),\n    is_secure_boot_enabled                         = optional(bool),\n    is_symmetric_multi_threading_enabled           = optional(bool),\n    is_trusted_platform_module_enabled             = optional(bool),\n    numa_nodes_per_socket                          = optional(number),\n    percentage_of_cores_enabled                    = optional(bool),\n  })",
+    "description": "Default platform_config for self-managed worker pools created with mode: 'instance', 'instance-pool', or 'cluster-network'. See <a href=https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PlatformConfig>PlatformConfig</a> for more information.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "oke_ip_families",
+    "type": "list(string)",
+    "description": "Override the ip_families attribute for the OKE cluster. Supported values: ['IPv4'] or ['IPV4', 'IPv6']",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "bastion_image_os_version",
+    "type": "string",
+    "description": "Bastion image operating system version when bastion_image_type = 'platform'.",
+    "default": "\"8\"",
+    "required": false
+  },
+  {
+    "name": "image_signing_keys",
+    "type": "set(string)",
+    "description": "A list of KMS key ids used by the worker nodes to verify signed images. The keys must use RSA algorithm.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "create_iam_resources",
+    "type": "bool",
+    "description": "Whether to create IAM dynamic groups, policies, and tags. Resources for components may be controlled individually with 'create_iam_*' variables when enabled. Ignored when 'create_iam_resources' is false.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "dcgm_exporter_helm_values",
+    "type": "map(string)",
+    "description": "Map of individual Helm chart values. See <a href=https://registry.terraform.io/providers/hashicorp/helm/latest/docs/data-sources/template>data.helm_template</a>.",
+    "default": "{}",
+    "required": false
+  }
+]

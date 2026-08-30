@@ -1,0 +1,10 @@
+[
+  {
+    "name": "waf_logid",
+    "description": ""
+  },
+  {
+    "name": "waf_loggroupid",
+    "description": ""
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "os_readlogid",
+    "description": ""
+  },
+  {
+    "name": "os_writelogid",
+    "description": ""
+  },
+  {
+    "name": "os_loggroupid",
+    "description": ""
+  }
+]

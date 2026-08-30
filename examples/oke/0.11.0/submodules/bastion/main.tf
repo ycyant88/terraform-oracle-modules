@@ -1,0 +1,36 @@
+terraform {
+  required_providers {
+    oci = {
+      source  = "oracle/oci"
+      version = "8.29.0"
+    }
+  }
+}
+
+provider "oci" {
+  # Configuration options
+}
+
+module "oke" {
+  source                         = "oracle-terraform-modules/oke/oci"
+  version                        = "0.11.0"
+  ad_names                       = var.ad_names
+  api_fingerprint                = var.api_fingerprint
+  api_private_key_path           = var.api_private_key_path
+  availability_domains           = var.availability_domains
+  bastion_shape                  = var.bastion_shape
+  compartment_ocid               = var.compartment_ocid
+  create_bastion                 = var.create_bastion
+  ig_route_id                    = var.ig_route_id
+  image_ocid                     = var.image_ocid
+  image_operating_system         = var.image_operating_system
+  image_operating_system_version = var.image_operating_system_version
+  label_prefix                   = var.label_prefix
+  newbits                        = var.newbits
+  region                         = var.region
+  ssh_private_key_path           = var.ssh_private_key_path
+  ssh_public_key_path            = var.ssh_public_key_path
+  subnets                        = var.subnets
+  vcn_cidr                       = var.vcn_cidr
+  vcn_id                         = var.vcn_id
+}

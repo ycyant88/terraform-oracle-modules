@@ -1,0 +1,30 @@
+[
+  {
+    "name": "tenancy_ocid",
+    "type": "string",
+    "description": "The OCID of the tenancy. ",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "user_name",
+    "type": "string",
+    "description": "The name you assign to the user during creation. The name must be unique across all compartments in the tenancy. ",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "user_description",
+    "type": "string",
+    "description": "The description you assign to the user. Does not have to be unique, and it's changeable. ",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "user_create",
+    "type": "string",
+    "description": "Create the user or not. If true, the user must have permissions to create the user; If false, user data will be returned about the user if it exists, if not found, then an empty string will be returned for the user ID.",
+    "default": "true",
+    "required": false
+  }
+]

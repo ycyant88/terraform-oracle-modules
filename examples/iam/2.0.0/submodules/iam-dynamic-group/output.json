@@ -1,0 +1,18 @@
+[
+  {
+    "name": "dynamic_group_name",
+    "description": ""
+  },
+  {
+    "name": "name_ocid",
+    "description": "group name and associated OCID"
+  },
+  {
+    "name": "dynamic_group_policy_name",
+    "description": ""
+  },
+  {
+    "name": "dynamic_group_id",
+    "description": ""
+  }
+]

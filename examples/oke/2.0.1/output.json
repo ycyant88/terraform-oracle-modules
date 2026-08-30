@@ -1,0 +1,26 @@
+[
+  {
+    "name": "ssh_to_admin",
+    "description": ""
+  },
+  {
+    "name": "ssh_to_bastion",
+    "description": ""
+  },
+  {
+    "name": "kubeconfig",
+    "description": ""
+  },
+  {
+    "name": "ocirtoken",
+    "description": ""
+  },
+  {
+    "name": "bastion_public_ip",
+    "description": ""
+  },
+  {
+    "name": "admin_private_ip",
+    "description": ""
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "users",
+    "type": "list(object({\n    name = string\n    description = string\n    email = string\n  }))",
+    "description": "The name and description you assign to the user during creation. The name must be unique across all compartments in the tenancy. ",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "tenancy_ocid",
+    "type": "string",
+    "description": "The OCID of the tenancy.",
+    "default": "null",
+    "required": false
+  }
+]

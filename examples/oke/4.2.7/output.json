@@ -1,0 +1,70 @@
+[
+  {
+    "name": "ig_route_id",
+    "description": "id of route table to vcn internet gateway"
+  },
+  {
+    "name": "operator_private_ip",
+    "description": "private ip address of operator host"
+  },
+  {
+    "name": "cluster_id",
+    "description": "ID of the Kubernetes cluster"
+  },
+  {
+    "name": "nodepool_ids",
+    "description": "Map of Nodepool names and IDs"
+  },
+  {
+    "name": "drg_id",
+    "description": "ID of DRG. use this DRG id to add additional resources"
+  },
+  {
+    "name": "bastion_public_ip",
+    "description": "public ip address of bastion host"
+  },
+  {
+    "name": "ssh_to_operator",
+    "description": "convenient command to ssh to the operator host"
+  },
+  {
+    "name": "subnet_ids",
+    "description": "map of subnet ids (cp, worker, int_lb, pub_lb, pod) used by OKE."
+  },
+  {
+    "name": "vcn_id",
+    "description": "id of vcn where oke is created. use this vcn id to add additional resources"
+  },
+  {
+    "name": "bastion_service_instance_id",
+    "description": ""
+  },
+  {
+    "name": "nat_route_id",
+    "description": "id of route table to nat gateway attached to vcn"
+  },
+  {
+    "name": "kubeconfig",
+    "description": "convenient command to set KUBECONFIG environment variable before running kubectl locally"
+  },
+  {
+    "name": "pub_lb_nsg",
+    "description": "id of default NSG that can be associated with the internal load balancer"
+  },
+  {
+    "name": "ssh_to_bastion",
+    "description": "convenient command to ssh to the bastion host"
+  },
+  {
+    "name": "fss_id",
+    "description": ""
+  },
+  {
+    "name": "int_lb_nsg",
+    "description": "id of default NSG that can be associated with the internal load balancer"
+  },
+  {
+    "name": "nsg_ids",
+    "description": "map of NSG ids (cp, worker, int_lb, pub_lb, pod) used by OKE."
+  }
+]

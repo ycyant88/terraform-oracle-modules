@@ -1,0 +1,44 @@
+terraform {
+  required_providers {
+    oci = {
+      source  = "oracle/oci"
+      version = "8.29.0"
+    }
+  }
+}
+
+provider "oci" {
+  # Configuration options
+}
+
+module "oke" {
+  source                         = "oracle-terraform-modules/oke/oci"
+  version                        = "0.11.0"
+  api_fingerprint                = var.api_fingerprint
+  api_private_key_path           = var.api_private_key_path
+  availability_domains           = var.availability_domains
+  bastion_shape                  = var.bastion_shape
+  compartment_name               = var.compartment_name
+  compartment_ocid               = var.compartment_ocid
+  create_bastion                 = var.create_bastion
+  create_nat_gateway             = var.create_nat_gateway
+  create_service_gateway         = var.create_service_gateway
+  disable_auto_retries           = var.disable_auto_retries
+  enable_instance_principal      = var.enable_instance_principal
+  image_ocid                     = var.image_ocid
+  image_operating_system         = var.image_operating_system
+  image_operating_system_version = var.image_operating_system_version
+  label_prefix                   = var.label_prefix
+  nat_gateway_name               = var.nat_gateway_name
+  newbits                        = var.newbits
+  region                         = var.region
+  service_gateway_name           = var.service_gateway_name
+  ssh_private_key_path           = var.ssh_private_key_path
+  ssh_public_key_path            = var.ssh_public_key_path
+  subnets                        = var.subnets
+  tenancy_ocid                   = var.tenancy_ocid
+  user_ocid                      = var.user_ocid
+  vcn_cidr                       = var.vcn_cidr
+  vcn_dns_name                   = var.vcn_dns_name
+  vcn_name                       = var.vcn_name
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "name": "ad_names",
+    "type": "list(string)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "node_pools",
+    "type": "object({\n    node_pools            = map(any)\n    node_pool_name_prefix = string\n    node_pool_image_id    = string\n    node_pool_os          = string\n    node_pool_os_version  = string\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "oke_ocir",
+    "type": "object({\n    secret_id     = string\n    email_address = string\n    ocir_urls     = map(string)\n    tenancy_name  = string\n    username      = string\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "metricserver_enabled",
+    "type": "string",
+    "description": "",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "nodepool_upgrade_method",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "node_pools_to_drain",
+    "type": "list(string)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "helm",
+    "type": "object({\n    helm_enabled = bool\n    helm_version = string\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "service_account",
+    "type": "object({\n    create_service_account               = bool\n    service_account_name                 = string\n    service_account_namespace            = string\n    service_account_cluster_role_binding = string\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "region",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "oke_ssh_keys",
+    "type": "object({\n    ssh_private_key_path = string\n    ssh_public_key_path  = string\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "oke_operator",
+    "type": "object({\n    bastion_public_ip           = string\n    operator_private_ip         = string\n    bastion_enabled             = bool\n    operator_enabled            = bool\n    operator_instance_principal = bool\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "oke_cluster",
+    "type": "object({\n    cluster_kubernetes_version                              = string\n    cluster_name                                            = string\n    cluster_options_add_ons_is_kubernetes_dashboard_enabled = bool\n    cluster_options_kubernetes_network_config_pods_cidr     = string\n    cluster_options_kubernetes_network_config_services_cidr = string\n    cluster_subnets                                         = map(string)\n    vcn_id                                                  = string\n\n    # encryption\n    use_encryption = bool\n    kms_key_id     = string\n\n    # admission controller options\n    admission_controller_options = map(bool)\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "calico",
+    "type": "object({\n    calico_enabled = bool\n    calico_version = string\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "label_prefix",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "lbs",
+    "type": "object({\n    preferred_lb_subnets = string\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "check_node_active",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "nodepool_drain",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  }
+]
