@@ -1,3 +1,3 @@
 # terraform-oracle-modules
 
-A collection of Terraform Oracle modules
+Collection of Terraform Oracle modules

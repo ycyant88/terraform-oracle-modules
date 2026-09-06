@@ -1,3 +1,0 @@
-path = ""
-
-schema_names = ""

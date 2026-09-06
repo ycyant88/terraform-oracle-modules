@@ -1,10 +1,7 @@
 {
 	"name": "Dev Containers terraform-oracle-modules",
 	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			"VARIANT": "ubuntu24.04"
-		}
+		"dockerfile": "Dockerfile"
 	},
 	"mounts": [
 		"source=dev-containers-terraform-oracle-modules-bashhistory,target=/home/vscode/commandhistory"
@@ -17,7 +14,7 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"GitHub.copilot",
+				"github.copilot-chat",
 				"hashicorp.hcl"
 			]
 		}

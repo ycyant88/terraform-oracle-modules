@@ -1,3 +1,0 @@
-tenancy_ocid = ""
-
-users = ""
