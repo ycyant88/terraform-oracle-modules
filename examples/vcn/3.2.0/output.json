@@ -1,0 +1,70 @@
+[
+  {
+    "name": "ig_route_id",
+    "description": "id of internet gateway route table"
+  },
+  {
+    "name": "nat_route_all_attributes",
+    "description": "all attributes of created nat gateway route table"
+  },
+  {
+    "name": "service_gateway_all_attributes",
+    "description": "all attributes of created service gateway"
+  },
+  {
+    "name": "drg_summary",
+    "description": ""
+  },
+  {
+    "name": "rpc_id",
+    "description": "id of rpc if it is created"
+  },
+  {
+    "name": "service_gateway_id",
+    "description": "id of service gateway if it is created"
+  },
+  {
+    "name": "nat_route_id",
+    "description": "id of VCN NAT gateway route table"
+  },
+  {
+    "name": "internet_gateway_all_attributes",
+    "description": "all attributes of created internet gateway"
+  },
+  {
+    "name": "ig_route_all_attributes",
+    "description": "all attributes of created ig route table"
+  },
+  {
+    "name": "vcn_all_attributes",
+    "description": "all attributes of created vcn"
+  },
+  {
+    "name": "vcn_id",
+    "description": "id of vcn that is created"
+  },
+  {
+    "name": "drg_id",
+    "description": "Deprecated: Use drg sub-module instead. id of drg if it is created"
+  },
+  {
+    "name": "nat_gateway_id",
+    "description": "id of nat gateway if it is created"
+  },
+  {
+    "name": "internet_gateway_id",
+    "description": "id of internet gateway if it is created"
+  },
+  {
+    "name": "nat_gateway_all_attributes",
+    "description": "all attributes of created nat gateway"
+  },
+  {
+    "name": "drg_attachment_all_attributes",
+    "description": "Deprecated: Use drg sub-module instead. all attributes related to drg attachment"
+  },
+  {
+    "name": "lpg_all_attributes",
+    "description": "all attributes of created lpg"
+  }
+]

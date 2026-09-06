@@ -1,0 +1,65 @@
+[
+  {
+    "name": "policy_compartment_id",
+    "type": "string",
+    "description": "The compartment id where policy is created.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "group_name",
+    "type": "string",
+    "description": "The name you assign to the group during creation. The name must be unique across all compartments in the tenancy.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "group_description",
+    "type": "string",
+    "description": "The description you assign to the Group. Does not have to be unique, and it's changeable. ",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "group_create",
+    "type": "bool",
+    "description": "(Deprecated) Create the group or not. If true, the user must have permissions to create the group; If false, group data will be returned about the group if it exists, if not found, then an empty string will be returned for the group ID.",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "policy_description",
+    "type": "string",
+    "description": "The description you assign to the policy. Does not have to be unique, and it's changeable. ",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "policy_statements",
+    "type": "list(string)",
+    "description": "Define policy consists of one or more policy statements. ",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "tenancy_ocid",
+    "type": "string",
+    "description": "The OCID of the tenancy.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "user_ids",
+    "type": "list(string)",
+    "description": "List of user ocids to be added as group member",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "policy_name",
+    "type": "string",
+    "description": "The name you assign to the policy during creation.  ",
+    "default": "null",
+    "required": false
+  }
+]

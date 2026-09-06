@@ -1,0 +1,170 @@
+[
+  {
+    "name": "autoscaler_compartments",
+    "type": "list(string)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "network_compartment_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_iam_defined_tags",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "tag_namespace",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_iam_resources",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_iam_worker_policy",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cluster_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "state_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_iam_tag_namespace",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "defined_tags",
+    "type": "map(string)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_iam_kms_policy",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_iam_operator_policy",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "policy_name",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cluster_kms_key_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "tenancy_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "enable_ipv6",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "freeform_tags",
+    "type": "map(string)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "use_defined_tags",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "operator_volume_kms_key_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "worker_volume_kms_key_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "worker_compartments",
+    "type": "list(string)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_iam_cluster_policy",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_iam_autoscaler_policy",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "name": "worker_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "worker_pool_ids",
+    "description": "Enabled worker pool IDs"
+  },
+  {
+    "name": "worker_pool_ips",
+    "description": "Created worker instance private IPs by pool for available modes ('node-pool', 'instance')."
+  },
+  {
+    "name": "cluster_ca_cert",
+    "description": "OKE cluster CA certificate"
+  },
+  {
+    "name": "availability_domains",
+    "description": "Availability domains for tenancy & region"
+  },
+  {
+    "name": "ig_route_table_id",
+    "description": "Internet gateway route table ID"
+  },
+  {
+    "name": "operator_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "control_plane_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "int_lb_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "pub_lb_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "operator_nsg_id",
+    "description": "Network Security Group for operator host(s)."
+  },
+  {
+    "name": "cluster_id",
+    "description": "ID of the OKE cluster"
+  },
+  {
+    "name": "pod_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "pub_lb_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "fss_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "control_plane_nsg_id",
+    "description": "Network Security Group for Kubernetes control plane(s)."
+  },
+  {
+    "name": "int_lb_nsg_id",
+    "description": "Network Security Group for internal load balancers."
+  },
+  {
+    "name": "worker_pools",
+    "description": "Created worker pools (mode != 'instance')"
+  },
+  {
+    "name": "bastion_public_ip",
+    "description": "Public IP address of bastion host"
+  },
+  {
+    "name": "operator_id",
+    "description": "ID of operator instance"
+  },
+  {
+    "name": "state_id",
+    "description": ""
+  },
+  {
+    "name": "cluster_oidc_discovery_endpoint",
+    "description": "OIDC discovery endpoint for the OKE cluster"
+  },
+  {
+    "name": "apiserver_private_host",
+    "description": "Private OKE cluster endpoint address"
+  },
+  {
+    "name": "vcn_id",
+    "description": "VCN ID"
+  },
+  {
+    "name": "control_plane_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "pod_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "int_lb_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "fss_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "cluster_kubeconfig",
+    "description": "OKE kubeconfig"
+  },
+  {
+    "name": "bastion_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "bastion_nsg_id",
+    "description": "Network Security Group for bastion host(s)."
+  },
+  {
+    "name": "pub_lb_nsg_id",
+    "description": "Network Security Group for public load balancers."
+  },
+  {
+    "name": "worker_nsg_id",
+    "description": "Network Security Group for worker nodes."
+  },
+  {
+    "name": "pod_nsg_id",
+    "description": "Network Security Group for pods."
+  },
+  {
+    "name": "fss_nsg_id",
+    "description": "Network Security Group for File Storage Service resources."
+  },
+  {
+    "name": "network_security_rules",
+    "description": ""
+  },
+  {
+    "name": "policy_statements",
+    "description": "Cluster IAM policy statements"
+  },
+  {
+    "name": "worker_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "lpg_all_attributes",
+    "description": "all attributes of created lpg"
+  },
+  {
+    "name": "cluster_endpoints",
+    "description": "Endpoints for the OKE cluster"
+  },
+  {
+    "name": "bastion_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "operator_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "drg_id",
+    "description": "Dynamic routing gateway ID"
+  },
+  {
+    "name": "operator_private_ip",
+    "description": "Private IP address of operator host"
+  },
+  {
+    "name": "ssh_to_operator",
+    "description": "SSH command for operator host"
+  },
+  {
+    "name": "worker_instances",
+    "description": "Created worker pools (mode == 'instance')"
+  },
+  {
+    "name": "bastion_id",
+    "description": "ID of bastion instance"
+  },
+  {
+    "name": "ssh_to_bastion",
+    "description": "SSH command for bastion host"
+  },
+  {
+    "name": "dynamic_group_ids",
+    "description": "Cluster IAM dynamic group IDs"
+  },
+  {
+    "name": "nat_route_table_id",
+    "description": "NAT gateway route table ID"
+  }
+]

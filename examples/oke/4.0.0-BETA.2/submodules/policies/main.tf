@@ -1,0 +1,19 @@
+module "oke" {
+  source                      = "oracle-terraform-modules/oke/oci"
+  version                     = "4.0.0-BETA.2"
+  bastion_public_ip           = var.bastion_public_ip
+  bastion_state               = var.bastion_state
+  cluster_id                  = var.cluster_id
+  compartment_id              = var.compartment_id
+  create_bastion_host         = var.create_bastion_host
+  create_operator             = var.create_operator
+  dynamic_group               = var.dynamic_group
+  key_id                      = var.key_id
+  label_prefix                = var.label_prefix
+  operator_instance_principal = var.operator_instance_principal
+  operator_private_ip         = var.operator_private_ip
+  ssh_private_key_path        = var.ssh_private_key_path
+  ssh_public_key_path         = var.ssh_public_key_path
+  tenancy_id                  = var.tenancy_id
+  use_encryption              = var.use_encryption
+}

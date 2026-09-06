@@ -1,0 +1,14 @@
+[
+  {
+    "name": "apigw_accesslogid",
+    "description": ""
+  },
+  {
+    "name": "apigw_execlogid",
+    "description": ""
+  },
+  {
+    "name": "apigw_loggroupid",
+    "description": ""
+  }
+]

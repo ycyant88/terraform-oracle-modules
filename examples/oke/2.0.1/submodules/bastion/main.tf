@@ -1,0 +1,9 @@
+module "oke" {
+  source                   = "oracle-terraform-modules/oke/oci"
+  version                  = "2.0.1"
+  oci_base_identity        = var.oci_base_identity
+  oci_bastion              = var.oci_bastion
+  oci_bastion_general      = var.oci_bastion_general
+  oci_bastion_network      = var.oci_bastion_network
+  oci_bastion_notification = var.oci_bastion_notification
+}

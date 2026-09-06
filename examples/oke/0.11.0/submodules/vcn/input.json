@@ -1,0 +1,65 @@
+[
+  {
+    "name": "vcn_name",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "label_prefix",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_nat_gateway",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "vcn_dns_name",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "service_gateway_name",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "vcn_cidr",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "compartment_ocid",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "nat_gateway_name",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_service_gateway",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  }
+]

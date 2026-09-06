@@ -1,0 +1,128 @@
+[
+  {
+    "name": "load_balancers",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "internal_lb_allowed_ports",
+    "type": "list(any)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "public_lb_allowed_cidrs",
+    "type": "list(any)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "label_prefix",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ig_route_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "allow_node_port_access",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "allow_worker_internet_access",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "public_lb_allowed_ports",
+    "type": "list(any)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "subnets",
+    "type": "map(any)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "vcn_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "control_plane_allowed_cidrs",
+    "type": "list(string)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "enable_waf",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "worker_type",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "internal_lb_allowed_cidrs",
+    "type": "list(any)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "nat_route_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "control_plane_type",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "allow_worker_ssh_access",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  }
+]

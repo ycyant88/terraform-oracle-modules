@@ -1,0 +1,10 @@
+[
+  {
+    "name": "vpn_logid",
+    "description": "VPN log id"
+  },
+  {
+    "name": "vpn_loggroupid",
+    "description": "VPN loggroup id"
+  }
+]

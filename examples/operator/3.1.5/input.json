@@ -1,0 +1,184 @@
+[
+  {
+    "name": "operator_notification_protocol",
+    "type": "string",
+    "description": "The notification protocol used.",
+    "default": "\"EMAIL\"",
+    "required": false
+  },
+  {
+    "name": "nsg_ids",
+    "type": "list(string)",
+    "description": "Optional list of network security groups that the operator will be part of",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "operator_image_id",
+    "type": "string",
+    "description": "Provide a custom image id for the operator host or leave as Oracle.",
+    "default": "\"Oracle\"",
+    "required": false
+  },
+  {
+    "name": "operator_os_version",
+    "type": "string",
+    "description": "The version of the Oracle Linux to use.",
+    "default": "\"8\"",
+    "required": false
+  },
+  {
+    "name": "ssh_public_key",
+    "type": "string",
+    "description": "the content of the ssh public key used to access the operator. set this or the ssh_public_key_path",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "boot_volume_encryption_key",
+    "type": "string",
+    "description": "The OCID of the OCI KMS key to assign as the master encryption key for the boot volume.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "enable_operator_notification",
+    "type": "bool",
+    "description": "Whether to enable ONS notification for the operator host.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "operator_notification_endpoint",
+    "type": "string",
+    "description": "The subscription notification endpoint. Email address to be notified.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "label_prefix",
+    "type": "string",
+    "description": "a string that will be prepended to all resources",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "assign_dns",
+    "type": "bool",
+    "description": "Whether to assign DNS records for operator subnet",
+    "default": "true",
+    "required": false
+  },
+  {
+    "name": "newbits",
+    "type": "number",
+    "description": "The difference between the VCN's netmask and the desired operator subnet mask",
+    "default": "13",
+    "required": false
+  },
+  {
+    "name": "vcn_id",
+    "type": "string",
+    "description": "The id of the VCN to use when creating the operator resources.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "compartment id where to create all resources",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "availability_domain",
+    "type": "number",
+    "description": "the AD to place the operator host",
+    "default": "1",
+    "required": false
+  },
+  {
+    "name": "netnum",
+    "type": "number",
+    "description": "0-based index of the operator subnet when the VCN's CIDR is masked with the corresponding newbit value.",
+    "default": "33",
+    "required": false
+  },
+  {
+    "name": "operator_shape",
+    "type": "map(any)",
+    "description": "The shape of the operator instance.",
+    "default": "{\n  \"boot_volume_size\": 50,\n  \"memory\": 4,\n  \"ocpus\": 1,\n  \"shape\": \"VM.Standard.E4.Flex\"\n}",
+    "required": false
+  },
+  {
+    "name": "operator_state",
+    "type": "string",
+    "description": "The target state for the instance. Could be set to RUNNING or STOPPED. (Updatable)",
+    "default": "\"RUNNING\"",
+    "required": false
+  },
+  {
+    "name": "enable_pv_encryption_in_transit",
+    "type": "bool",
+    "description": "Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "operator_notification_topic",
+    "type": "string",
+    "description": "The name of the notification topic",
+    "default": "\"operator\"",
+    "required": false
+  },
+  {
+    "name": "tenancy_id",
+    "type": "string",
+    "description": "tenancy id where to create the sources",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "nat_route_id",
+    "type": "string",
+    "description": "the id of the route table to the nat gateway.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "enable_operator_instance_principal",
+    "type": "bool",
+    "description": "whether to enable instance_principal on the operator",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "freeform_tags",
+    "type": "map(any)",
+    "description": "Freeform tags for operator",
+    "default": "{\n  \"access\": \"restricted\",\n  \"environment\": \"dev\",\n  \"role\": \"operator\"\n}",
+    "required": false
+  },
+  {
+    "name": "operator_timezone",
+    "type": "string",
+    "description": "The preferred timezone for the operator host.",
+    "default": "\"Australia/Sydney\"",
+    "required": false
+  },
+  {
+    "name": "ssh_public_key_path",
+    "type": "string",
+    "description": "path to the ssh public key used to access the operator. set this or the ssh_public_key",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "upgrade_operator",
+    "type": "bool",
+    "description": "Whether to upgrade the operator host packages after provisioning. It's useful to set this to false during development/testing so the operator is provisioned faster.",
+    "default": "false",
+    "required": false
+  }
+]

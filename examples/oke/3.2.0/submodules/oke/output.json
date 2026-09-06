@@ -1,0 +1,10 @@
+[
+  {
+    "name": "cluster_id",
+    "description": ""
+  },
+  {
+    "name": "nodepool_ids",
+    "description": ""
+  }
+]

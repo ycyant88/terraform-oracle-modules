@@ -1,0 +1,19 @@
+module "oke" {
+  source                       = "oracle-terraform-modules/oke/oci"
+  version                      = "4.0.0-BETA.2"
+  allow_node_port_access       = var.allow_node_port_access
+  allow_worker_internet_access = var.allow_worker_internet_access
+  allow_worker_ssh_access      = var.allow_worker_ssh_access
+  compartment_id               = var.compartment_id
+  control_plane_access         = var.control_plane_access
+  control_plane_access_source  = var.control_plane_access_source
+  enable_waf                   = var.enable_waf
+  ig_route_id                  = var.ig_route_id
+  label_prefix                 = var.label_prefix
+  lb_type                      = var.lb_type
+  nat_route_id                 = var.nat_route_id
+  public_lb_ports              = var.public_lb_ports
+  subnets                      = var.subnets
+  vcn_id                       = var.vcn_id
+  worker_mode                  = var.worker_mode
+}

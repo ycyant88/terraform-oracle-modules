@@ -1,0 +1,22 @@
+[
+  {
+    "name": "nodepool_ids",
+    "description": ""
+  },
+  {
+    "name": "endpoints",
+    "description": ""
+  },
+  {
+    "name": "autoscaling_nodepools",
+    "description": ""
+  },
+  {
+    "name": "cluster_id",
+    "description": ""
+  },
+  {
+    "name": "cluster_kms_dynamic_group_id",
+    "description": ""
+  }
+]

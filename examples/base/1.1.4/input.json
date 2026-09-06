@@ -1,0 +1,44 @@
+[
+  {
+    "name": "oci_base_vcn",
+    "type": "object({\r\n    nat_gateway_enabled     = bool\r\n    service_gateway_enabled = bool\r\n    vcn_cidr                = string\r\n    vcn_dns_label           = string\r\n    vcn_name                = string\r\n  })",
+    "description": "VCN parameters",
+    "default": "{\n  \"nat_gateway_enabled\": true,\n  \"service_gateway_enabled\": true,\n  \"vcn_cidr\": \"10.0.0.0/16\",\n  \"vcn_dns_label\": \"\",\n  \"vcn_name\": \"\"\n}",
+    "required": false
+  },
+  {
+    "name": "oci_base_bastion",
+    "type": "object({\r\n    availability_domains  = number\r\n    bastion_access        = string\r\n    bastion_enabled       = bool\r\n    bastion_image_id      = string\r\n    bastion_shape         = string\r\n    bastion_upgrade       = bool\r\n    netnum                = number\r\n    newbits               = number\r\n    notification_enabled  = bool\r\n    notification_endpoint = string\r\n    notification_protocol = string\r\n    notification_topic    = string\r\n    ssh_private_key_path  = string\r\n    ssh_public_key_path   = string\r\n    timezone              = string\r\n  })",
+    "description": "bastion host parameters",
+    "default": "{\n  \"availability_domains\": 1,\n  \"bastion_access\": \"ANYWHERE\",\n  \"bastion_enabled\": false,\n  \"bastion_image_id\": \"Autonomous\",\n  \"bastion_shape\": \"\",\n  \"bastion_upgrade\": true,\n  \"netnum\": 13,\n  \"newbits\": 32,\n  \"notification_enabled\": false,\n  \"notification_endpoint\": \"\",\n  \"notification_protocol\": \"EMAIL\",\n  \"notification_topic\": \"bastion\",\n  \"ssh_private_key_path\": \"\",\n  \"ssh_public_key_path\": \"\",\n  \"timezone\": \"\"\n}",
+    "required": false
+  },
+  {
+    "name": "oci_base_admin",
+    "type": "object({\r\n    availability_domains      = number\r\n    admin_enabled             = bool\r\n    admin_image_id            = string\r\n    admin_shape               = string\r\n    admin_upgrade             = bool\r\n    enable_instance_principal = bool\r\n    netnum                    = number\r\n    newbits                   = number\r\n    notification_enabled      = bool\r\n    notification_endpoint     = string\r\n    notification_protocol     = string\r\n    notification_topic        = string\r\n    ssh_private_key_path      = string\r\n    ssh_public_key_path       = string\r\n    timezone                  = string\r\n  })",
+    "description": "admin host parameters",
+    "default": "{\n  \"admin_enabled\": false,\n  \"admin_image_id\": \"Oracle\",\n  \"admin_shape\": \"\",\n  \"admin_upgrade\": true,\n  \"availability_domains\": 1,\n  \"enable_instance_principal\": false,\n  \"netnum\": 33,\n  \"newbits\": 13,\n  \"notification_enabled\": false,\n  \"notification_endpoint\": \"\",\n  \"notification_protocol\": \"EMAIL\",\n  \"notification_topic\": \"admin\",\n  \"ssh_private_key_path\": \"\",\n  \"ssh_public_key_path\": \"\",\n  \"timezone\": \"\"\n}",
+    "required": false
+  },
+  {
+    "name": "tagging",
+    "type": "object({\r\n    computetag                = map(any)\r\n    networktag                = map(any)\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "oci_base_identity",
+    "type": "object({\r\n    api_fingerprint      = string\r\n    api_private_key_path = string\r\n    compartment_id       = string\r\n    tenancy_id           = string\r\n    user_id              = string\r\n  })",
+    "description": "oci identity and provider parameters",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "oci_base_general",
+    "type": "object({\r\n    label_prefix = string\r\n    region       = string\r\n  })",
+    "description": "general oci parameters",
+    "default": "{\n  \"label_prefix\": \"\",\n  \"region\": \"\"\n}",
+    "required": false
+  }
+]

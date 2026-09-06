@@ -1,0 +1,72 @@
+[
+  {
+    "name": "kubernetes_version",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "bastion_host",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "bastion_user",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "operator_enabled",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "operator_host",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "operator_user",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ssh_private_key",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cluster_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cluster_addons",
+    "type": "any",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cluster_addons_to_remove",
+    "type": "any",
+    "description": "",
+    "default": "",
+    "required": true
+  }
+]

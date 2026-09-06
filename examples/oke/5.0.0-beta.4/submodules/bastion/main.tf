@@ -1,0 +1,22 @@
+module "oke" {
+  source              = "oracle-terraform-modules/oke/oci"
+  version             = "5.0.0-beta.4"
+  assign_dns          = var.assign_dns
+  availability_domain = var.availability_domain
+  compartment_id      = var.compartment_id
+  defined_tags        = var.defined_tags
+  freeform_tags       = var.freeform_tags
+  image_id            = var.image_id
+  is_public           = var.is_public
+  nsg_ids             = var.nsg_ids
+  shape               = var.shape
+  ssh_private_key     = var.ssh_private_key
+  ssh_public_key      = var.ssh_public_key
+  state_id            = var.state_id
+  subnet_id           = var.subnet_id
+  tag_namespace       = var.tag_namespace
+  timezone            = var.timezone
+  upgrade             = var.upgrade
+  use_defined_tags    = var.use_defined_tags
+  user                = var.user
+}

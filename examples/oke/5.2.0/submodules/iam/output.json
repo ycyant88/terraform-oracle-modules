@@ -1,0 +1,10 @@
+[
+  {
+    "name": "dynamic_group_ids",
+    "description": "Cluster IAM dynamic group IDs"
+  },
+  {
+    "name": "policy_statements",
+    "description": "Cluster IAM policy statements"
+  }
+]

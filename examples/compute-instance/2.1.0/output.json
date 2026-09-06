@@ -1,0 +1,26 @@
+[
+  {
+    "name": "instance_password",
+    "description": "Passwords to login to Windows instance. "
+  },
+  {
+    "name": "instances_summary",
+    "description": "Private and Public IPs for each instance."
+  },
+  {
+    "name": "instance_id",
+    "description": "ocid of created instances. "
+  },
+  {
+    "name": "private_ip",
+    "description": "Private IPs of created instances. "
+  },
+  {
+    "name": "public_ip",
+    "description": "Public IPs of created instances. "
+  },
+  {
+    "name": "instance_username",
+    "description": "Usernames to login to Windows instance. "
+  }
+]

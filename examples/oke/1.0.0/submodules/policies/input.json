@@ -1,0 +1,51 @@
+[
+  {
+    "name": "dynamic_group",
+    "type": "string",
+    "description": "name of dynamic group to allow updating dynamic-groups",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "oke_kms",
+    "type": "object({\n    use_encryption = bool\n    key_id         = string\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cluster_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "oci_identity",
+    "type": "object({\n    api_fingerprint      = string\n    api_private_key_path = string\n    compartment_id       = string\n    compartment_name     = string\n    tenancy_id           = string\n    user_id              = string\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ssh_keys",
+    "type": "object({\n    ssh_private_key_path = string\n    ssh_public_key_path  = string\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "label_prefix",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "bastion",
+    "type": "object({\n    bastion_public_ip         = string\n    create_bastion            = bool\n    enable_instance_principal = bool\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  }
+]

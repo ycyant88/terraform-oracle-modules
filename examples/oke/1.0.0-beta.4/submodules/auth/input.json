@@ -1,0 +1,9 @@
+[
+  {
+    "name": "ocir",
+    "type": "object({\n    api_fingerprint      = string\n    api_private_key_path = string\n    compartment_ocid     = string\n    create_auth_token    = bool\n    home_region          = string\n    tenancy_ocid         = string\n    user_ocid            = string\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  }
+]

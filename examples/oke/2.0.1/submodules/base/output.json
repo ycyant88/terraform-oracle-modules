@@ -1,0 +1,46 @@
+[
+  {
+    "name": "nat_route_id",
+    "description": ""
+  },
+  {
+    "name": "ssh_to_bastion",
+    "description": ""
+  },
+  {
+    "name": "bastion_public_ip",
+    "description": ""
+  },
+  {
+    "name": "group_name",
+    "description": ""
+  },
+  {
+    "name": "ig_route_id",
+    "description": ""
+  },
+  {
+    "name": "nat_gateway_id",
+    "description": ""
+  },
+  {
+    "name": "vcn_id",
+    "description": ""
+  },
+  {
+    "name": "home_region",
+    "description": ""
+  },
+  {
+    "name": "ad_names",
+    "description": ""
+  },
+  {
+    "name": "admin_private_ip",
+    "description": ""
+  },
+  {
+    "name": "ssh_to_admin",
+    "description": ""
+  }
+]

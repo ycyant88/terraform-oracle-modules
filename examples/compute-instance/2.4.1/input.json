@@ -1,0 +1,254 @@
+[
+  {
+    "name": "cloud_agent_plugins",
+    "type": "map(string)",
+    "description": "Whether each Oracle Cloud Agent plugins should be ENABLED or DISABLED.",
+    "default": "{\n  \"autonomous_linux\": \"ENABLED\",\n  \"bastion\": \"ENABLED\",\n  \"block_volume_mgmt\": \"DISABLED\",\n  \"custom_logs\": \"ENABLED\",\n  \"java_management_service\": \"DISABLED\",\n  \"management\": \"DISABLED\",\n  \"monitoring\": \"ENABLED\",\n  \"osms\": \"ENABLED\",\n  \"run_command\": \"ENABLED\",\n  \"vulnerability_scanning\": \"ENABLED\"\n}",
+    "required": false
+  },
+  {
+    "name": "extended_metadata",
+    "type": "map(any)",
+    "description": "(Updatable) Additional metadata key/value pairs that you provide.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "instance_display_name",
+    "type": "string",
+    "description": "(Updatable) A user-friendly name for the instance. Does not have to be unique, and it's changeable.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "boot_volume_backup_policy",
+    "type": "string",
+    "description": "Choose between default backup policies : gold, silver, bronze. Use disabled to affect no backup policy on the Boot Volume.",
+    "default": "\"disabled\"",
+    "required": false
+  },
+  {
+    "name": "ad_number",
+    "type": "number",
+    "description": "The availability domain number of the instance. If none is provided, it will start with AD-1 and continue in round-robin.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "instance_count",
+    "type": "number",
+    "description": "Number of identical instances to launch from a single module.",
+    "default": "1",
+    "required": false
+  },
+  {
+    "name": "public_ip",
+    "type": "string",
+    "description": "Whether to create a Public IP to attach to primary vnic and which lifetime. Valid values are NONE, RESERVED or EPHEMERAL.",
+    "default": "\"NONE\"",
+    "required": false
+  },
+  {
+    "name": "skip_source_dest_check",
+    "type": "bool",
+    "description": "Whether the source/destination check is disabled on the VNIC.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "source_type",
+    "type": "string",
+    "description": "The source type for the instance.",
+    "default": "\"image\"",
+    "required": false
+  },
+  {
+    "name": "resource_platform",
+    "type": "string",
+    "description": "Platform to create resources in.",
+    "default": "\"linux\"",
+    "required": false
+  },
+  {
+    "name": "ipxe_script",
+    "type": "string",
+    "description": "(Optional) The iPXE script which to continue the boot process on the instance.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "primary_vnic_nsg_ids",
+    "type": "list(string)",
+    "description": "A list of the OCIDs of the network security groups (NSGs) to add the primary VNIC to",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "attachment_type",
+    "type": "string",
+    "description": "(Optional) The type of volume. The only supported values are iscsi and paravirtualized.",
+    "default": "\"paravirtualized\"",
+    "required": false
+  },
+  {
+    "name": "block_storage_sizes_in_gbs",
+    "type": "list(number)",
+    "description": "Sizes of volumes to create and attach to each instance.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "boot_volume_size_in_gbs",
+    "type": "number",
+    "description": "The size of the boot volume in GBs.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "defined_tags",
+    "type": "map(string)",
+    "description": "predefined and scoped to a namespace to tag the resources created using defined tags.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "shape",
+    "type": "string",
+    "description": "The shape of an instance.",
+    "default": "\"VM.Standard2.1\"",
+    "required": false
+  },
+  {
+    "name": "subnet_ocids",
+    "type": "list(string)",
+    "description": "The unique identifiers (OCIDs) of the subnets in which the instance primary VNICs are created.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "vnic_name",
+    "type": "string",
+    "description": "A user-friendly name for the VNIC.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "instance_state",
+    "type": "string",
+    "description": "(Updatable) The target state for the instance. Could be set to RUNNING or STOPPED.",
+    "default": "\"RUNNING\"",
+    "required": false
+  },
+  {
+    "name": "baseline_ocpu_utilization",
+    "type": "string",
+    "description": "(Updatable) The baseline OCPU utilization for a subcore burstable VM instance",
+    "default": "\"BASELINE_1_1\"",
+    "required": false
+  },
+  {
+    "name": "ssh_authorized_keys",
+    "type": "string",
+    "description": "DEPRECATED: use ssh_public_keys instead. Public SSH keys path to be included in the ~/.ssh/authorized_keys file for the default user on the instance.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "ssh_public_keys",
+    "type": "string",
+    "description": "Public SSH keys to be included in the ~/.ssh/authorized_keys file for the default user on the instance. To provide multiple keys, see docs/instance_ssh_keys.adoc.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "hostname_label",
+    "type": "string",
+    "description": "The hostname for the VNIC's primary private IP.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "freeform_tags",
+    "type": "map(string)",
+    "description": "simple key-value pairs to tag the resources created using freeform tags.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "instance_flex_memory_in_gbs",
+    "type": "number",
+    "description": "(Updatable) The total amount of memory available to the instance, in gigabytes.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "assign_public_ip",
+    "type": "bool",
+    "description": "Deprecated: use `var.public_ip` instead. Whether the VNIC should be assigned a public IP address (Always EPHEMERAL).",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "private_ips",
+    "type": "list(string)",
+    "description": "Private IP addresses of your choice to assign to the VNICs.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "preserve_boot_volume",
+    "type": "bool",
+    "description": "Specifies whether to delete or preserve the boot volume when terminating an instance.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "instance_timeout",
+    "type": "string",
+    "description": "Timeout setting for creating instance.",
+    "default": "\"25m\"",
+    "required": false
+  },
+  {
+    "name": "source_ocid",
+    "type": "string",
+    "description": "The OCID of an image or a boot volume to use, depending on the value of source_type.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "user_data",
+    "type": "string",
+    "description": "Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "public_ip_display_name",
+    "type": "string",
+    "description": "(Updatable) A user-friendly name. Does not have to be unique, and it's changeable.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "use_chap",
+    "type": "bool",
+    "description": "(Applicable when attachment_type=iscsi) Whether to use CHAP authentication for the volume attachment.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "compartment_ocid",
+    "type": "string",
+    "description": "(Updatable) The OCID of the compartment where to create all resources",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "instance_flex_ocpus",
+    "type": "number",
+    "description": "(Updatable) The total number of OCPUs available to the instance.",
+    "default": "null",
+    "required": false
+  }
+]

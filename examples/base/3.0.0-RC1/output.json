@@ -1,0 +1,46 @@
+[
+  {
+    "name": "ad_names",
+    "description": "list of ADs in the selected region"
+  },
+  {
+    "name": "operator_private_ip",
+    "description": "private ip address of operator host"
+  },
+  {
+    "name": "group_name",
+    "description": "name of dynamic group for operator host instance_principal"
+  },
+  {
+    "name": "ig_route_id",
+    "description": "Internet Gateway id"
+  },
+  {
+    "name": "nat_route_id",
+    "description": "NAT Routing table id"
+  },
+  {
+    "name": "vcn_id",
+    "description": "VCN id"
+  },
+  {
+    "name": "ssh_to_bastion",
+    "description": "convenient output to ssh to the bastion host"
+  },
+  {
+    "name": "bastion_public_ip",
+    "description": "public ip address of operator host"
+  },
+  {
+    "name": "nat_gateway_id",
+    "description": "NAT gateway id of VCN"
+  },
+  {
+    "name": "home_region",
+    "description": "tenancy home region"
+  },
+  {
+    "name": "ssh_to_operator",
+    "description": "convenient output to ssh to the operator host"
+  }
+]

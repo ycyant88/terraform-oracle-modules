@@ -1,0 +1,58 @@
+[
+  {
+    "name": "freeform_tags",
+    "type": "map(any)",
+    "description": "simple key-value pairs to tag the created resources using freeform OCI Free-form tags.",
+    "default": "{\n  \"module\": \"oracle-terraform-modules/vcn/oci\",\n  \"terraformed\": \"Please do not edit manually\"\n}",
+    "required": false
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "compartment id where to create all resources",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "subnets",
+    "type": "any",
+    "description": "Subnets to be created",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "enable_ipv6",
+    "type": "bool",
+    "description": "Enable IPV6",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "vcn_id",
+    "type": "string",
+    "description": "VCN ID",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ig_route_id",
+    "type": "string",
+    "description": "Internet Gateway route table id",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "nat_route_id",
+    "type": "string",
+    "description": "NAT Gateway route table id",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "defined_tags",
+    "type": "map(string)",
+    "description": "predefined and scoped to a namespace to tag the resources created using defined tags.",
+    "default": "null",
+    "required": false
+  }
+]

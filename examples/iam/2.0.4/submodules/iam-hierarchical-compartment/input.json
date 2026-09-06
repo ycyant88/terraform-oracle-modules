@@ -1,0 +1,16 @@
+[
+  {
+    "name": "compartments",
+    "type": "any",
+    "description": "Hierarchical Compartments",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "root_compartment_id",
+    "type": "string",
+    "description": "Target compartment id which is considered as root",
+    "default": "",
+    "required": true
+  }
+]

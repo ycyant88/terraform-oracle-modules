@@ -1,0 +1,194 @@
+[
+  {
+    "name": "pub_lb_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "bastion_nsg_id",
+    "description": "Network Security Group for bastion host(s)."
+  },
+  {
+    "name": "network_security_rules",
+    "description": ""
+  },
+  {
+    "name": "worker_pool_ids",
+    "description": "Enabled worker pool IDs"
+  },
+  {
+    "name": "cluster_id",
+    "description": "ID of the OKE cluster"
+  },
+  {
+    "name": "apiserver_private_host",
+    "description": "Private OKE cluster endpoint address"
+  },
+  {
+    "name": "bastion_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "pod_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "worker_pool_ips",
+    "description": "Created worker instance private IPs by pool for available modes ('node-pool', 'instance')."
+  },
+  {
+    "name": "dynamic_group_ids",
+    "description": "Cluster IAM dynamic group IDs"
+  },
+  {
+    "name": "nat_route_table_id",
+    "description": "NAT gateway route table ID"
+  },
+  {
+    "name": "int_lb_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "worker_nsg_id",
+    "description": "Network Security Group for worker nodes."
+  },
+  {
+    "name": "operator_private_ip",
+    "description": "Private IP address of operator host"
+  },
+  {
+    "name": "worker_instances",
+    "description": "Created worker pools (mode == 'instance')"
+  },
+  {
+    "name": "ssh_to_bastion",
+    "description": "SSH command for bastion host"
+  },
+  {
+    "name": "policy_statements",
+    "description": "Cluster IAM policy statements"
+  },
+  {
+    "name": "ig_route_table_id",
+    "description": "Internet gateway route table ID"
+  },
+  {
+    "name": "control_plane_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "state_id",
+    "description": ""
+  },
+  {
+    "name": "operator_nsg_id",
+    "description": "Network Security Group for operator host(s)."
+  },
+  {
+    "name": "fss_nsg_id",
+    "description": "Network Security Group for File Storage Service resources."
+  },
+  {
+    "name": "worker_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "fss_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "pub_lb_nsg_id",
+    "description": "Network Security Group for public load balancers."
+  },
+  {
+    "name": "pod_nsg_id",
+    "description": "Network Security Group for pods."
+  },
+  {
+    "name": "lpg_all_attributes",
+    "description": "all attributes of created lpg"
+  },
+  {
+    "name": "operator_id",
+    "description": "ID of operator instance"
+  },
+  {
+    "name": "bastion_public_ip",
+    "description": "Public IP address of bastion host"
+  },
+  {
+    "name": "operator_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "int_lb_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "control_plane_nsg_id",
+    "description": "Network Security Group for Kubernetes control plane(s)."
+  },
+  {
+    "name": "control_plane_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "pod_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "pub_lb_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "fss_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "cluster_endpoints",
+    "description": "Endpoints for the OKE cluster"
+  },
+  {
+    "name": "cluster_kubeconfig",
+    "description": "OKE kubeconfig"
+  },
+  {
+    "name": "cluster_ca_cert",
+    "description": "OKE cluster CA certificate"
+  },
+  {
+    "name": "operator_subnet_cidr",
+    "description": ""
+  },
+  {
+    "name": "ssh_to_operator",
+    "description": "SSH command for operator host"
+  },
+  {
+    "name": "worker_subnet_id",
+    "description": ""
+  },
+  {
+    "name": "int_lb_nsg_id",
+    "description": "Network Security Group for internal load balancers."
+  },
+  {
+    "name": "worker_pools",
+    "description": "Created worker pools (mode != 'instance')"
+  },
+  {
+    "name": "bastion_id",
+    "description": "ID of bastion instance"
+  },
+  {
+    "name": "availability_domains",
+    "description": "Availability domains for tenancy & region"
+  },
+  {
+    "name": "vcn_id",
+    "description": "VCN ID"
+  },
+  {
+    "name": "bastion_subnet_cidr",
+    "description": ""
+  }
+]

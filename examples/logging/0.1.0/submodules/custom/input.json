@@ -1,0 +1,51 @@
+[
+  {
+    "name": "log_retention_duration",
+    "type": "string",
+    "description": "Log retention duration",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "Compartment OCID",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "tenancy_id",
+    "type": "string",
+    "description": "Tenancy OCID",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "linuxloggroup",
+    "type": "string",
+    "description": "Custom Linux loggroup",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "winloggroup",
+    "type": "string",
+    "description": "Custom Windows loggroup",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "linux_logdef",
+    "type": "map(any)",
+    "description": "Custom Linux log definition",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "windows_logdef",
+    "type": "map(any)",
+    "description": "Custom Windows Log Definition",
+    "default": "",
+    "required": true
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "name": "fss_mount_target_nsg_id",
+    "description": ""
+  },
+  {
+    "name": "fss_id",
+    "description": ""
+  },
+  {
+    "name": "fss_mount_target_id",
+    "description": ""
+  },
+  {
+    "name": "fss_subnet_id",
+    "description": ""
+  }
+]

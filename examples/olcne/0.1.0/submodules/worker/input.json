@@ -1,0 +1,30 @@
+[
+  {
+    "name": "olcne_general",
+    "type": "object({\r\n    ad_names     = list(string)\r\n    compartment_id = string\r\n    label_prefix = string\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "olcne_worker",
+    "type": "object({\r\n    worker_image_id     = string\r\n    worker_shape        = string\r\n    worker_upgrade      = bool\r\n    size                = number\r\n    ssh_public_key_path = string\r\n    timezone            = string\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "olcne_worker_network",
+    "type": "object({\r\n    nsg_ids      = map(string)\r\n    subnet_id    = string\r\n    subnet_label = string\r\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "oci_loadbalancer_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  }
+]

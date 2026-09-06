@@ -1,0 +1,65 @@
+[
+  {
+    "name": "drg_compartment_id",
+    "type": "string",
+    "description": "compartment id where the DRG is located",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "label_prefix",
+    "type": "string",
+    "description": "a string that will be prepended to all resources",
+    "default": "\"none\"",
+    "required": false
+  },
+  {
+    "name": "freeform_tags",
+    "type": "map(any)",
+    "description": "simple key-value pairs to tag the created resources using freeform OCI Free-form tags.",
+    "default": "{\n  \"module\": \"oracle-terraform-modules/vcn/oci//modules/drg\",\n  \"terraformed\": \"Please do not edit manually\"\n}",
+    "required": false
+  },
+  {
+    "name": "drg_display_name",
+    "type": "string",
+    "description": "(Updatable) Name of Dynamic Routing Gateway. Does not have to be unique.",
+    "default": "\"drg\"",
+    "required": false
+  },
+  {
+    "name": "remote_peering_connections",
+    "type": "map(any)",
+    "description": "List of parameters to add and optionally peer to remote peering connections",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "compartment id where to create all resources",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "defined_tags",
+    "type": "map(any)",
+    "description": "predefined and scoped to a namespace to tag the created resources using OCI Defined tags.",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "drg_vcn_attachments",
+    "type": "map(any)",
+    "description": "The OCID of the network resource attached to the DRG",
+    "default": "null",
+    "required": false
+  },
+  {
+    "name": "drg_id",
+    "type": "string",
+    "description": "ID of an external created DRG",
+    "default": "null",
+    "required": false
+  }
+]

@@ -1,0 +1,303 @@
+[
+  {
+    "name": "defined_tags",
+    "type": "map(string)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "allow_rules_pods",
+    "type": "any",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_nat_gateway",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "drg_attachments",
+    "type": "any",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "internet_gateway_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "worker_is_public",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "use_stateless_rules",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "state_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cni_type",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "enable_ipv6",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "freeform_tags",
+    "type": "map(string)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "use_defined_tags",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "allow_rules_internal_lb",
+    "type": "any",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "allow_rules_workers",
+    "type": "any",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "allow_worker_internet_access",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "allow_worker_ssh_access",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "allow_bastion_cluster_access",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "bastion_allowed_cidrs",
+    "type": "set(string)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "tag_namespace",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "allow_node_port_access",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "allow_rules_cp",
+    "type": "any",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "allow_rules_public_lb",
+    "type": "any",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "assign_dns",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "control_plane_is_public",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_cluster",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_bastion",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ig_route_table_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "load_balancers",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "nat_gateway_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "nat_route_table_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "nsgs",
+    "type": "map(object({\n    create = optional(string)\n    id     = optional(string)\n  }))",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "bastion_is_public",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_operator",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "enable_waf",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "igw_ngw_mixed_route_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "allow_pod_internet_access",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_internet_gateway",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "vcn_cidrs",
+    "type": "list(string)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "vcn_ipv6_cidrs",
+    "type": "list(string)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "control_plane_allowed_cidrs",
+    "type": "set(string)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "vcn_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "subnets",
+    "type": "map(object({\n    create       = optional(string)\n    id           = optional(string)\n    newbits      = optional(string)\n    netnum       = optional(string)\n    cidr         = optional(string)\n    display_name = optional(string)\n    dns_label    = optional(string)\n    ipv6_cidr    = optional(string)\n  }))",
+    "description": "",
+    "default": "",
+    "required": true
+  }
+]

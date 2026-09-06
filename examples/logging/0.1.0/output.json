@@ -1,0 +1,106 @@
+[
+  {
+    "name": "vcn_logid",
+    "description": "VCN subnet flowlogs log id"
+  },
+  {
+    "name": "apigw_accesslogid",
+    "description": "APIGateway access logs id"
+  },
+  {
+    "name": "devops_logid",
+    "description": "Devops logs id"
+  },
+  {
+    "name": "email_relaylogid",
+    "description": "Email logs id"
+  },
+  {
+    "name": "linux_loggroupid",
+    "description": "Custom Linux loggroup id"
+  },
+  {
+    "name": "event_loggroupid",
+    "description": "Event loggroup id"
+  },
+  {
+    "name": "lb_accesslogid",
+    "description": "Loadbalancer access logs id"
+  },
+  {
+    "name": "lb_loggroupid",
+    "description": "Loadbalancer loggroup id"
+  },
+  {
+    "name": "os_writelogid",
+    "description": "ObjectStorage write logs id"
+  },
+  {
+    "name": "apigw_loggroupid",
+    "description": "APIGateway loggroup id"
+  },
+  {
+    "name": "email_acceptlogid",
+    "description": "Email logs id"
+  },
+  {
+    "name": "email_loggroupid",
+    "description": "Email loggroup id"
+  },
+  {
+    "name": "event_logid",
+    "description": "Event logs id"
+  },
+  {
+    "name": "vpn_loggroupid",
+    "description": "VPN IPSEC loggroup id"
+  },
+  {
+    "name": "windows_logid",
+    "description": "Custom Windows logs id"
+  },
+  {
+    "name": "devops_loggroupid",
+    "description": "Devops loggroup id"
+  },
+  {
+    "name": "lb_errorlogid",
+    "description": "Loadbalancer error logs id"
+  },
+  {
+    "name": "linux_logid",
+    "description": "Custom Linux logs id"
+  },
+  {
+    "name": "os_loggroupid",
+    "description": "ObjectStorage loggroup id"
+  },
+  {
+    "name": "vcn_loggroupid",
+    "description": "VCN subnet flowlogs loggroup id"
+  },
+  {
+    "name": "vpn_logid",
+    "description": "VPN  IPSEC read logs id"
+  },
+  {
+    "name": "windows_loggroupid",
+    "description": "Custom Windows loggroup id"
+  },
+  {
+    "name": "apigw_execlogid",
+    "description": "APIGateway execution logs id"
+  },
+  {
+    "name": "func_logid",
+    "description": "Function logs id"
+  },
+  {
+    "name": "func_loggroupid",
+    "description": "Function loggroup id"
+  },
+  {
+    "name": "os_readlogid",
+    "description": "ObjectStorage read logs id"
+  }
+]

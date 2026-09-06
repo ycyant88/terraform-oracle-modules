@@ -1,0 +1,170 @@
+[
+  {
+    "name": "resource_platform",
+    "type": "string",
+    "description": "Platform to create resources in.",
+    "default": "\"linux\"",
+    "required": false
+  },
+  {
+    "name": "skip_source_dest_check",
+    "type": "bool",
+    "description": "Whether the source/destination check is disabled on the VNIC.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "subnet_ocids",
+    "type": "list(string)",
+    "description": "The unique identifiers (OCIDs) of the subnets in which the instance primary VNICs are created.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "source_type",
+    "type": "string",
+    "description": "The source type for the instance.",
+    "default": "\"image\"",
+    "required": false
+  },
+  {
+    "name": "attachment_type",
+    "type": "string",
+    "description": "(Optional) The type of volume. The only supported values are iscsi and paravirtualized.",
+    "default": "\"paravirtualized\"",
+    "required": false
+  },
+  {
+    "name": "block_storage_sizes_in_gbs",
+    "type": "list(number)",
+    "description": "Sizes of volumes to create and attach to each instance.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "use_chap",
+    "type": "bool",
+    "description": "(Applicable when attachment_type=iscsi) Whether to use CHAP authentication for the volume attachment.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "shape",
+    "type": "string",
+    "description": "The shape of an instance.",
+    "default": "\"VM.Standard2.1\"",
+    "required": false
+  },
+  {
+    "name": "assign_public_ip",
+    "type": "bool",
+    "description": "Whether the VNIC should be assigned a public IP address.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "private_ips",
+    "type": "list(string)",
+    "description": "Private IP addresses of your choice to assign to the VNICs.",
+    "default": "[]",
+    "required": false
+  },
+  {
+    "name": "source_ocid",
+    "type": "string",
+    "description": "The OCID of an image or a boot volume to use, depending on the value of source_type.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "boot_volume_size_in_gbs",
+    "type": "number",
+    "description": "The size of the boot volume in GBs.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "vnic_name",
+    "type": "string",
+    "description": "A user-friendly name for the VNIC.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "ssh_authorized_keys",
+    "type": "string",
+    "description": "Public SSH keys path to be included in the ~/.ssh/authorized_keys file for the default user on the instance.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "instance_timeout",
+    "type": "string",
+    "description": "Timeout setting for creating instance.",
+    "default": "\"25m\"",
+    "required": false
+  },
+  {
+    "name": "ipxe_script",
+    "type": "string",
+    "description": "(Optional) The iPXE script which to continue the boot process on the instance.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "preserve_boot_volume",
+    "type": "bool",
+    "description": "Specifies whether to delete or preserve the boot volume when terminating an instance.",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "hostname_label",
+    "type": "string",
+    "description": "The hostname for the VNIC's primary private IP.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "user_data",
+    "type": "string",
+    "description": "Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "compartment_ocid",
+    "type": "string",
+    "description": "(Required) (Updatable) The OCID of the compartment where to create all resources",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ad_number",
+    "type": "number",
+    "description": "(Optional) The availability domain number of the instance. If none is provided, it will start with AD-1 and continue in round-robin.",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "instance_display_name",
+    "type": "string",
+    "description": "(Optional) (Updatable) A user-friendly name for the instance. Does not have to be unique, and it's changeable.",
+    "default": "\"\"",
+    "required": false
+  },
+  {
+    "name": "extended_metadata",
+    "type": "map(any)",
+    "description": "(Optional) (Updatable) Additional metadata key/value pairs that you provide.",
+    "default": "{}",
+    "required": false
+  },
+  {
+    "name": "instance_count",
+    "type": "number",
+    "description": "Number of instances to launch.",
+    "default": "1",
+    "required": false
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "name": "nat_route_id",
+    "description": ""
+  },
+  {
+    "name": "vcn_id",
+    "description": ""
+  },
+  {
+    "name": "nat_gateway_id",
+    "description": ""
+  },
+  {
+    "name": "ig_route_id",
+    "description": ""
+  }
+]

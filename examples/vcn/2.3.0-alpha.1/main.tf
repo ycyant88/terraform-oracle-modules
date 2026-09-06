@@ -1,0 +1,20 @@
+module "vcn" {
+  source                       = "oracle-terraform-modules/vcn/oci"
+  version                      = "2.3.0-alpha.1"
+  compartment_id               = var.compartment_id
+  create_drg                   = var.create_drg
+  drg_display_name             = var.drg_display_name
+  internet_gateway_enabled     = var.internet_gateway_enabled
+  internet_gateway_route_rules = var.internet_gateway_route_rules
+  label_prefix                 = var.label_prefix
+  local_peering_gateways       = var.local_peering_gateways
+  lockdown_default_seclist     = var.lockdown_default_seclist
+  nat_gateway_enabled          = var.nat_gateway_enabled
+  nat_gateway_route_rules      = var.nat_gateway_route_rules
+  region                       = var.region
+  service_gateway_enabled      = var.service_gateway_enabled
+  tags                         = var.tags
+  vcn_cidr                     = var.vcn_cidr
+  vcn_dns_label                = var.vcn_dns_label
+  vcn_name                     = var.vcn_name
+}

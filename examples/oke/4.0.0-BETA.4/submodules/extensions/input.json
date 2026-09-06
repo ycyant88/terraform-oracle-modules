@@ -1,0 +1,289 @@
+[
+  {
+    "name": "tenancy_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "pods_cidr",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "upgrade_nodepool",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ocir_urls",
+    "type": "map(any)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "secret_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "service_account_name",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "node_pools_to_drain",
+    "type": "list(string)",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ssh_private_key",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ssh_private_key_path",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "operator_os_version",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "check_node_active",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_operator",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "username",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "enable_metric_server",
+    "type": "bool",
+    "description": "",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "enable_vpa",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "service_account_namespace",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "operator_state",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "use_encryption",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "secret_namespace",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cluster_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "kms_key_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "email_address",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "secret_name",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "service_account_cluster_role_binding",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ssh_public_key_path",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "bastion_state",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "operator_dynamic_group",
+    "type": "string",
+    "description": "name of dynamic group to allow updating dynamic-groups",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "nodepool_upgrade_method",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "enable_operator_instance_principal",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "install_calico",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "vpa_version",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_bastion_host",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "bastion_public_ip",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "operator_private_ip",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "kms_dynamic_group_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "calico_version",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "label_prefix",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "region",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ssh_public_key",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_service_account",
+    "type": "bool",
+    "description": "",
+    "default": "",
+    "required": true
+  }
+]

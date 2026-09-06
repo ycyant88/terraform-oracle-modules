@@ -1,0 +1,70 @@
+[
+  {
+    "name": "ig_route_id",
+    "description": "id of internet gateway route table"
+  },
+  {
+    "name": "nat_route_id",
+    "description": "id of VCN NAT gateway route table"
+  },
+  {
+    "name": "ig_route_all_attributes",
+    "description": "all attributes of created ig route table"
+  },
+  {
+    "name": "nat_route_all_attributes",
+    "description": "all attributes of created nat gateway route table"
+  },
+  {
+    "name": "service_gateway_all_attributes",
+    "description": "all attributes of created service gateway"
+  },
+  {
+    "name": "subnet_id",
+    "description": ""
+  },
+  {
+    "name": "vcn_id",
+    "description": "id of vcn that is created"
+  },
+  {
+    "name": "internet_gateway_id",
+    "description": "id of internet gateway if it is created"
+  },
+  {
+    "name": "lpg_all_attributes",
+    "description": "all attributes of created lpg"
+  },
+  {
+    "name": "vcn_all_attributes",
+    "description": "all attributes of created vcn"
+  },
+  {
+    "name": "default_security_list_id",
+    "description": ""
+  },
+  {
+    "name": "nat_gateway_id",
+    "description": "id of nat gateway if it is created"
+  },
+  {
+    "name": "nat_gateway_all_attributes",
+    "description": "all attributes of created nat gateway"
+  },
+  {
+    "name": "subnet_all_attributes",
+    "description": ""
+  },
+  {
+    "name": "service_gateway_id",
+    "description": "id of service gateway if it is created"
+  },
+  {
+    "name": "sgw_route_id",
+    "description": "id of VCN Service gateway route table"
+  },
+  {
+    "name": "internet_gateway_all_attributes",
+    "description": "all attributes of created internet gateway"
+  }
+]

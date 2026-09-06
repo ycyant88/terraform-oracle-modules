@@ -1,0 +1,282 @@
+[
+  {
+    "name": "auth_token",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "email_address",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "region",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "install_helm",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "calico_version",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "tenancy_ocid",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cluster_options_add_ons_is_tiller_enabled",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cluster_options_kubernetes_network_config_pods_cidr",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cluster_subnets",
+    "type": "map",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "node_pool_node_image_name",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cluster_kubernetes_version",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cluster_options_kubernetes_network_config_services_cidr",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "node_pool_node_shape",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_auth_token",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "user_ocid",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "enable_instance_principal",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "image_operating_system",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "vcn_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ocir_urls",
+    "type": "map",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "tenancy_name",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "availability_domains",
+    "type": "map",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "bastion_public_ip",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "node_pools",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cluster_kube_config_expiration",
+    "type": "string",
+    "description": "",
+    "default": "2592000",
+    "required": false
+  },
+  {
+    "name": "cluster_options_add_ons_is_kubernetes_dashboard_enabled",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "username",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "node_pool_quantity_per_subnet",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "nodepool_topology",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ocirtoken_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "helm_version",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ssh_private_key_path",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "create_bastion",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cluster_name",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "node_pool_name_prefix",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "install_calico",
+    "type": "string",
+    "description": "",
+    "default": "false",
+    "required": false
+  },
+  {
+    "name": "compartment_ocid",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ssh_public_key_path",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ad_names",
+    "type": "list",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "label_prefix",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cluster_kube_config_token_version",
+    "type": "string",
+    "description": "",
+    "default": "\"1.0.0\"",
+    "required": false
+  }
+]

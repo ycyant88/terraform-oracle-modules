@@ -1,0 +1,10 @@
+[
+  {
+    "name": "bastion_public_ip",
+    "description": ""
+  },
+  {
+    "name": "bastion_id",
+    "description": ""
+  }
+]

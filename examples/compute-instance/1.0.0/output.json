@@ -1,0 +1,34 @@
+[
+  {
+    "name": "private_ip",
+    "description": "Private IPs of created instances. "
+  },
+  {
+    "name": "public_ip",
+    "description": "Public IPs of created instances. "
+  },
+  {
+    "name": "volume_attachment_iqn",
+    "description": "Unique IDs assigned to iSCSI devices. Used when attaching a volume to an instance. "
+  },
+  {
+    "name": "volume_attachment_ipv4",
+    "description": "The volume's iSCSI IP addresses. "
+  },
+  {
+    "name": "volume_attachment_port",
+    "description": "The volume's iSCSI ports. "
+  },
+  {
+    "name": "instance_username",
+    "description": "Usernames to login to Windows instance. "
+  },
+  {
+    "name": "instance_password",
+    "description": "Passwords to login to Windows instance. "
+  },
+  {
+    "name": "instance_id",
+    "description": "ocid of created instances. "
+  }
+]

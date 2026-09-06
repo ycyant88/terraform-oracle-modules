@@ -1,0 +1,86 @@
+[
+  {
+    "name": "api_private_key_path",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "operator",
+    "type": "object({\n    bastion_public_ip           = string\n    operator_private_ip         = string\n    bastion_enabled             = bool\n    operator_enabled            = bool\n    operator_instance_principal = bool\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "dynamic_group",
+    "type": "string",
+    "description": "name of dynamic group to allow updating dynamic-groups",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "oke_kms",
+    "type": "object({\n    use_encryption = bool\n    key_id         = string\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "user_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "ssh_keys",
+    "type": "object({\n    ssh_private_key_path = string\n    ssh_public_key_path  = string\n  })",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "cluster_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "compartment_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "label_prefix",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "api_fingerprint",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "region",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  },
+  {
+    "name": "tenancy_id",
+    "type": "string",
+    "description": "",
+    "default": "",
+    "required": true
+  }
+]

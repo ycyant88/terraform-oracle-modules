@@ -1,0 +1,9 @@
+[
+  {
+    "name": "oci_base_vcn",
+    "type": "object({\r\n    compartment_id          = string\r\n    label_prefix            = string\r\n    nat_gateway_enabled     = bool\r\n    service_gateway_enabled = bool\r\n    vcn_cidr                = string\r\n    vcn_dns_label           = string\r\n    vcn_name                = string\r\n  })",
+    "description": "vcn basic parameters",
+    "default": "",
+    "required": true
+  }
+]
